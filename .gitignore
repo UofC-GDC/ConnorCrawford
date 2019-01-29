@@ -41,6 +41,7 @@ sysinfo.txt
 # Specific problem starters
 Editor.meta
 ProjectVersion.txt
+manifest.json #Talk to Caelum or Riley if you want to add a package
 
 # Odin
 Sirenix/Assemblies/AOT
