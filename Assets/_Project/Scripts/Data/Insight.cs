@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Insight", menuName ="New Insight")]
 public class Insight : ScriptableObject {
-    public List<List<string>> text;
+    public List<List<string>> text = new List<List<string>>();
 
     public Text style;
 }
