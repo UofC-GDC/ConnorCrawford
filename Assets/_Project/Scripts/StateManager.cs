@@ -36,6 +36,8 @@ public class StateManager : Singleton<StateManager> {
     public struct Env
     {
         public Player player;
+        bool rightClicked;
+        bool leftClicked;
     }
 
 }
