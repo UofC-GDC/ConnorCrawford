@@ -25,6 +25,6 @@ MonoBehaviour:
     - A. Uhhhh. What is this thing?
   - insightOption:
     - 'How does time travel work here? '
-    - ' Is it more like Back to the Future'
+    - Is it more like Back to the Future
     - 'or more like Ocarina of Time?  '
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
