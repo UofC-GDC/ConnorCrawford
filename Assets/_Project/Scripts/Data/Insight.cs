@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,5 +15,5 @@ public class Insight : ScriptableObject {
 
     public List<InsightOption> text = new List<InsightOption>();
 
-    public Text style;
+    public TextMeshPro style;
 }
