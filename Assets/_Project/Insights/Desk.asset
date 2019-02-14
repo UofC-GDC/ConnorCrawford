@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
+  m_Name: Desk
+  m_EditorClassIdentifier: 
+  text:
+  - insightOption:
+    - This is where I get all of my construction paper
+    - "...but I don\u2019t do a lot of crafts anymore."
+  - insightOption:
+    - "I\u2019ve got so much colored paper. Who needs that much blue paper?!"
+  - insightOption:
+    - There's gotta be something in this desk
+    - I can use besides all the trash I shoved underneath.
+  - insightOption:
+    - I'm tired of this desk taking all of this space.
+    - 'As if I''m gonna use it!  '
+  style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

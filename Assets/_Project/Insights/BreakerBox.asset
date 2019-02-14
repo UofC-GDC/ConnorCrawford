@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
+  m_Name: BreakerBox
+  m_EditorClassIdentifier: 
+  text:
+  - insightOption:
+    - "I\u2019m really not allowed to touch that or mom gets mad."
+    - "It\u2019s just a bunch of boring switches anyway."
+  - insightOption:
+    - "Mom didn\u2019t have to put a note on it, I can remember on my own"
+  style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
