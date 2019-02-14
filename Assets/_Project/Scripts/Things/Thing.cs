@@ -10,14 +10,7 @@ using UnityEngine;
  **/
 abstract public class Thing : MonoBehaviour {
 
-    public List<List<Insight>> insights;
-
-    protected IEnumerator<List<Insight>> insightEnumerator;
-
-    private void Awake()
-    {
-        insightEnumerator = insights.GetEnumerator();
-    }
+    public Insight insight;
 
     public virtual void OnLeftClick()
     {
@@ -35,9 +28,8 @@ abstract public class Thing : MonoBehaviour {
     }
 
 
-    public virtual List<Insight> GetInsight()
+    public virtual InsightOption GetInsight()
     {
-        insightEnumerator.MoveNext();
-        return insightEnumerator.Current;
+        return insight.text[Random.Range(0, insight.text.Count)];
     }
 }
