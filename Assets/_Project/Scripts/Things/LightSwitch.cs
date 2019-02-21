@@ -4,11 +4,13 @@ public class LightSwitch : Thing
 {
     [SerializeField] private Light roomLight;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource lightSound;
 
     private void Start()
     {
         animator.SetTrigger("LightOn");
         roomLight.enabled = true;
+        lightSound.Stop();
     }
 
     private bool lightOn;
@@ -28,6 +30,7 @@ public class LightSwitch : Thing
         }
 
         animator.SetTrigger(triggerString);
+        lightSound.Play();
 
         return null;
     }
