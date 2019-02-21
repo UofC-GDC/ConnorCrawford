@@ -11,24 +11,29 @@ public class LightSwitch : Thing
         animator.SetTrigger("LightOn");
         roomLight.enabled = true;
         lightSound.Stop();
+        lightSound.pitch = 1;
     }
 
-    private bool lightOn;
+    private bool lightOn = true;
     private string triggerString = "";
+    private float soundPitch = 1;
 
     public override State Action()
     {
-        if (lightOn)
+        if (!lightOn)
         {
             triggerString = "LightOn";
             lightOn = roomLight.enabled = true;
+            soundPitch = 1;
         }
         else
         {
             triggerString = "LightOff";
             lightOn = roomLight.enabled = false;
+            soundPitch = .6f;
         }
 
+        lightSound.pitch = soundPitch;
         animator.SetTrigger(triggerString);
         lightSound.Play();
 
