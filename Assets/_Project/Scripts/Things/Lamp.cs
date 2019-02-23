@@ -1,18 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class LightSwitch : Thing
+public class Lamp : Thing 
 {
-    [SerializeField] private Light roomLight;
     [SerializeField] private Animator animator;
-    [SerializeField] private AudioSource lightSound;
-    [SerializeField] private Door door;
+    [SerializeField] private AudioSource lampSound;
 
     private void Start()
     {
-        animator.SetTrigger("LightOn");
-        roomLight.enabled = true;
-        lightSound.Stop();
-        lightSound.pitch = 1;
+        animator.SetTrigger("LampOn");
+        lampSound.Stop();
+        lampSound.pitch = 1;
     }
 
     private bool lightOn = true;
@@ -21,24 +20,22 @@ public class LightSwitch : Thing
 
     public override State Action()
     {
-        if (door.open) return base.Action();
-
         if (!lightOn)
         {
             triggerString = "LightOn";
-            lightOn = roomLight.enabled = true;
+            lightOn = true;
             soundPitch = 1;
         }
         else
         {
             triggerString = "LightOff";
-            lightOn = roomLight.enabled = false;
+            lightOn = false;
             soundPitch = .6f;
         }
 
-        lightSound.pitch = soundPitch;
+        lampSound.pitch = soundPitch;
         animator.SetTrigger(triggerString);
-        lightSound.Play();
+        lampSound.Play();
 
         return base.Action();
     }

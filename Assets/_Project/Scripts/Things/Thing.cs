@@ -10,13 +10,13 @@ using UnityEngine;
  **/
 abstract public class Thing : MonoBehaviour {
 
-    public List<List<Insight>> insights;
+    public Insight insight;
 
-    protected IEnumerator<List<Insight>> insightEnumerator;
+    protected IEnumerator<InsightOption> insightEnumerator;
 
     private void Awake()
     {
-        insightEnumerator = insights.GetEnumerator();
+        insightEnumerator = insight.text.GetEnumerator();
     }
 
     public virtual void OnLeftClick()
@@ -35,7 +35,7 @@ abstract public class Thing : MonoBehaviour {
     }
 
 
-    public virtual List<Insight> GetInsight()
+    public virtual InsightOption GetInsightOption()
     {
         insightEnumerator.MoveNext();
         return insightEnumerator.Current;

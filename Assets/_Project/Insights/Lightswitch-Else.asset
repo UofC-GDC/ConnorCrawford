@@ -14,6 +14,5 @@ MonoBehaviour:
   text:
   - insightOption:
     - "Ah, my good old\u2026"
-  - insightOption:
     - '... lightswitch'
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
