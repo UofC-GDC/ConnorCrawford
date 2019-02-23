@@ -22,13 +22,13 @@ public class Lamp : Thing
     {
         if (!lightOn)
         {
-            triggerString = "LightOn";
+            triggerString = "LampOn";
             lightOn = true;
             soundPitch = 1;
         }
         else
         {
-            triggerString = "LightOff";
+            triggerString = "LampOff";
             lightOn = false;
             soundPitch = .6f;
         }
