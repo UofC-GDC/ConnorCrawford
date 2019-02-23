@@ -7,6 +7,7 @@ public class TestingInteraction : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private AudioSource noInteractionSound;
+    [SerializeField] private DialogueManager dialogueManager;
 
     private int mouseClick = -1;
     private bool hasTarget = false;
@@ -38,8 +39,7 @@ public class TestingInteraction : MonoBehaviour
                         var option = thing.GetInsightOption();
                         if (option != null)
                         {
-                            foreach (string line in option.insightOption)
-                                Debug.Log(line);
+                            dialogueManager.SetupLines(option);
                         }
                         break;
                     case 1:
@@ -59,6 +59,7 @@ public class TestingInteraction : MonoBehaviour
         RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
         if (hit2D.collider != null)
         {
+            if(hit2D.collider.gameObject.tag == "SpeechBubble") return false;
             thing = hit2D.collider.gameObject.GetComponent<Thing>();
             return thing != null;
         }
