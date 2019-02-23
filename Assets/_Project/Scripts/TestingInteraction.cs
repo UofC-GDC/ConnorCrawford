@@ -35,10 +35,10 @@ public class TestingInteraction : MonoBehaviour
                 switch (mouseClick)
                 {
                     case 0:
-                        var lines = thing.GetInsightOption().insightOption;
-                        if (lines != null)
+                        var option = thing.GetInsightOption();
+                        if (option != null)
                         {
-                            foreach (string line in lines)
+                            foreach (string line in option.insightOption)
                                 Debug.Log(line);
                         }
                         break;

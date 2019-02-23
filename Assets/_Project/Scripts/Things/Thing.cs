@@ -38,6 +38,11 @@ abstract public class Thing : MonoBehaviour {
     public virtual InsightOption GetInsightOption()
     {
         insightEnumerator.MoveNext();
+        if (insightEnumerator.Current == null)
+        {
+            insightEnumerator.Reset();
+            insightEnumerator.MoveNext();
+        }
         return insightEnumerator.Current;
     }
 }
