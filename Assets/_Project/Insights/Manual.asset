@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
+  m_Name: Manual
+  m_EditorClassIdentifier: 
+  text:
+  - insightOption:
+    - Well this is a weeeeird book.
+    - All of the pages are red!
+  - insightOption:
+    - I feel like it has letters the page is bumpy.
+    - "It\u2019s too dark though"
+  - insightOption:
+    - 'If I could find the right light, I could see the writing '
+  style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

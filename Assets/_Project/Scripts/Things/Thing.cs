@@ -12,6 +12,13 @@ abstract public class Thing : MonoBehaviour {
 
     public Insight insight;
 
+    protected IEnumerator<InsightOption> insightEnumerator;
+
+    private void Awake()
+    {
+        insightEnumerator = insight.text.GetEnumerator();
+    }
+
     public virtual void OnLeftClick()
     {
 
@@ -28,8 +35,5 @@ abstract public class Thing : MonoBehaviour {
     }
 
 
-    public virtual InsightOption GetInsight()
+    public virtual InsightOption GetInsightOption()
     {
-        return insight.text[Random.Range(0, insight.text.Count)];
-    }
-}
