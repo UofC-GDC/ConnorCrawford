@@ -19,6 +19,7 @@ public class Door : Thing
             if (open)
             {
                 CloseDoor();
+                return null;
             }
             else
             {
@@ -26,6 +27,7 @@ public class Door : Thing
                 open = true;
                 collider3d.SetActive(true);
                 ChangeAndPlayClip(doorOpenClip);
+                return null;
             }
         }
         else if (!noteDropped)

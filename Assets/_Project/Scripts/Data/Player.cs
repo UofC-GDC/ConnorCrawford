@@ -1,4 +1,4 @@
 ﻿//Data Class
 public struct Player {
-    Thing inventory;
+    public Thing inventory;
 }

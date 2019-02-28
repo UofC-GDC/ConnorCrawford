@@ -32,6 +32,7 @@ abstract public class Thing : MonoBehaviour
 
     public virtual State Action()
     {
+        //Shake the mouse
         return null;
     }
 
