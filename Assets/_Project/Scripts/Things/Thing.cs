@@ -8,7 +8,8 @@ using UnityEngine;
  * 
  * Implement Action to specify custom actions of the thing
  **/
-abstract public class Thing : MonoBehaviour {
+abstract public class Thing : MonoBehaviour
+{
 
     public Insight insight;
 
@@ -26,11 +27,12 @@ abstract public class Thing : MonoBehaviour {
 
     public virtual void OnRightClick()
     {
-        
+
     }
 
     public virtual State Action()
     {
+        //Shake the mouse
         return null;
     }
 
@@ -43,6 +45,7 @@ abstract public class Thing : MonoBehaviour {
             insightEnumerator.Reset();
             insightEnumerator.MoveNext();
         }
+
         return insightEnumerator.Current;
     }
 }

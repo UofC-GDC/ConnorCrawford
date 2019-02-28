@@ -21,11 +21,10 @@ GameObject:
   - component: {fileID: 4354282873236312}
   - component: {fileID: 212500182560700416}
   - component: {fileID: 61077289127170074}
-  - component: {fileID: 95983521359794714}
-  - component: {fileID: 82883944291148928}
-  - component: {fileID: 114164931512225060}
+  - component: {fileID: 82101000583834390}
+  - component: {fileID: 114444401709188982}
   m_Layer: 9
-  m_Name: Door
+  m_Name: FishPostTT
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234446816559788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.72, y: -0.54, z: 14.754}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,20 +55,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0030010939, y: 0.24428442}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 1.39}
-    newSize: {x: 0.5, y: 1.39}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5102804, y: 1.8662713}
+  m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
---- !u!82 &82883944291148928
+--- !u!82 &82101000583834390
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,10 +76,9 @@ AudioSource:
   m_GameObject: {fileID: 1234446816559788}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: afde001d1de64b24098b995de63c9b22,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: e5d7ec4df9acf074486dc105aa0bca78, type: 3}
-  m_PlayOnAwake: 0
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -165,25 +163,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95983521359794714
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234446816559788}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7384673dfa268824bb1fba4ccb758f16, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114164931512225060
+--- !u!114 &114444401709188982
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,17 +171,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1234446816559788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 590c55f117f7305498c3e5a16ee86fef, type: 3}
+  m_Script: {fileID: 11500000, guid: ee2059ed12cd34b4f9381de5d47c94e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insight: {fileID: 11400000, guid: 49f45d2b0c7755541b8449725a6e1ae3, type: 2}
-  animator: {fileID: 95983521359794714}
-  collider3d: {fileID: 0}
-  doorSource: {fileID: 82883944291148928}
-  doorOpenClip: {fileID: 8300000, guid: cc70a80bf9a675547909e2b2946fa4d7, type: 3}
-  doorCloseClip: {fileID: 8300000, guid: ceb3bb39808ebb44dbce2e26cc87a2c5, type: 3}
-  locked: 0
-  open: 1
+  insight: {fileID: 11400000, guid: 8d1e7a10dcc8b9c4fbede2bee768ee28, type: 2}
 --- !u!212 &212500182560700416
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -217,7 +190,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f012d9ecef787ba49ae8f73a2b2b2f63, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,14 +210,14 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5589a50f4bf646b408d80903d64b3693, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 1.39}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

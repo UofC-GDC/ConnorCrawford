@@ -37,6 +37,6 @@ public class Lamp : Thing
         animator.SetTrigger(triggerString);
         lampSound.Play();
 
-        return base.Action();
+        return null
     }
 }

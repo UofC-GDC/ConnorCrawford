@@ -40,6 +40,6 @@ public class LightSwitch : Thing
         animator.SetTrigger(triggerString);
         lightSound.Play();
 
-        return base.Action();
+        return null;
     }
 }
