@@ -30,7 +30,7 @@ public class Flashlight : Thing
                 currentFlashLightState = flashLightState.inHand;
                 break;
             case flashLightState.inHand:
-                //if (StateManager.Instance.env.player.inventory == typeof(BluePaper))
+                //if (typeof(StateManager.Instance.env.player.inventory) == typeof(BluePaper))
                 //{
                 //    currentFlashLightState = flashLightState.blue;
                 //}
