@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: d400be5e7cfc98a428e5e8ac89d89334
+guid: d0b736eb051b81548bac9b7c1f9ab7d9
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Lamp_0
-    21300002: Lamp_1
+    21300000: leChair_0
+    21300002: leChair_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -82,78 +82,45 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lamp_0
+      name: leChair_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 143
-        height: 200
+        width: 40
+        height: 68
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d6d05bbc48638547978e734f933acc3
+      spriteID: 2169f487304cabf499e41171903b6574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lamp_1
+      name: leChair_1
       rect:
         serializedVersion: 2
-        x: 142
+        x: 43
         y: 0
-        width: 143
-        height: 200
+        width: 40
+        height: 68
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1efbe93879fc25469aa2f2ba15d82a2
+      spriteID: 3fd601cad1416854a9cfe96fe3017546
       vertices: []
       indices: 
       edges: []
@@ -161,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bc62725a7d1770e48884e9eaa88929b1
+    spriteID: 076746a3c1053d84f823d93e33a7eb97
     vertices: []
     indices: 
     edges: []
