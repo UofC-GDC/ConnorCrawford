@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScreenSpaceShader : MonoBehaviour {
 
-    public List<Material> effects;
+    public Material effect;
 
     //void OnEnable()
     //{
@@ -21,6 +21,7 @@ public class ScreenSpaceShader : MonoBehaviour {
 
         // execute the shader on input texture (src) and write to output (dest)
         //Graphics.Blit(src, dest, effect);
-        foreach (var effect in effects) Graphics.Blit(src, dest, effect);
+            Graphics.Blit(src, dest, effect);
+ 
     }
 }
