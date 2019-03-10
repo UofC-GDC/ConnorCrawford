@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: 2dd70df4b0b3c054f8270928b69491ca
+guid: 14963a760e93aa147bba22decc49d2f5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: timeMachine_0
-    21300002: timeMachine_1
-    21300004: timeMachine_2
-    21300006: timeMachine_3
+    21300000: steam_0
+    21300002: steam_1
+    21300004: steam_2
+    21300006: steam_3
+    21300008: steam_4
+    21300010: steam_5
+    21300012: steam_6
+    21300014: steam_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -88,13 +92,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: timeMachine_0
+      name: steam_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 88.25
-        height: 100
+        y: 50.25
+        width: 17.5
+        height: 16.75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,19 +106,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30659f63523d81e42a75c05ac488acbd
+      spriteID: 26b287ec549bce24a9861c5e39a52490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: timeMachine_1
+      name: steam_1
       rect:
         serializedVersion: 2
-        x: 88
-        y: 0
-        width: 88.25
-        height: 100
+        x: 17
+        y: 50.25
+        width: 17.5
+        height: 16.75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +126,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e65cfc77d6889374fb0ce9e58a9b0597
+      spriteID: 7227cc9305958974baeb849a89ce30c1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: timeMachine_2
+      name: steam_2
       rect:
         serializedVersion: 2
-        x: 176
-        y: 0
-        width: 88.25
-        height: 100
+        x: 0
+        y: 34.25
+        width: 17.5
+        height: 16.75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,19 +146,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05b2a0f105b5f494ab702631c503d3ed
+      spriteID: 3e0999933ee0b61449639b13f2c74125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: timeMachine_3
+      name: steam_3
       rect:
         serializedVersion: 2
-        x: 264
-        y: 0
-        width: 88.25
-        height: 100
+        x: 17
+        y: 34.25
+        width: 17.5
+        height: 16.75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +166,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93ea9f65f7fc9f649b502c6b1707ef73
+      spriteID: 9e12c4b0fbdbb874d97889b10bcb06e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steam_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 18.25
+        width: 17.5
+        height: 16.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df23105b9b8fe44a84e0c7b4d502344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steam_5
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 18.25
+        width: 17.5
+        height: 16.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b73161f803050b4ba577692910c8554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steam_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.25
+        width: 17.5
+        height: 16.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8012f21db6ea4ad459adb2b65780eccc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steam_7
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 2.25
+        width: 17.5
+        height: 16.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff2e88e8199f4749b51f86d30fa01c3
       vertices: []
       indices: 
       edges: []
@@ -170,7 +254,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: eff6c3a75faf3e1418bd46097e610d5f
+    spriteID: 3980c147bb17ad440a919a957f73985e
     vertices: []
     indices: 
     edges: []

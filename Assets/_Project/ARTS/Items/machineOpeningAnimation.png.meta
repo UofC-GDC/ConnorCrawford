@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 2dd70df4b0b3c054f8270928b69491ca
+guid: b5ff87e599b58d847953927061dde705
 TextureImporter:
   fileIDToRecycleName:
-    21300000: timeMachine_0
-    21300002: timeMachine_1
-    21300004: timeMachine_2
-    21300006: timeMachine_3
+    21300000: machineOpeningAnimation_0
+    21300002: machineOpeningAnimation_1
+    21300004: machineOpeningAnimation_2
+    21300006: machineOpeningAnimation_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -88,12 +88,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: timeMachine_0
+      name: machineOpeningAnimation_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 24
         y: 0
-        width: 88.25
+        width: 86
         height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -102,19 +102,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30659f63523d81e42a75c05ac488acbd
+      spriteID: 21d5ff206df4f46479fc57a48304ef70
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: timeMachine_1
+      name: machineOpeningAnimation_1
       rect:
         serializedVersion: 2
-        x: 88
+        x: 135
         y: 0
-        width: 88.25
-        height: 100
+        width: 86
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e65cfc77d6889374fb0ce9e58a9b0597
+      spriteID: 44f19894d5d45e842948d867a95a9e5f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: timeMachine_2
+      name: machineOpeningAnimation_2
       rect:
         serializedVersion: 2
-        x: 176
+        x: 247
         y: 0
-        width: 88.25
-        height: 100
+        width: 86
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,19 +142,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05b2a0f105b5f494ab702631c503d3ed
+      spriteID: 48635b4f37fcd494b8ebe06dbbbd2f4f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: timeMachine_3
+      name: machineOpeningAnimation_3
       rect:
         serializedVersion: 2
-        x: 264
+        x: 333
         y: 0
-        width: 88.25
-        height: 100
+        width: 110
+        height: 133
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93ea9f65f7fc9f649b502c6b1707ef73
+      spriteID: 88d3f57008a42564abd013e0de784a5c
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: eff6c3a75faf3e1418bd46097e610d5f
+    spriteID: a46e104d369bc974a8fdd34adc3c35da
     vertices: []
     indices: 
     edges: []
