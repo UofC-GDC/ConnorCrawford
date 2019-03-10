@@ -9,7 +9,7 @@ public class StartState : State
 {
     public State DoAction(State prevSate, StateManager.Env curr_env, ref StateManager.Env? new_env)
     {
-        Debug.Log("Starting");
-        return new DummyState();
+        new_env = new StateManager.Env();
+        return new GetInputState();
     }
 }

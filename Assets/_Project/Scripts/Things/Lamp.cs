@@ -18,7 +18,7 @@ public class Lamp : Thing
     private string triggerString = "";
     private float soundPitch = 1;
 
-    public override State Action()
+    public override State Action(StateManager.Env env, ref Player player)
     {
         if (!lightOn)
         {

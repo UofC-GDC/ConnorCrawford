@@ -39,11 +39,11 @@ public class TestingInteraction : MonoBehaviour
                         var option = thing.GetInsightOption();
                         if (option != null)
                         {
-                            dialogueManager.SetupLines(option);
+                            dialogueManager.SetupLines(option.insightOption, thing.insight.style);
                         }
                         break;
                     case 1:
-                        thing.Action();
+                        //thing.Action();
                         break;
                 }
                 hasTarget = false;
