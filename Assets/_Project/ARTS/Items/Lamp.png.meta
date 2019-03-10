@@ -123,17 +123,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 19
-        height: 48
+        y: 0
+        width: 143
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66bf75095f574fa4ca18f0a0a4c060e9
+      spriteID: 5d6d05bbc48638547978e734f933acc3
       vertices: []
       indices: 
       edges: []
@@ -142,18 +142,18 @@ TextureImporter:
       name: Lamp_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 142
         y: 0
-        width: 97
-        height: 98
+        width: 143
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 663dcc86d75713042837b77cf8fda93c
+      spriteID: a1efbe93879fc25469aa2f2ba15d82a2
       vertices: []
       indices: 
       edges: []
