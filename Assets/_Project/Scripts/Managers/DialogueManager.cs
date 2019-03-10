@@ -65,6 +65,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private void PlayLine(string line, bool moreLines)
     {
+        StopAllCoroutines();
         StartCoroutine(_PlayLine(line, moreLines));
     }
 

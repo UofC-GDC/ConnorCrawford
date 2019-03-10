@@ -39,8 +39,9 @@ public class WalkingState : State
             }
 
 
-            return prevState;
-        }else
+            return StateManager.controller;
+        }
+        else
         {
             if (!hasSetDestination)
             {

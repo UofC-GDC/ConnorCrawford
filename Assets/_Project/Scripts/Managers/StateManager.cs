@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//#define SM_DEBUG
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -12,13 +14,20 @@ public class StateManager : Singleton<StateManager>
 {
 
     public NavMeshAgent agent;
+#if SM_DEBUG
+    public CutScene testScene;
+#endif
 
-	State currentState;
+    State currentState;
 	State previousSate;
 
+#if !SM_DEBUG
     public static State controller = new GetInputState();
+#else
+    public static State controller;
+#endif
 
-	public Env env
+    public Env env
 	{
 		get;
 		private set;
@@ -27,7 +36,13 @@ public class StateManager : Singleton<StateManager>
     private void Awake()
     {
         previousSate = null;
+#if !SM_DEBUG
         currentState = new StartState();
+#else
+        env = new Env();
+        currentState = new CutSceneState(testScene);
+        controller = currentState;
+#endif
     }
 
 	private void Update()
