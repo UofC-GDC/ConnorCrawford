@@ -3,28 +3,35 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DialogueManager : MonoBehaviour 
+public class DialogueManager : Singleton<DialogueManager>
 {
-    [SerializeField] private GameObject connerSpeechBubble;
-    [SerializeField] private TextMeshPro connerSpeechBubbleText;
+    [SerializeField] private GameObject speechBubble;
+    [SerializeField] private TextMeshPro speechBubbleText;
     [SerializeField] private GameObject nextButton;
     [Tooltip("The number of frames to pause for after each character.")]
-    [Range(0,60)]
+    [Range(0, 60)]
     [SerializeField] private int waitForFramesNumber;
 
     private IEnumerator<string> lineEnumerator;
 
-    public void SetupLines(InsightOption option)
+    public bool doneLines{
+        get;
+        private set;
+    }
+
+    public void SetupLines(List<string> lines, TextMeshPro style)
     {
-        connerSpeechBubble.SetActive(true);
+        speechBubble.SetActive(true);
         StopAllCoroutines();
-        lineEnumerator = option.insightOption.GetEnumerator();
+        lineEnumerator = lines.GetEnumerator();
         lineEnumerator.MoveNext();
         PlayNextLine();
+        doneLines = false;
     }
 
     public void PlayNextLine()
     {
+        Debug.Log("Playing Next Line");
         if (lineEnumerator == null)
         {
             ResetSpeechBubble();
@@ -44,14 +51,16 @@ public class DialogueManager : MonoBehaviour
             var moreLines = lineEnumerator.Current != null;
             nextButton.SetActive(moreLines);
             PlayLine(lineToPlay, moreLines);
+            return;
         }
     }
 
     private void ResetSpeechBubble()
     {
+        doneLines = true;
         lineEnumerator = null;
-        connerSpeechBubbleText.text = "";
-        connerSpeechBubble.SetActive(false);
+        speechBubbleText.text = "";
+        speechBubble.SetActive(false);
     }
 
     private void PlayLine(string line, bool moreLines)
@@ -65,7 +74,7 @@ public class DialogueManager : MonoBehaviour
         foreach (var character in line)
         {
             text += character;
-            connerSpeechBubbleText.text = text;
+            speechBubbleText.text = text;
             for (int i = 0; i < waitForFramesNumber; i++)
             {
                 yield return null;

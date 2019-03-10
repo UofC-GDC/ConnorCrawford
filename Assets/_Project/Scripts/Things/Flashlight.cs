@@ -20,7 +20,7 @@ public class Flashlight : Thing
         renderer.enabled = true;
     }
 
-    public override State Action()
+    public override State Action(StateManager.Env env, ref Player player)
     {
         switch (currentFlashLightState)
         {
@@ -36,7 +36,7 @@ public class Flashlight : Thing
                 //}
                 break;
             case flashLightState.blue:
-                return base.Action();
+                return base.Action(env, ref player);
         }
 
         return null;

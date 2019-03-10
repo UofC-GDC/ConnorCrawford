@@ -6,6 +6,11 @@ public class DoInteractionState : State
 {
     public State DoAction(State prevSate, StateManager.Env curr_env, ref StateManager.Env? new_env)
     {
-        throw new System.NotImplementedException();
+        var maybeState = curr_env.target.Action(curr_env, ref curr_env.player);
+
+        new_env = curr_env;
+
+        if (maybeState != null) return maybeState;
+        else return StateManager.controller;
     }
 }

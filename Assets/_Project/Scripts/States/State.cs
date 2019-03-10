@@ -8,5 +8,5 @@ public interface State {
      * Return this to stay in the same state
      * Assign to new_env to update the game state, query curr_env to check the current game state
      */
-   State DoAction(State prevSate, StateManager.Env curr_env, ref StateManager.Env? new_env);
+   State DoAction(State prevState, StateManager.Env curr_env, ref StateManager.Env? new_env);
 }

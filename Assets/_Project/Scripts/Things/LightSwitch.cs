@@ -19,9 +19,9 @@ public class LightSwitch : Thing
     private string triggerString = "";
     private float soundPitch = 1;
 
-    public override State Action()
+    public override State Action(StateManager.Env env, ref Player player)
     {
-        if (door.open) return base.Action();
+        if (door.open) return base.Action(env, ref player);
 
         if (!lightOn)
         {

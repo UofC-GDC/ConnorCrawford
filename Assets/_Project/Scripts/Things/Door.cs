@@ -12,7 +12,7 @@ public class Door : Thing
     [HideInInspector]   public bool open = true;
                         private bool noteDropped = false;
 
-    public override State Action()
+    public override State Action(StateManager.Env env, ref Player player)
     {
         if (!locked)
         {
@@ -36,7 +36,7 @@ public class Door : Thing
             noteDropped = true;
         }
 
-        return base.Action();
+        return base.Action(env, ref player);
     }
 
     private void Update()

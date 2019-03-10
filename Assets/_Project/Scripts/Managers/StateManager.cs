@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 /*
  * THE GAME
@@ -10,8 +11,12 @@ using UnityEngine;
 public class StateManager : Singleton<StateManager>
 {
 
+    public NavMeshAgent agent;
+
 	State currentState;
 	State previousSate;
+
+    public static State controller = new GetInputState();
 
 	public Env env
 	{
@@ -19,11 +24,11 @@ public class StateManager : Singleton<StateManager>
 		private set;
 	}
 
-	private void Awake()
-	{
-		previousSate = null;
-		currentState = new StartState(); // Begin
-	}
+    private void Awake()
+    {
+        previousSate = null;
+        currentState = new StartState();
+    }
 
 	private void Update()
 	{
@@ -31,6 +36,8 @@ public class StateManager : Singleton<StateManager>
 		previousSate = currentState;
 		Env? next = null;
 		currentState = currentState.DoAction(prev, env, ref next); // State Transition
+        var type = currentState.GetType();
+        if (type == typeof(GetInputState) || type == typeof(CutSceneState)) controller = currentState;
 		env = next ?? env;
 	}
 
@@ -42,6 +49,8 @@ public class StateManager : Singleton<StateManager>
 		public bool leftClicked;
 		public Thing target;
 		public RaycastHit2D hit;
+        public RaycastHit hit3D;
+        public readonly NavMeshAgent agent;
 	}
 
 }
