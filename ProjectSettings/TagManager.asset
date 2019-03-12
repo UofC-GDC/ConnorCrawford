@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - SpeechBubble
+  - Chair
   layers:
   - Default
   - TransparentFX
