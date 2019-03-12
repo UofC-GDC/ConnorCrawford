@@ -6,7 +6,7 @@ public class GetInputState : State
 {
     public State DoAction(State prevSate, StateManager.Env curr_env, ref StateManager.Env? new_env)
     {
-        Debug.Log("Doing Input State");
+        //Debug.Log("Doing Input State");
         StateManager.Env localEnv = curr_env;
 
         localEnv.leftClicked = Input.GetMouseButtonDown(0);

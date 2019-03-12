@@ -8,7 +8,7 @@ public class WalkingState : State
     bool hasSetDestination = false;
     public State DoAction(State prevState, StateManager.Env curr_env, ref StateManager.Env? new_env)
     {
-        Debug.Log("Do Walking State");
+        //Debug.Log("Do Walking State");
         var agent = StateManager.Instance.agent;
         float dist = agent.remainingDistance;
        //Debug.Log(dist);
