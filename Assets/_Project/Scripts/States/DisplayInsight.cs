@@ -12,7 +12,7 @@ public class DisplayInsight : State
             option = curr_env.target.GetInsightOption();
             foreach (string line in option.insightOption)
             {
-                Debug.Log(line);
+                //Debug.Log(line);
             }
             if (option != null)
             {

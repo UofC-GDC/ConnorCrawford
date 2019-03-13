@@ -31,7 +31,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public void PlayNextLine()
     {
-        Debug.Log("Playing Next Line");
+        //Debug.Log("Playing Next Line");
         if (lineEnumerator == null)
         {
             ResetSpeechBubble();
