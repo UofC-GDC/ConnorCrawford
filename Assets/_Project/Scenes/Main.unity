@@ -2388,18 +2388,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1234446816559788, guid: da14bdaf9ef632c439cdc25a9a47c519,
     type: 2}
   m_PrefabInternal: {fileID: 1904318049}
---- !u!114 &981114967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 981114966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2059ed12cd34b4f9381de5d47c94e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  insight: {fileID: 11400000, guid: 6c9fcc34c5acde04fb227fde593debc3, type: 2}
 --- !u!114 &981114968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2411,6 +2399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f02b7d81df7b7f459ee20560dd1b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  insight: {fileID: 11400000, guid: 6c9fcc34c5acde04fb227fde593debc3, type: 2}
+  Model: {fileID: 1170708610}
   radioSongs:
   - {fileID: 8300000, guid: b786d2961f6321848bc2c5d0493ed811, type: 3}
   - {fileID: 8300000, guid: 0e77728f28390854faf7df18ecbbba36, type: 3}
