@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Radio : MonoBehaviour 
+public class Radio : Thing3d
 {
     [SerializeField] private List<AudioClip> radioSongs;
     [SerializeField] private AudioSource source;
 
     private int i = 0;
 
-	private void Start () 
+    protected new void Start()
     {
+        base.Start();
         source.loop = false;
         source.clip = radioSongs[i];
         source.Play();
-	}
-	
-	private void Update () 
+    }
+
+    private void Update()
     {
         if (!source.isPlaying)
         {
@@ -27,5 +28,10 @@ public class Radio : MonoBehaviour
             source.clip = radioSongs[i];
             source.Play();
         }
-	}
+    }
+
+    public override State Action(StateManager.Env env, ref Player player)
+    {
+        return base.Action(env, ref player);
+    }
 }
