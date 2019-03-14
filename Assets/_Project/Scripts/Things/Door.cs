@@ -9,6 +9,7 @@ public class Door : Thing
     [SerializeField]    private AudioClip doorCloseClip;
     [SerializeField]    private BoxCollider2D openCollider;
     [SerializeField]    private BoxCollider2D closedCollider;
+    [SerializeField]    private GameObject note;
 
     [SerializeField]    private bool locked = false;
     [HideInInspector]   public bool open = true;
@@ -37,7 +38,7 @@ public class Door : Thing
         }
         else if (!noteDropped)
         {
-            //Drop Note TODO
+            note.SetActive(true);
             noteDropped = true;
         }
 
