@@ -12,28 +12,20 @@ public class Thing3d : Thing {
 	protected void Start() {
 		active = false;
 		viewer = GameObject.Find("/3D Viewer");
-		camera3d = GameObject.Find("/3D Viewer/Camera").GetComponent<Camera>();
+		camera3d = viewer.GetComponent<Camera>();
 		target = GameObject.Find("/3D Viewer/Target").transform;
 	}
 	public override State Action(StateManager.Env env, ref Player player) {
 
 		if(!active){
 			camera3d.enabled = true;
-			instance = Instantiate(Model,target);
+			//instance = Instantiate(Model,target);
+			Model.SetActive(true);
 		}
-
-		instance.transform.eulerAngles = calcMouseAngle();
 
 		if(!active){
 			active = true;
 		}
 		return new DoInteractionState();
-	}
-
-	private Vector3 calcMouseAngle() {
-		return new Vector3(
-			rotateScale * (Input.mousePosition.y / Screen.height) - (rotateScale / 2),
-			-(rotateScale * (Input.mousePosition.x / Screen.width) - (rotateScale / 2)),
-			0);
 	}
 }
