@@ -6,36 +6,25 @@ public class Flashlight : Thing
 {
     [SerializeField] private new SpriteRenderer renderer;
 
-    private flashLightState currentFlashLightState = flashLightState.ground;
-
-    public enum flashLightState
-    {
-        ground,
-        inHand,
-        blue
-    }
-
     private void Start()
     {
         renderer.enabled = true;
+        DarknessManager.Instance.ResetFlashlight();
     }
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        switch (currentFlashLightState)
+        switch (DarknessManager.Instance.currentFlashLightState)
         {
-            case flashLightState.ground:
+            case DarknessManager.FlashLightState.ground:
                 renderer.enabled = false;
-                //cursor.hasLight = true;
-                currentFlashLightState = flashLightState.inHand;
+                DarknessManager.Instance.PickupFlashlight();
                 break;
-            case flashLightState.inHand:
-                //if (typeof(StateManager.Instance.env.player.inventory) == typeof(BluePaper))
-                //{
-                //    currentFlashLightState = flashLightState.blue;
-                //}
+            case DarknessManager.FlashLightState.inHand:
+                if (env.player.inventory.GetType() == typeof(BluePaper))
+                    DarknessManager.Instance.BlueifyFlashlight();
                 break;
-            case flashLightState.blue:
+            case DarknessManager.FlashLightState.blue:
                 return base.Action(env, ref player);
         }
 

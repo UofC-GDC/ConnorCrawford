@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111ca70890d7a5c4a91d872954a87bbb, type: 3}
+  m_Name: OpenDoor
+  m_EditorClassIdentifier: 
+  script:
+  - verb: 2
+    arg: {fileID: 1234446816559788, guid: f1f20e59efdd87f428e7d8b19d1906ac, type: 2}
