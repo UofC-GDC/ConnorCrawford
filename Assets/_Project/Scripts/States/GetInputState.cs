@@ -6,6 +6,8 @@ public class GetInputState : State
 {
     public State DoAction(State prevSate, StateManager.Env curr_env, ref StateManager.Env? new_env)
     {
+        if (DarknessManager.Instance.runTheDoorCutscene) return DarknessManager.Instance.DoorCutscene();
+
         //Debug.Log("Doing Input State");
         StateManager.Env localEnv = curr_env;
 

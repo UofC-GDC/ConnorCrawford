@@ -5,7 +5,6 @@ public class LightSwitch : Thing
     [SerializeField] private Light roomLight;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource lightSound;
-    [SerializeField] private Door door;
 
     private void Start()
     {
@@ -15,25 +14,24 @@ public class LightSwitch : Thing
         lightSound.pitch = 1;
     }
 
-    private bool lightOn = true;
     private string triggerString = "";
     private float soundPitch = 1;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        if (door.open) return base.Action(env, ref player);
+        if (DarknessManager.Instance.doorOpen) return base.Action(env, ref player);
 
-        if (!lightOn)
+        if (!DarknessManager.Instance.roomLightOn)
         {
             triggerString = "LightOn";
-            lightOn = roomLight.enabled = true;
+            DarknessManager.Instance.RoomLightOn();
             soundPitch = 1;
         }
         else
         {
             triggerString = "LightOff";
-            lightOn = roomLight.enabled = false;
-            soundPitch = .6f;
+            DarknessManager.Instance.RoomLightOff();
+            soundPitch = .6f; ;
         }
 
         lightSound.pitch = soundPitch;
