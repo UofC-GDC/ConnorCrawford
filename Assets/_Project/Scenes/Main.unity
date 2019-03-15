@@ -2400,7 +2400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insight: {fileID: 11400000, guid: 6c9fcc34c5acde04fb227fde593debc3, type: 2}
-  Model: {fileID: 1170708610}
+  Model: {fileID: 1861557553}
   radioSongs:
   - {fileID: 8300000, guid: b786d2961f6321848bc2c5d0493ed811, type: 3}
   - {fileID: 8300000, guid: 0e77728f28390854faf7df18ecbbba36, type: 3}
@@ -5780,6 +5780,11 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1861557553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1813298388455028, guid: b49cbcd545cab46a8bc3301fac22ad63,
+    type: 2}
+  m_PrefabInternal: {fileID: 305638773}
 --- !u!1 &1868178200
 GameObject:
   m_ObjectHideFlags: 0
