@@ -1558,7 +1558,7 @@ Prefab:
         type: 2}
       propertyPath: Model
       value: 
-      objectReference: {fileID: 1170708610}
+      objectReference: {fileID: 839627966}
     m_RemovedComponents:
     - {fileID: 114984730228720180, guid: 9cdc8284d2dfe884ca33803ccd50792b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 9cdc8284d2dfe884ca33803ccd50792b, type: 2}
@@ -2125,6 +2125,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!1 &839627966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1588924777919076, guid: b49cbcd545cab46a8bc3301fac22ad63,
+    type: 2}
+  m_PrefabInternal: {fileID: 305638773}
+--- !u!1 &850465205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1301619357207672, guid: b49cbcd545cab46a8bc3301fac22ad63,
+    type: 2}
+  m_PrefabInternal: {fileID: 305638773}
 --- !u!1001 &854646862
 Prefab:
   m_ObjectHideFlags: 0
@@ -2400,7 +2410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insight: {fileID: 11400000, guid: 6c9fcc34c5acde04fb227fde593debc3, type: 2}
-  Model: {fileID: 1861557553}
+  Model: {fileID: 850465205}
   radioSongs:
   - {fileID: 8300000, guid: b786d2961f6321848bc2c5d0493ed811, type: 3}
   - {fileID: 8300000, guid: 0e77728f28390854faf7df18ecbbba36, type: 3}
@@ -3158,11 +3168,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1366942244037032, guid: c4a7a36b504d30944b82e4e6e4864cd2,
     type: 2}
   m_PrefabInternal: {fileID: 1169599033}
---- !u!1 &1170708610 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1459473343040908, guid: b49cbcd545cab46a8bc3301fac22ad63,
-    type: 2}
-  m_PrefabInternal: {fileID: 305638773}
 --- !u!4 &1172948084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4354282873236312, guid: 4b8d79b4bdaf21a4aa26baa0ece992fc,
@@ -5780,11 +5785,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1861557553 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1813298388455028, guid: b49cbcd545cab46a8bc3301fac22ad63,
-    type: 2}
-  m_PrefabInternal: {fileID: 305638773}
 --- !u!1 &1868178200
 GameObject:
   m_ObjectHideFlags: 0
