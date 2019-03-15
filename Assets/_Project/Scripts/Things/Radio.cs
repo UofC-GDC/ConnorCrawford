@@ -29,9 +29,4 @@ public class Radio : Thing3d
             source.Play();
         }
     }
-
-    public override State Action(StateManager.Env env, ref Player player)
-    {
-        return base.Action(env, ref player);
-    }
 }

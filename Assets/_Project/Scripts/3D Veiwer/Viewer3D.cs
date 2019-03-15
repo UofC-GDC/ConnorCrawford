@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Viewer3D : MonoBehaviour {
 
-	public GameObject active;
+	private GameObject active;
 
 	// Use this for initialization
 	void Start () {
