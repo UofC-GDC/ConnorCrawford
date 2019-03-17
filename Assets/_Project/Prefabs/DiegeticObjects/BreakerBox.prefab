@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insight: {fileID: 11400000, guid: 2d98fc0c624232047b735937ad491190, type: 2}
+  Model: {fileID: 0}
   animator: {fileID: 95239776315602258}
   colliderClosed: {fileID: 61042050698870994}
   colliderOpen: {fileID: 61441159634576696}

@@ -37,8 +37,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234446816559788}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.796, y: 0.31, z: 16.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.47, y: 0.5, z: 16.515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -195,6 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f02b7d81df7b7f459ee20560dd1b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  insight: {fileID: 0}
+  Model: {fileID: 0}
   radioSongs:
   - {fileID: 8300000, guid: b786d2961f6321848bc2c5d0493ed811, type: 3}
   - {fileID: 8300000, guid: 0e77728f28390854faf7df18ecbbba36, type: 3}
