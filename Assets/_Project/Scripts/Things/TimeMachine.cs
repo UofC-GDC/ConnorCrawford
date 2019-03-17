@@ -18,8 +18,8 @@ public class TimeMachine : Thing
         {
             lidAnimator.SetTrigger("Open");
             steamAnimator.SetTrigger("Steam");
-            manual.SetActive(true);
-            open = true;
+            StartCoroutine(BookTurnOn());
+            return null;
         }
         else if (!unlocked)
         {
@@ -27,6 +27,7 @@ public class TimeMachine : Thing
             {
                 //Unlock Time Machine
                 unlocked = true;
+                return null;
             }
             else if (Input.GetMouseButtonDown(1))
             {
@@ -36,13 +37,25 @@ public class TimeMachine : Thing
             else
             {
                 heldTime = 0;
+                return base.Action(env, ref player);
             }
         }
         else
         {
             //Open Star puzzle
+            return null;
+        }
+    }
+
+    private IEnumerator BookTurnOn()
+    {
+        while (!lidAnimator.GetCurrentAnimatorStateInfo(0).IsName("TimeMachineOpened"))
+        {
+            yield return null;
         }
 
-        return base.Action(env, ref player);
+        manual.SetActive(true);
+        open = true;
+        yield break;
     }
 }
