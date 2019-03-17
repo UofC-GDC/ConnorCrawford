@@ -37,7 +37,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4957822624216148}
-  - component: {fileID: 114984730228720180}
   - component: {fileID: 61441159634576696}
   - component: {fileID: 61042050698870994}
   - component: {fileID: 114803990438530776}
@@ -48,6 +47,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1813433555197328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4790530189912586}
+  - component: {fileID: 61240607392577056}
+  - component: {fileID: 114225752335536474}
+  m_Layer: 9
+  m_Name: BreakerBoxDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!4 &4354282873236312
 Transform:
   m_ObjectHideFlags: 1
@@ -59,9 +75,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4957822624216148}
+  - {fileID: 4790530189912586}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4790530189912586
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813433555197328}
+  m_LocalRotation: {x: -0.000000014901159, y: 0.3826834, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: -0.0000012516975, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000004}
+  m_Children: []
+  m_Father: {fileID: 4354282873236312}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &4957822624216148
 Transform:
   m_ObjectHideFlags: 1
@@ -81,13 +111,13 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690854863568182}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.14106826, y: 0.05819788}
+  m_Offset: {x: -0.09886742, y: 0.036888555}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 1, y: 0.5}
@@ -98,7 +128,32 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28187153, y: 0.59489655}
+  m_Size: {x: 0.19746983, y: 0.53333795}
+  m_EdgeRadius: 0
+--- !u!61 &61240607392577056
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813433555197328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.2834925, y: 0.032942563}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 1, y: 0.5}
+    oldSize: {x: 0.2, y: 0.5}
+    newSize: {x: 0.2, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16588664, y: 0.45599467}
   m_EdgeRadius: 0
 --- !u!61 &61441159634576696
 BoxCollider2D:
@@ -238,6 +293,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114225752335536474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813433555197328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbdbd5a0cdca17428897e63ed9dbbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insight: {fileID: 11400000, guid: 2d98fc0c624232047b735937ad491190, type: 2}
+  breakerBox: {fileID: 114803990438530776}
 --- !u!114 &114803990438530776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,24 +317,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef41f7e739db0864e837a8bcba13e91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insight: {fileID: 0}
-  animator: {fileID: 0}
-  colliderClosed: {fileID: 0}
-  colliderOpen: {fileID: 0}
+  insight: {fileID: 11400000, guid: 2d98fc0c624232047b735937ad491190, type: 2}
+  animator: {fileID: 95239776315602258}
+  colliderClosed: {fileID: 61042050698870994}
+  colliderOpen: {fileID: 61441159634576696}
+  breakerBoxDoor: {fileID: 1813433555197328}
   broken: 0
   open: 0
---- !u!114 &114984730228720180
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1690854863568182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2059ed12cd34b4f9381de5d47c94e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  insight: {fileID: 11400000, guid: 2d98fc0c624232047b735937ad491190, type: 2}
 --- !u!212 &212500182560700416
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -20,12 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4177989100810652}
   - component: {fileID: 20363357301599702}
-  - component: {fileID: 81537864491808414}
-  - component: {fileID: 114817999648913446}
   - component: {fileID: 114404192336828502}
   - component: {fileID: 114285281184050826}
-  - component: {fileID: 114629858748229064}
   - component: {fileID: 82301176737244804}
+  - component: {fileID: 114052396255453404}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -86,13 +84,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &81537864491808414
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1654298472039274}
-  m_Enabled: 1
 --- !u!82 &82301176737244804
 AudioSource:
   m_ObjectHideFlags: 1
@@ -113,7 +104,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 9.405411
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -189,6 +180,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114052396255453404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1654298472039274}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 8f8e0a8be70edcc4ea453b517a8829b3, type: 2}
 --- !u!114 &114285281184050826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,29 +229,3 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!114 &114629858748229064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1654298472039274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f7f1f7a2df3d342ad5076ac9a7a6d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  noInteractionSound: {fileID: 82301176737244804}
-  dialogueManager: {fileID: 0}
---- !u!114 &114817999648913446
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1654298472039274}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 8f8e0a8be70edcc4ea453b517a8829b3, type: 2}
