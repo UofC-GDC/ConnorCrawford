@@ -11,6 +11,24 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1234446816559788}
   m_IsPrefabAsset: 1
+--- !u!1 &1054981875813980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4716275646265576}
+  - component: {fileID: 61798503926058674}
+  - component: {fileID: 61028211349888274}
+  - component: {fileID: 114056811180996108}
+  m_Layer: 9
+  m_Name: Action
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1234446816559788
 GameObject:
   m_ObjectHideFlags: 0
@@ -20,10 +38,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4354282873236312}
   - component: {fileID: 212500182560700416}
-  - component: {fileID: 61077289127170074}
   - component: {fileID: 95983521359794714}
   - component: {fileID: 82883944291148928}
-  - component: {fileID: 114164931512225060}
   m_Layer: 9
   m_Name: Door
   m_TagString: Object
@@ -40,23 +56,37 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.72, y: -0.54, z: 14.754}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4716275646265576}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61077289127170074
+--- !u!4 &4716275646265576
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054981875813980}
+  m_LocalRotation: {x: -0.677988, y: -0.200829, z: 0.20082903, w: 0.677988}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4354282873236312}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -57.000004, y: -90.00001, z: 90.00001}
+--- !u!61 &61028211349888274
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234446816559788}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1054981875813980}
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0030010939, y: 0.24428442}
+  m_Offset: {x: 0.009141058, y: 0.47029692}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -67,7 +97,32 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5102804, y: 1.8662713}
+  m_Size: {x: 0.59343654, y: 2.6472797}
+  m_EdgeRadius: 0
+--- !u!61 &61798503926058674
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054981875813980}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00013451278, y: 0.00079369545}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 1.39}
+    newSize: {x: 0.5, y: 1.39}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6114496, y: 2.6691184}
   m_EdgeRadius: 0
 --- !u!82 &82883944291148928
 AudioSource:
@@ -183,12 +238,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114164931512225060
+--- !u!114 &114056811180996108
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234446816559788}
+  m_GameObject: {fileID: 1054981875813980}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 590c55f117f7305498c3e5a16ee86fef, type: 3}
@@ -200,6 +255,8 @@ MonoBehaviour:
   doorSource: {fileID: 82883944291148928}
   doorOpenClip: {fileID: 8300000, guid: cc70a80bf9a675547909e2b2946fa4d7, type: 3}
   doorCloseClip: {fileID: 8300000, guid: ceb3bb39808ebb44dbce2e26cc87a2c5, type: 3}
+  openCollider: {fileID: 61798503926058674}
+  closedCollider: {fileID: 61028211349888274}
   locked: 0
   open: 1
 --- !u!212 &212500182560700416
