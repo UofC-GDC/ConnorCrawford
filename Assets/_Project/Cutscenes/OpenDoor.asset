@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Name: OpenDoor
   m_EditorClassIdentifier: 
   script:
+  - verb: 0
+    arg: {fileID: 1234446816559788, guid: f1f20e59efdd87f428e7d8b19d1906ac, type: 2}
   - verb: 2
     arg: {fileID: 1234446816559788, guid: f1f20e59efdd87f428e7d8b19d1906ac, type: 2}
