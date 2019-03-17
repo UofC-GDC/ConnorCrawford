@@ -195,6 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f02b7d81df7b7f459ee20560dd1b1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  insight: {fileID: 0}
+  Model: {fileID: 0}
   radioSongs:
   - {fileID: 8300000, guid: b786d2961f6321848bc2c5d0493ed811, type: 3}
   - {fileID: 8300000, guid: 0e77728f28390854faf7df18ecbbba36, type: 3}
