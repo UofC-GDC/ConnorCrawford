@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakerBox : Thing 
+public class BreakerBox : Thing3d
 {
     [SerializeField] private Animator animator;
     [SerializeField] private Collider2D colliderClosed;
@@ -28,8 +28,7 @@ public class BreakerBox : Thing
         }
         else
         {
-            //Enter 3D mode
-            return null;
+            return base.Action(env, ref player);
         }
     }
 

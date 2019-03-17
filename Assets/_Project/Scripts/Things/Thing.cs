@@ -32,7 +32,7 @@ abstract public class Thing : MonoBehaviour
 
     public virtual State Action(StateManager.Env env, ref Player player)
     {
-        //Shake the mouse
+        Cursor.Instance.ShakeMouse();
         return null;
     }
 

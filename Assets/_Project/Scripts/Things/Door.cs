@@ -9,35 +9,29 @@ public class Door : Thing
     [SerializeField]    private AudioClip doorCloseClip;
     [SerializeField]    private BoxCollider2D openCollider;
     [SerializeField]    private BoxCollider2D closedCollider;
+    [SerializeField]    private GameObject note;
 
     [SerializeField]    private bool locked = false;
-    [HideInInspector]   public bool open = true;
                         private bool noteDropped = false;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
         if (!locked)
         {
-            if (open)
+            if (DarknessManager.Instance.doorOpen)
             {
                 CloseDoor();
                 return null;
             }
             else
             {
-                animator.SetTrigger("OpenDoor");
-                open = true;
-                collider3d.SetActive(true);
-                ChangeAndPlayClip(doorOpenClip);
-                transform.localRotation = Quaternion.Euler(-57, -90, 90);
-                openCollider.enabled = true;
-                closedCollider.enabled = false;
+                OpenDoor();
                 return null;
             }
         }
         else if (!noteDropped)
         {
-            //Drop Note TODO
+            note.SetActive(true);
             noteDropped = true;
         }
 
@@ -46,19 +40,31 @@ public class Door : Thing
 
     private void Update()
     {
-        if (locked && open) CloseDoor();
+        if (locked && DarknessManager.Instance.doorOpen) CloseDoor();
+    }
+
+    private void OpenDoor()
+    {
+        animator.SetTrigger("OpenDoor");
+        DarknessManager.Instance.OpenDoor();
+        collider3d.SetActive(true);
+        ChangeAndPlayClip(doorOpenClip);
+        transform.localRotation = Quaternion.Euler(-57, -90, 90);
+        openCollider.enabled = true;
+        closedCollider.enabled = false;
     }
 
     private void CloseDoor()
     {
         animator.SetTrigger("CloseDoor");
-        open = false;
+        DarknessManager.Instance.CloseDoor();
         collider3d.SetActive(false);
         ChangeAndPlayClip(doorCloseClip);
         openCollider.enabled = false;
         closedCollider.enabled = true;
         transform.localRotation = Quaternion.Euler(-57, 90, -90);
     }
+
 
     private void ChangeAndPlayClip(AudioClip clip)
     {
