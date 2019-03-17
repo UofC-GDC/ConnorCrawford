@@ -469,9 +469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb694f6650ee0c94cb636f235c44804d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insight: {fileID: 0}
-  lidAnimator: {fileID: 0}
-  steamAnimator: {fileID: 0}
+  insight: {fileID: 11400000, guid: c77feb7199b07c041ac260a3a0b566a3, type: 2}
+  lidAnimator: {fileID: 95095800702493584}
+  steamAnimator: {fileID: 95507648854054908}
   manual: {fileID: 0}
 --- !u!212 &212051035190074246
 SpriteRenderer:
