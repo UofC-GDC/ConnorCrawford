@@ -28,9 +28,10 @@ public class CUTSCENE_BUTTON : Thing
         line3.verb = CutScene.Verb.DoAction;
 
         c.script = new List<CutScene.Line>();
-        c.script.Add(line1);
         c.script.Add(line3);
-        c.script.Add(line2);
+        c.script.Add(line1);
+        //c.script.Add(line2);
+
         return c.MakeState();
     }
 }
