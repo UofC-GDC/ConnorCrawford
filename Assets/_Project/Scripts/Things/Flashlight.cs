@@ -29,8 +29,7 @@ public class Flashlight : Thing
             }
             else if (!DarknessManager.Instance.flashlightInHand)
             {
-                renderer.enabled = false;
-                DarknessManager.Instance.PickupFlashlight();
+                PickupFlashlight();
                 return base.Action(env, ref player);
             }
             else
@@ -40,9 +39,7 @@ public class Flashlight : Thing
         }
         else if (!DarknessManager.Instance.flashlightInHand)
         {
-            DarknessManager.Instance.PickupFlashlight();
-            renderer.transform.SetParent(flashLightHolder, true);
-            renderer.transform.localPosition = Vector3.zero;
+            PickupFlashlight();
         }
         else
         {
@@ -50,5 +47,12 @@ public class Flashlight : Thing
         }
 
         return null;
+    }
+
+    private void PickupFlashlight()
+    {
+        DarknessManager.Instance.PickupFlashlight();
+        renderer.transform.SetParent(flashLightHolder, true);
+        renderer.transform.localPosition = Vector3.zero;
     }
 }

@@ -79,6 +79,8 @@ public class DarknessManager : Singleton<DarknessManager>
         flashlightInHand = true;
         flashLightUI.transform.SetParent(cursor.transform, false);
         flashLightUIBlue.transform.SetParent(cursor.transform, false);
+        flashLightDark.transform.SetParent(cursor.transform, false);
+        flashLightDark.transform.localPosition = Vector3.zero;
     }
     #endregion
 
