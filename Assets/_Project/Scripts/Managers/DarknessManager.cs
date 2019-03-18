@@ -4,28 +4,25 @@ using UnityEngine;
 
 public class DarknessManager : Singleton<DarknessManager> 
 {
-    public enum FlashLightState
-    {
-        ground,
-        inHand,
-        blue
-    }
 
     [SerializeField] private Light              roomLight;
     [SerializeField] private ScreenSpaceShader  nightPallete;
+    [SerializeField] private ScreenSpaceShader  blueFlashlightEffect;
     [SerializeField] private GameObject         flashLightDark;
     [SerializeField] private GameObject         pureDark;
+    [SerializeField] private GameObject         flashLightUI;
+    [SerializeField] private GameObject         flashLightUIBlue;
     [SerializeField] private Door               door;
 
 
-                        public bool roomLightOn     = true;
+                        public bool roomLightOn         = true;
 
-    [HideInInspector]   public FlashLightState currentFlashLightState = FlashLightState.ground;
-    [HideInInspector]   public bool flashlightOn    = false;
-    [HideInInspector]   public bool flashlightBlue  = false;
+    [HideInInspector]   public bool flashlightInHand    = false;
+    [HideInInspector]   public bool flashlightPowered   = false;
+    [HideInInspector]   public bool flashlightBlue      = false;
 
-                        public bool day             = true;
-                        public bool doorOpen        = true;
+                        public bool day                 = true;
+                        public bool doorOpen            = true;
 
 
     private void Start()
@@ -59,23 +56,26 @@ public class DarknessManager : Singleton<DarknessManager>
     #region Flashlight Methods
     public void ResetFlashlight()
     {
-        currentFlashLightState = FlashLightState.ground;
-        flashlightOn    = false;
-        flashlightBlue  = false;
+        flashlightPowered   = false;
+        flashlightBlue      = false;
+        flashlightInHand    = false;
+
+        blueFlashlightEffect.enabled = false;
     }
 
-    public void PickupFlashlight()
+    public void PowerFlashlight()
     {
-        currentFlashLightState = FlashLightState.inHand;
-        flashlightOn    = true;
-        flashlightBlue  = false;
+        flashlightPowered = true;
     }
 
     public void BlueifyFlashlight()
     {
-        currentFlashLightState = FlashLightState.inHand;
-        flashlightOn    = true;
         flashlightBlue  = true;
+    }
+
+    public void PickupFlashlight()
+    {
+        flashlightInHand = true;
     }
     #endregion
 
@@ -116,13 +116,11 @@ public class DarknessManager : Singleton<DarknessManager>
     {
         if (!roomLightOn && !day && !doorOpen)
         {
-            if (flashlightOn)
-            {
-                flashLightDark.SetActive(true);
-            }
-            else
+            if (!flashlightPowered)
             {
                 pureDark.SetActive(true);
+                flashLightUI.SetActive(false);
+                flashLightUIBlue.SetActive(false);
                 if (badBlackTimer <= 5f)
                     badBlackTimer += Time.deltaTime;
                 else
@@ -130,13 +128,38 @@ public class DarknessManager : Singleton<DarknessManager>
                     runTheDoorCutscene = true;
                 }
             }
+            else 
+            {
+                flashLightDark.SetActive(true);
+                flashLightUI.SetActive(false);
+                flashLightUIBlue.SetActive(false);
+                if (flashlightBlue)
+                {
+                    blueFlashlightEffect.enabled = true;
+                }
+            }
         }
         else
         {
+            if (flashlightPowered)
+            {
+                if (flashlightBlue)
+                {
+                    flashLightUIBlue.SetActive(true);
+                }
+                flashLightUI.SetActive(true);
+            }
+            else
+            {
+                flashLightUI.SetActive(false);
+                flashLightUIBlue.SetActive(false);
+            }
+
             runTheDoorCutscene = false;
             badBlackTimer = 0;
             flashLightDark.SetActive(false);
             pureDark.SetActive(false);
+            blueFlashlightEffect.enabled = false;
         }
     }
 

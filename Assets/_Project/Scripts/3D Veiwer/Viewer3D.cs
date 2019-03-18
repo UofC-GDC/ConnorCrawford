@@ -20,7 +20,7 @@ public class Viewer3D : MonoBehaviour {
 			active = null;
 		}
 	}
-	public State Display(GameObject gameObject) {
+	public State Display(GameObject gameObject, StateManager.Env env, ref Player player) {
 		if(gameObject != active) {
 			Deactivate();
 			Activate(gameObject);
@@ -43,12 +43,18 @@ public class Viewer3D : MonoBehaviour {
 			}
 		}
 		if(mouseOver != null){
-			if(mouseOver.interaction && Input.GetMouseButton(0)) {
-				mouseOver.interact();
-			} else {
-				mouseOver.interaction = false;
-				mouseOver = null;
-			}
+            if (mouseOver.interaction)
+            {
+                if(Input.GetMouseButton(0))
+                    mouseOver.interactLeft(env, ref player);
+                if(Input.GetMouseButton(1))
+                    mouseOver.interactRight(env, ref player);
+            }
+            else
+            {
+                mouseOver.interaction = false;
+                mouseOver = null;
+            }
 		}
 		return new DoInteractionState();
 	}

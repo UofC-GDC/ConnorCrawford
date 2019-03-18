@@ -12,20 +12,29 @@ public class Flashlight : Thing
         DarknessManager.Instance.ResetFlashlight();
     }
 
+    //Caelum you were removing the enum for flashlight and replacing with bools since all states of onGround x blue x powered are possible. Additionally power needs to properly programmed in.
+
     public override State Action(StateManager.Env env, ref Player player)
     {
-        switch (DarknessManager.Instance.currentFlashLightState)
+        if (env.player.inventory != null)
         {
-            case DarknessManager.FlashLightState.ground:
-                renderer.enabled = false;
-                DarknessManager.Instance.PickupFlashlight();
-                break;
-            case DarknessManager.FlashLightState.inHand:
-                if (env.player.inventory.GetType() == typeof(BluePaper))
-                    DarknessManager.Instance.BlueifyFlashlight();
-                break;
-            case DarknessManager.FlashLightState.blue:
-                return base.Action(env, ref player);
+            if (env.player.inventory.GetType() == typeof(BluePaper))
+            {
+                DarknessManager.Instance.BlueifyFlashlight(); //Double check this
+            }
+            else if (env.player.inventory.GetType() == typeof(Battery))
+            {
+                DarknessManager.Instance.PowerFlashlight(); //Double check this
+            }
+        }
+        else if (DarknessManager.Instance.flashlightInHand)
+        {
+            renderer.enabled = false;
+            DarknessManager.Instance.PickupFlashlight();
+        }
+        else
+        {
+            return base.Action(env, ref player);
         }
 
         return null;
