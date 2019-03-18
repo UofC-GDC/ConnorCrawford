@@ -12,6 +12,7 @@ public class DarknessManager : Singleton<DarknessManager>
     [SerializeField] private GameObject         pureDark;
     [SerializeField] private GameObject         flashLightUI;
     [SerializeField] private GameObject         flashLightUIBlue;
+    [SerializeField] private GameObject         cursor;
     [SerializeField] private Door               door;
 
 
@@ -76,6 +77,8 @@ public class DarknessManager : Singleton<DarknessManager>
     public void PickupFlashlight()
     {
         flashlightInHand = true;
+        flashLightUI.transform.SetParent(cursor.transform, false);
+        flashLightUIBlue.transform.SetParent(cursor.transform, false);
     }
     #endregion
 
