@@ -80,7 +80,8 @@ public class DarknessManager : Singleton<DarknessManager>
         flashLightUI.transform.SetParent(cursor.transform, false);
         flashLightUIBlue.transform.SetParent(cursor.transform, false);
         flashLightDark.transform.SetParent(cursor.transform, false);
-        flashLightDark.transform.localPosition = Vector3.zero;
+        flashLightDark.transform.localPosition = new Vector3(-0.633f, -0.202f, 0);
+        flashLightDark.transform.localRotation = Quaternion.Euler(Vector3.zero);
     }
     #endregion
 
