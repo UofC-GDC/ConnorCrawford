@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 /*
  * THE GAME
@@ -14,6 +15,10 @@ public class StateManager : Singleton<StateManager>
 {
 
     public NavMeshAgent agent;
+    public GameObject connerSpeechBubble;
+    public GameObject connerNextButton;
+    public TextMeshPro connerTextMesh;
+
 #if SM_DEBUG
     public CutScene testScene;
 #endif

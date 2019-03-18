@@ -39,7 +39,7 @@ public class TestingInteraction : MonoBehaviour
                         var option = thing.GetInsightOption();
                         if (option != null)
                         {
-                            dialogueManager.SetupLines(option.insightOption, thing.insight.style);
+                            //dialogueManager.SetupLines(option.insightOption, thing.insight.style);
                         }
                         break;
                     case 1:

@@ -32,7 +32,7 @@ public class CutSceneState : State
                     next = new WalkingState();
                     break;
                 case CutScene.Verb.DisplayInsight:
-                    next = new DisplayInsight();
+                    next = new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, null, StateManager.Instance.connerTextMesh);
                     break;
                 case CutScene.Verb.DoAction:
                     next = new DoInteractionState();
