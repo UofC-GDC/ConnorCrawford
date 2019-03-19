@@ -4423,42 +4423,42 @@ Prefab:
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_fontColor.r
-      value: 0.5882353
+      value: 0.336
       objectReference: {fileID: 0}
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_fontColor.g
-      value: 0.19215688
+      value: 0.028223997
       objectReference: {fileID: 0}
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_fontColor.b
-      value: 0.21960784
+      value: 0.031241363
       objectReference: {fileID: 0}
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
@@ -4469,6 +4469,30 @@ Prefab:
         type: 2}
       propertyPath: m_inputSource
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_text
+      value: Test Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_fontColor32.rgba
+      value: 4278650709
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944527968705832, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
