@@ -14,6 +14,7 @@ public class DarknessManager : Singleton<DarknessManager>
     [SerializeField] private GameObject         flashLightUIBlue;
     [SerializeField] private GameObject         cursor;
     [SerializeField] private Door               door;
+    [SerializeField] private Animator           starsFullAnimator;
 
 
                         public bool roomLightOn         = true;
@@ -144,6 +145,8 @@ public class DarknessManager : Singleton<DarknessManager>
                     blueFlashlightEffect.enabled = true;
                 }
             }
+            starsFullAnimator.SetBool("FadeIn", true);
+            starsFullAnimator.SetBool("FadeOut", false);
         }
         else
         {
@@ -165,6 +168,8 @@ public class DarknessManager : Singleton<DarknessManager>
             badBlackTimer = 0;
             flashLightDark.SetActive(false);
             pureDark.SetActive(false);
+            starsFullAnimator.SetBool("FadeOut", true);
+            starsFullAnimator.SetBool("FadeIn", false);
             blueFlashlightEffect.enabled = false;
         }
     }
