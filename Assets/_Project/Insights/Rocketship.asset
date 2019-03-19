@@ -9,11 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
-  m_Name: TrashBin
+  m_Name: Rocketship
   m_EditorClassIdentifier: 
   text:
   - insightOption:
-    - "hmm. I should prooooobably take that out\u2026"
-  - insightOption:
-    - One day. One day I'll empty you.
-  style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
+    - My dad helped me build that
+    - In fact he did most of it...
+  style: {fileID: 0}

@@ -20,4 +20,11 @@ MonoBehaviour:
     - 'Hehe that tickles! '
   - insightOption:
     - "\u2026"
+  - insightOption:
+    - 'Stats:'
+    - 'Pitch speed: 80.5kph'
+    - Batting velocity 84.0kph
+    - Net worth $14
+  - insightOption:
+    - My favorite shirt!
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

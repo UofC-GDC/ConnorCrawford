@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
-  m_Name: Pascal-PostTT
+  m_Name: PascalPostTT
   m_EditorClassIdentifier: 
   text:
   - insightOption:
@@ -22,6 +22,16 @@ MonoBehaviour:
     - "More like\u2026"
     - Pastel!
     - "Get it? Because of the game\u2019s color pallet? "
+  - insightOption:
+    - How's my little fishy???
+  - insightOption:
+    - Want some food?
+  - insightOption:
+    - Pascal why are you so orange?
+  - insightOption:
+    - Pascal is my fish.
+  - insightOption:
+    - Just keep swimming
   - insightOption:
     - 'Can fish time travel? Can bowls time travel? '
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

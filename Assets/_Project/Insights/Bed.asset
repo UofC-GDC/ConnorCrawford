@@ -19,4 +19,6 @@ MonoBehaviour:
     - 'Bed time!! NO please just a few more minutes '
   - insightOption:
     - "I think there\u2019s more important things to do right now "
+  - insightOption:
+    - Making my bed is boooring...
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

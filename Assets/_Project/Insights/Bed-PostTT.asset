@@ -24,4 +24,6 @@ MonoBehaviour:
     - What did I do to deserve this gift?
   - insightOption:
     - Now's not the time for rest. I've got time to travel!
+  - insightOption:
+    - Making my bed is boooring...
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
