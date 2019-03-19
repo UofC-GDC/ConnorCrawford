@@ -80,7 +80,7 @@ public class DarknessManager : Singleton<DarknessManager>
         flashlightInHand = true;
 
         flashLightUI.transform.SetParent(cursor.transform, false);
-        flashLightUI.transform.localPosition = new Vector3(0, 0, .5f);
+        flashLightUI.transform.localPosition = new Vector3(0, 0, .25f);
 
         flashLightUIBlue.transform.SetParent(cursor.transform, false);
         flashLightUIBlue.transform.localPosition = new Vector3(0,0,1);
