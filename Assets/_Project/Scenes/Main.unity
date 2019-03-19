@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2059ed12cd34b4f9381de5d47c94e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insight: {fileID: 11400000, guid: 7276a5d17768c3f4eb3304dd5ed13146, type: 2}
+  insight: {fileID: 11400000, guid: a0b7e9febaebb4745bc50aa17ca3486b, type: 2}
 --- !u!1001 &196143981
 Prefab:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ public class TimeMachine : Thing
             if (heldTime >= 3f && heldTime <= 4f && !Input.GetMouseButtonDown(1))
             {
                 //Unlock Time Machine
+                Debug.Log("TIME MACHINE UNLOCKED!");
                 unlocked = true;
                 return null;
             }
