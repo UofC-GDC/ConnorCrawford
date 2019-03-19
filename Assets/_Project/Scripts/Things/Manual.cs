@@ -8,9 +8,10 @@ public class Manual : Thing
     [SerializeField] private GameObject speechBubble;
     [SerializeField] private GameObject nextButton;
     [SerializeField] private TextMeshPro textMesh;
+    [SerializeField] private Thing manualTarget;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        return new DisplayInsight(speechBubble, nextButton, this, textMesh);
+        return new DisplayInsight(speechBubble, nextButton, manualTarget, textMesh);
     }
 }

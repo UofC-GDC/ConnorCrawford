@@ -423,6 +423,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63944536}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &187191847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 187191848}
+  - component: {fileID: 187191849}
+  m_Layer: 9
+  m_Name: DummyThingForManualText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &187191848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187191847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1019512039}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187191849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187191847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2059ed12cd34b4f9381de5d47c94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insight: {fileID: 11400000, guid: 7276a5d17768c3f4eb3304dd5ed13146, type: 2}
 --- !u!1001 &196143981
 Prefab:
   m_ObjectHideFlags: 0
@@ -2460,6 +2501,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1700730037575378, guid: d690b7b88ff6fe344a8311e5ed787c28,
     type: 2}
   m_PrefabInternal: {fileID: 1496195519}
+--- !u!4 &1019512039 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4685250242722384, guid: d690b7b88ff6fe344a8311e5ed787c28,
+    type: 2}
+  m_PrefabInternal: {fileID: 1496195519}
 --- !u!114 &1019512040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2471,10 +2517,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9f81897ec54dd489027be9f9e2a009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insight: {fileID: 11400000, guid: 7276a5d17768c3f4eb3304dd5ed13146, type: 2}
+  insight: {fileID: 11400000, guid: 6ed6901429fd6384eb7e9d78a76705c2, type: 2}
   speechBubble: {fileID: 598439318}
   nextButton: {fileID: 477938500}
   textMesh: {fileID: 1687883497}
+  manualTarget: {fileID: 187191849}
 --- !u!1 &1039509163
 GameObject:
   m_ObjectHideFlags: 0
