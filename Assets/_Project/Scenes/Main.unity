@@ -1277,6 +1277,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 2100000, guid: a23566b3ced7e804cb9229bd2b1ea350, type: 2}
+--- !u!114 &598451131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 598451128}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0904ea0d64de34083d0fe6244c874a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &598451133 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20363357301599702, guid: 44d1939b4c527d6428d4ebd86d3fe499,
@@ -5031,6 +5042,36 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404192336828502, guid: 44d1939b4c527d6428d4ebd86d3fe499,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20363357301599702, guid: 44d1939b4c527d6428d4ebd86d3fe499,
+        type: 2}
+      propertyPath: orthographic size
+      value: 2.5825
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404192336828502, guid: 44d1939b4c527d6428d4ebd86d3fe499,
+        type: 2}
+      propertyPath: m_RefResolutionX
+      value: 455
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404192336828502, guid: 44d1939b4c527d6428d4ebd86d3fe499,
+        type: 2}
+      propertyPath: m_RefResolutionY
+      value: 413
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404192336828502, guid: 44d1939b4c527d6428d4ebd86d3fe499,
+        type: 2}
+      propertyPath: m_PixelSnapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404192336828502, guid: 44d1939b4c527d6428d4ebd86d3fe499,
+        type: 2}
+      propertyPath: m_UpscaleRT
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d1939b4c527d6428d4ebd86d3fe499, type: 2}
