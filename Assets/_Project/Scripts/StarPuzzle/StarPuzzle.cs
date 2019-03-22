@@ -6,19 +6,47 @@ public class StarPuzzle : MonoBehaviour
 {
     [SerializeField] private LineRenderer lineRenderer;
 
+    private List<List<Vector3>> solutionList = new List<List<Vector3>>();
+
+    public List<List<Star>> starSolutions = new List<List<Star>>();
+
     private void Start()
     {
+        int i = 0;
+        foreach (var starSolution in starSolutions)
+        {
+            foreach (var star in starSolution)
+            {
+                solutionList[i].Add(star.transform.position);
+            }
+            i++;
+        }
+
         lineRenderer.positionCount = 0;
     }
 
     Vector3 mousePos;
 
+    bool allDone = false;
+
     private void Update()
     {
-        //if (lineRenderer.positionCount == 0)
-        //{
+        if (allDone && ( lineRenderer.GetPositions() ))
+        {
+            print("You Did It");
+        }
 
-        //}
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            lineRenderer.positionCount = 0;
+            allDone = false;
+        }
+
+        if (allDone)
+        {
+            return;
+        }
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
@@ -39,11 +67,19 @@ public class StarPuzzle : MonoBehaviour
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, endPos);
     }
 
+    private bool CheckListEqual(System.Array array, List list)
+    {
+        for
+    }
+
     private void AddStar(Vector3 pos)
     {
         for (int i = 0; i < lineRenderer.positionCount-1; i++)
         {
-            if (pos == lineRenderer.GetPosition(i)) return;
+            if (pos == lineRenderer.GetPosition(i))
+            {
+                allDone = true;
+            }
         }
         lineRenderer.positionCount++;
         lineRenderer.SetPosition(lineRenderer.positionCount - 1, pos);
