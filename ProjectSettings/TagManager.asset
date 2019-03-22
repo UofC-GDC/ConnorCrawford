@@ -7,6 +7,7 @@ TagManager:
   - Object
   - SpeechBubble
   - Chair
+  - Star
   layers:
   - Default
   - TransparentFX
