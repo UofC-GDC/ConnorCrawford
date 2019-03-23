@@ -115,6 +115,11 @@ public static class Extensions
         return layerNumber - 1;
     }
 
+    public static bool ApproximatelyEquality(this Vector3 a, Vector3 b)
+    {
+        return Mathf.Approximately(a.x, b.x) && Mathf.Approximately(a.y, b.y) && Mathf.Approximately(a.z, b.z);
+    }
+
     public static void Log(this GameObject gameObject, string message)
     {
         Debug.Log(message, gameObject);

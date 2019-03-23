@@ -2,36 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class WhyIHateThis
+{
+    public List<Star> solutionOption;
+}
+
+
 public class StarPuzzle : MonoBehaviour 
 {
     [SerializeField] private LineRenderer lineRenderer;
 
-    private List<List<Vector3>> solutionList = new List<List<Vector3>>();
-
-    public List<List<Star>> starSolutions = new List<List<Star>>();
+    public List<WhyIHateThis> starSolutions = new List<WhyIHateThis>();
 
     private void Start()
     {
-        int i = 0;
-        foreach (var starSolution in starSolutions)
-        {
-            foreach (var star in starSolution)
-            {
-                solutionList[i].Add(star.transform.position);
-            }
-            i++;
-        }
-
         lineRenderer.positionCount = 0;
     }
 
     Vector3 mousePos;
 
     bool allDone = false;
+    bool youDidIt = false;
 
     private void Update()
     {
-        if (allDone && ( lineRenderer.GetPositions() ))
+        if (allDone)
+        {
+            foreach (var starSolution in starSolutions)
+            {
+                var putItInHere = new Vector3[lineRenderer.positionCount];
+                lineRenderer.GetPositions(putItInHere);
+                if (!CheckListEqual(putItInHere, starSolution))
+                {
+                    youDidIt = false;
+                }
+                else
+                {
+                    youDidIt = true;
+                    break;
+                }
+            }
+        }
+
+        if (allDone && youDidIt)
         {
             print("You Did It");
         }
@@ -67,9 +81,19 @@ public class StarPuzzle : MonoBehaviour
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, endPos);
     }
 
-    private bool CheckListEqual(System.Array array, List list)
+    private bool CheckListEqual(System.Array array, WhyIHateThis why)
     {
-        for
+        if (array.Length != why.solutionOption.Count) return false;
+
+        for (int i = 0; i < array.Length-1; i++)
+        {
+            if (!((Vector3)array.GetValue(i)).ApproximatelyEquality(why.solutionOption[i].transform.position))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private void AddStar(Vector3 pos)
@@ -81,7 +105,8 @@ public class StarPuzzle : MonoBehaviour
                 allDone = true;
             }
         }
-        lineRenderer.positionCount++;
+        if(!allDone)
+            lineRenderer.positionCount++;
         lineRenderer.SetPosition(lineRenderer.positionCount - 1, pos);
         if (lineRenderer.positionCount == 1) lineRenderer.positionCount++;
     }
