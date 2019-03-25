@@ -124,4 +124,32 @@ public static class Extensions
     {
         Debug.Log(message, gameObject);
     }
+
+    public static bool SetEquals<T>(this HashSet<T> a, HashSet<T> b) where T : System.IEquatable<T>
+    {
+        if (a.Count != b.Count) return false;
+
+        foreach (var itemA in a)
+        {
+            var searchForItem = false;
+            foreach (var itemB in b)
+            {
+                if ((System.IEquatable<T>)(itemA)==(System.IEquatable<T>)itemB)
+                {
+                    searchForItem = true;
+                    break;
+                }
+                else
+                {
+                    searchForItem = false;
+                }
+            }
+            if (!searchForItem)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

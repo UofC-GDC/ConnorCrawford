@@ -10,6 +10,10 @@ public class TimeMachine : Thing
     [SerializeField] private Animator steamAnimator;
     [SerializeField] private GameObject manual;
 
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private GameObject starPuzzle;
+    [SerializeField] private Animator fadeInOutPanelAnimator;
+
     private float heldTime = 0f;
 
     public override State Action(StateManager.Env env, ref Player player)
@@ -43,9 +47,27 @@ public class TimeMachine : Thing
         }
         else
         {
-            //Open Star puzzle
+             StartCoroutine(ActivateStarPuzzle());
             return null;
         }
+    }
+
+    [ContextMenu("ActivateStarPuzzle")]
+    private void ActivateStarPuzzleContext() { StartCoroutine(ActivateStarPuzzle()); }
+
+
+    private IEnumerator ActivateStarPuzzle()
+    {
+        fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
+
+        while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
+        {
+            yield return null;
+        }
+
+        mainCamera.SetActive(false);
+        starPuzzle.SetActive(true);
+        fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
     }
 
     private IEnumerator BookTurnOn()

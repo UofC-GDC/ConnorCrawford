@@ -20,6 +20,7 @@ public class Cursor : Singleton<Cursor>
 
     public void ShakeMouse()
     {
+        Debug.Log("Mouse says you cannot", this);
         mouseShake.Play();
     }
 

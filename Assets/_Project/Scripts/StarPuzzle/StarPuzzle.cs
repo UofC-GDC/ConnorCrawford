@@ -12,6 +12,10 @@ public class WhyIHateThis
 public class StarPuzzle : MonoBehaviour 
 {
     [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private Camera starCamera;
+    [SerializeField] private GameObject puzzle1;
+    [SerializeField] private GameObject puzzle2;
+    [SerializeField] private Animator fadeInOutPanelAnimator;
 
     public List<WhyIHateThis> starSolutions = new List<WhyIHateThis>();
 
@@ -47,14 +51,27 @@ public class StarPuzzle : MonoBehaviour
 
         if (allDone && youDidIt)
         {
-            print("You Did It");
+            lineRenderer.positionCount = 0;
+            if (!puzzle2.activeInHierarchy)
+                StartCoroutine(ActivateStarPuzzle2());
+            print("SUPER DONE");
         }
 
 
         if (Input.GetMouseButtonUp(1))
         {
-            lineRenderer.positionCount = 0;
-            allDone = false;
+            if (!allDone)
+            {
+                allDone = true;
+                lineRenderer.positionCount--;
+            }
+            else
+            {
+                lineRenderer.positionCount = 0;
+                allDone = false;
+                connections.Clear();
+                lastStar = null;
+            }
         }
 
         if (allDone)
@@ -62,7 +79,7 @@ public class StarPuzzle : MonoBehaviour
             return;
         }
 
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = starCamera.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
 
         var endPos = transform.position = mousePos;
@@ -71,14 +88,26 @@ public class StarPuzzle : MonoBehaviour
         if (closestStar != null)
         {
             endPos = closestStar.transform.position;
-            if (Input.GetMouseButtonUp(0))
-            {
-                AddStar(endPos);
-            }
+            if(Input.GetMouseButtonUp(0))
+                AddStar(closestStar);
         }
 
-        if(lineRenderer.positionCount != 0)
+        if (lineRenderer.positionCount != 0)
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, endPos);
+    }
+
+    private IEnumerator ActivateStarPuzzle2()
+    {
+        fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
+
+        while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
+        {
+            yield return null;
+        }
+
+        puzzle1.SetActive(false);
+        puzzle2.SetActive(true);
+        fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
     }
 
     private bool CheckListEqual(System.Array array, WhyIHateThis why)
@@ -96,19 +125,49 @@ public class StarPuzzle : MonoBehaviour
         return true;
     }
 
-    private void AddStar(Vector3 pos)
+    private Star lastStar = null;
+    private List<HashSet<Star>> connections = new List<HashSet<Star>>();
+
+    private void AddStar(Star star)
     {
-        for (int i = 0; i < lineRenderer.positionCount-1; i++)
+        if (lastStar != null)
         {
-            if (pos == lineRenderer.GetPosition(i))
+            var newConnection = new HashSet<Star>();
+            newConnection.Add(star);
+            newConnection.Add(lastStar);
+
+            var goodConnection = true;
+
+            foreach (var connection in connections)
             {
-                allDone = true;
+                if (connection.SetEquals(newConnection))
+                {
+                    goodConnection = false;
+                    break;
+                }
+            }
+            if (!goodConnection)
+            {
+                Cursor.Instance.ShakeMouse();
+                return;
             }
         }
-        if(!allDone)
+        lineRenderer.positionCount++;
+        lineRenderer.SetPosition(lineRenderer.positionCount - 1, star.transform.position);
+
+        if (lineRenderer.positionCount == 1)
+        {
             lineRenderer.positionCount++;
-        lineRenderer.SetPosition(lineRenderer.positionCount - 1, pos);
-        if (lineRenderer.positionCount == 1) lineRenderer.positionCount++;
+        }
+        else
+        {
+            var connection = new HashSet<Star>();
+            connection.Add(star);
+            connection.Add(lastStar);
+            connections.Add(connection);
+        }
+
+        lastStar = star;
     }
 
     /// <summary>
