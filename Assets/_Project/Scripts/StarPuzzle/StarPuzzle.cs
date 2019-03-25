@@ -20,6 +20,7 @@ public class StarPuzzle : MonoBehaviour
 
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject starPuzzle;
+    [SerializeField] private TimeMachine timeMachine;
 
     public List<WhyIHateThis> starSolutions = new List<WhyIHateThis>();
 
@@ -62,6 +63,7 @@ public class StarPuzzle : MonoBehaviour
             }
             else
             {
+                timeMachine.readyToTimeTravel = true;
                 if (!transitioning)
                     StartCoroutine(ActivateStarPuzzle2(true));
             }

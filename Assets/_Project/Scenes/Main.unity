@@ -1973,6 +1973,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a64009707160544aeb556ed6d01441, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &498503937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114638683459398570, guid: b98af90800a8da346a65041c5eff87b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1119773074}
+  m_Script: {fileID: 11500000, guid: cb694f6650ee0c94cb636f235c44804d, type: 3}
 --- !u!1 &521405593
 GameObject:
   m_ObjectHideFlags: 0
@@ -10902,6 +10908,7 @@ MonoBehaviour:
   lineRendererAnimator: {fileID: 2037373420}
   mainCamera: {fileID: 598451128}
   starPuzzle: {fileID: 1279588687}
+  timeMachine: {fileID: 498503937}
   starSolutions:
   - solutionOption:
     - {fileID: 1241825255}
@@ -11298,6 +11305,7 @@ MonoBehaviour:
   lineRendererAnimator: {fileID: 2111052095}
   mainCamera: {fileID: 598451128}
   starPuzzle: {fileID: 1279588687}
+  timeMachine: {fileID: 498503937}
   starSolutions:
   - solutionOption:
     - {fileID: 1541013434}

@@ -6,6 +6,7 @@ public class TimeMachine : Thing
 {
     private bool open = false;
     private bool unlocked = false;
+    public bool readyToTimeTravel = false;
     [SerializeField] private Animator lidAnimator;
     [SerializeField] private Animator steamAnimator;
     [SerializeField] private GameObject manual;
@@ -27,23 +28,30 @@ public class TimeMachine : Thing
         }
         else if (!unlocked)
         {
-            if (heldTime >= 3f && heldTime <= 4f && !Input.GetMouseButtonDown(1))
-            {
-                //Unlock Time Machine
-                Debug.Log("TIME MACHINE UNLOCKED!");
-                unlocked = true;
-                return null;
-            }
-            else if (Input.GetMouseButtonDown(1))
-            {
-                heldTime += Time.deltaTime;
-                return new DoInteractionState();
-            }
-            else
-            {
-                heldTime = 0;
-                return base.Action(env, ref player);
-            }
+            unlocked = true;
+            return null;
+            //if (heldTime >= 3f && heldTime <= 4f && !Input.GetMouseButtonDown(1))
+            //{
+            //    //Unlock Time Machine
+            //    Debug.Log("TIME MACHINE UNLOCKED!");
+            //    unlocked = true;
+            //    return null;
+            //}
+            //else if (Input.GetMouseButtonDown(1))
+            //{
+            //    heldTime += Time.deltaTime;
+            //    return new DoInteractionState();
+            //}
+            //else
+            //{
+            //    heldTime = 0;
+            //    return base.Action(env, ref player);
+            //}
+        }
+        else if (readyToTimeTravel)
+        {
+            print("TRAVELING THROUGH TIME!!!");
+            return null;
         }
         else
         {
