@@ -128,8 +128,7 @@ public class StarPuzzle : MonoBehaviour
         {
             puzzle1.SetActive(false);
             puzzle2.SetActive(false);
-            mainCamera.SetActive(true);
-            starPuzzle.SetActive(false);
+            StarExitButton.Instance.DisableStarPuzzle();
         }
         else
         {

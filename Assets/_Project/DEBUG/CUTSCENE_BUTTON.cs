@@ -8,7 +8,9 @@ public class CUTSCENE_BUTTON : Thing
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        return DoorCutscene();
+        StarExitButton.Instance.ActivateStarPuzzle();
+        return null;
+        //return DoorCutscene();
     }
 
     public State DoorCutscene()

@@ -47,27 +47,9 @@ public class TimeMachine : Thing
         }
         else
         {
-             StartCoroutine(ActivateStarPuzzle());
+            StarExitButton.Instance.ActivateStarPuzzle();
             return null;
         }
-    }
-
-    [ContextMenu("ActivateStarPuzzle")]
-    private void ActivateStarPuzzleContext() { StartCoroutine(ActivateStarPuzzle()); }
-
-
-    private IEnumerator ActivateStarPuzzle()
-    {
-        fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
-
-        while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
-        {
-            yield return null;
-        }
-
-        mainCamera.SetActive(false);
-        starPuzzle.SetActive(true);
-        fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
     }
 
     private IEnumerator BookTurnOn()
