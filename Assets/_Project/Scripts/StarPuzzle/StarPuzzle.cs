@@ -16,6 +16,7 @@ public class StarPuzzle : MonoBehaviour
     [SerializeField] private GameObject puzzle1;
     [SerializeField] private GameObject puzzle2;
     [SerializeField] private Animator fadeInOutPanelAnimator;
+    [SerializeField] private Animator lineRendererAnimator;
 
     public List<WhyIHateThis> starSolutions = new List<WhyIHateThis>();
 
@@ -51,10 +52,13 @@ public class StarPuzzle : MonoBehaviour
 
         if (allDone && youDidIt)
         {
-            lineRenderer.positionCount = 0;
             if (!puzzle2.activeInHierarchy)
-                StartCoroutine(ActivateStarPuzzle2());
-            print("SUPER DONE");
+            { 
+                if(!transitioning)
+                    StartCoroutine(ActivateStarPuzzle2());
+            }
+            else
+                Debug.Log("SUPER DONE", this);
         }
 
 
@@ -96,8 +100,12 @@ public class StarPuzzle : MonoBehaviour
             lineRenderer.SetPosition(lineRenderer.positionCount - 1, endPos);
     }
 
+    private bool transitioning = false;
+
     private IEnumerator ActivateStarPuzzle2()
     {
+        lineRendererAnimator.SetTrigger("Win");
+        transitioning = true;
         fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
 
         while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
@@ -105,6 +113,11 @@ public class StarPuzzle : MonoBehaviour
             yield return null;
         }
 
+        lineRenderer.positionCount = 0;
+        allDone = false;
+        youDidIt = false;
+        connections.Clear();
+        lastStar = null;
         puzzle1.SetActive(false);
         puzzle2.SetActive(true);
         fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
