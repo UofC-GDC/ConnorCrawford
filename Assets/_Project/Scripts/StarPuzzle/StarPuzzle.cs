@@ -58,7 +58,10 @@ public class StarPuzzle : MonoBehaviour
                     StartCoroutine(ActivateStarPuzzle2());
             }
             else
-                Debug.Log("SUPER DONE", this);
+            {
+                if (!transitioning)
+                    StartCoroutine(ActivateStarPuzzle2());
+            }
         }
 
 
@@ -104,8 +107,8 @@ public class StarPuzzle : MonoBehaviour
 
     private IEnumerator ActivateStarPuzzle2()
     {
-        lineRendererAnimator.SetTrigger("Win");
         transitioning = true;
+        lineRendererAnimator.SetTrigger("Win");
         fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
 
         while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
@@ -121,6 +124,7 @@ public class StarPuzzle : MonoBehaviour
         puzzle1.SetActive(false);
         puzzle2.SetActive(true);
         fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
+        transitioning = false;
     }
 
     private bool CheckListEqual(System.Array array, WhyIHateThis why)
