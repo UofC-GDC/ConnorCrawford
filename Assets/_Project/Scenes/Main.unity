@@ -10512,6 +10512,8 @@ MonoBehaviour:
   puzzle2: {fileID: 690621228}
   fadeInOutPanelAnimator: {fileID: 1289716142}
   lineRendererAnimator: {fileID: 2037373420}
+  mainCamera: {fileID: 598451128}
+  starPuzzle: {fileID: 1279588687}
   starSolutions:
   - solutionOption:
     - {fileID: 1241825255}
@@ -10906,6 +10908,8 @@ MonoBehaviour:
   puzzle2: {fileID: 1304880897}
   fadeInOutPanelAnimator: {fileID: 1289716142}
   lineRendererAnimator: {fileID: 2111052095}
+  mainCamera: {fileID: 598451128}
+  starPuzzle: {fileID: 1279588687}
   starSolutions:
   - solutionOption:
     - {fileID: 1541013434}

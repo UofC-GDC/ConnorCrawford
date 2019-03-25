@@ -18,6 +18,9 @@ public class StarPuzzle : MonoBehaviour
     [SerializeField] private Animator fadeInOutPanelAnimator;
     [SerializeField] private Animator lineRendererAnimator;
 
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private GameObject starPuzzle;
+
     public List<WhyIHateThis> starSolutions = new List<WhyIHateThis>();
 
     private void Start()
@@ -55,12 +58,12 @@ public class StarPuzzle : MonoBehaviour
             if (!puzzle2.activeInHierarchy)
             { 
                 if(!transitioning)
-                    StartCoroutine(ActivateStarPuzzle2());
+                    StartCoroutine(ActivateStarPuzzle2(false));
             }
             else
             {
                 if (!transitioning)
-                    StartCoroutine(ActivateStarPuzzle2());
+                    StartCoroutine(ActivateStarPuzzle2(true));
             }
         }
 
@@ -105,7 +108,7 @@ public class StarPuzzle : MonoBehaviour
 
     private bool transitioning = false;
 
-    private IEnumerator ActivateStarPuzzle2()
+    private IEnumerator ActivateStarPuzzle2(bool puzzle2Done)
     {
         transitioning = true;
         lineRendererAnimator.SetTrigger("Win");
@@ -121,8 +124,18 @@ public class StarPuzzle : MonoBehaviour
         youDidIt = false;
         connections.Clear();
         lastStar = null;
-        puzzle1.SetActive(false);
-        puzzle2.SetActive(true);
+        if (puzzle2Done)
+        {
+            puzzle1.SetActive(false);
+            puzzle2.SetActive(false);
+            mainCamera.SetActive(true);
+            starPuzzle.SetActive(false);
+        }
+        else
+        {
+            puzzle1.SetActive(false);
+            puzzle2.SetActive(true);
+        }
         fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
         transitioning = false;
     }
