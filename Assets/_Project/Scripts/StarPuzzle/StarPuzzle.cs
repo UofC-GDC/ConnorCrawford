@@ -114,31 +114,43 @@ public class StarPuzzle : MonoBehaviour
     {
         transitioning = true;
         lineRendererAnimator.SetTrigger("Win");
-        fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
+
+        if (puzzle2Done)
+        {
+            StarExitButton.Instance.DisableStarPuzzle();
+        }
+        else
+        {
+            fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
+        }
 
         while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
         {
             yield return null;
         }
 
+
         lineRenderer.positionCount = 0;
         allDone = false;
         youDidIt = false;
         connections.Clear();
         lastStar = null;
+        if (!puzzle2Done)
+        {
+            fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
+        }
+        transitioning = false;
+
         if (puzzle2Done)
         {
             puzzle1.SetActive(false);
             puzzle2.SetActive(false);
-            StarExitButton.Instance.DisableStarPuzzle();
         }
         else
         {
             puzzle1.SetActive(false);
             puzzle2.SetActive(true);
         }
-        fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
-        transitioning = false;
     }
 
     private bool CheckListEqual(System.Array array, WhyIHateThis why)
