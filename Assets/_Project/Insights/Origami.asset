@@ -14,4 +14,7 @@ MonoBehaviour:
   text:
   - insightOption:
     - I learned to do origami at school.
+  - insightOption:
+    - 'Oh man I remember when I played Furyfold. '
+    - Origami is so cool!
   style: {fileID: 0}
