@@ -10857,7 +10857,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1234446816559788, guid: 3e10b9b70105a04459f79f4e61d67286, type: 2}
       propertyPath: m_Name
-      value: Trophy (1)
+      value: RocketShip
       objectReference: {fileID: 0}
     - target: {fileID: 61077289127170074, guid: 3e10b9b70105a04459f79f4e61d67286,
         type: 2}
