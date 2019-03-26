@@ -7,11 +7,11 @@ public class VolumeLeveler : MonoBehaviour {
     // Work in progress
     public void SetMusicLvl(float musicLvl)
     {
-        masterMixer.SetFloat("Test", musicLvl);
+        masterMixer.SetFloat("MusicVolume", musicLvl);
     }
 
     public void SetSfxLvl(float sfxLvl)
     {
-        masterMixer.SetFloat("", sfxLvl);
+        masterMixer.SetFloat("SoundEffectsVolume", sfxLvl);
     }
 }
