@@ -8,12 +8,20 @@ public class DialogueManager : Singleton<DialogueManager>
     [Tooltip("The number of frames to pause for after each character.")]
     [Range(0, 60)]
     [SerializeField] private int waitForFramesNumber;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AnimationCurve curve;
+    private float startPitch;
 
     private IEnumerator<string> lineEnumerator;
 
     public bool doneLines{
         get;
         private set;
+    }
+
+    private void Start()
+    {
+        startPitch = audioSource.pitch;
     }
 
     public void SetupLines(List<string> lines, GameObject speechBubble, TextMeshPro style, GameObject nextButton)
@@ -78,12 +86,44 @@ public class DialogueManager : Singleton<DialogueManager>
         var text = "";
         foreach (var character in line)
         {
+            #region Update Bubble
             text += character;
             speechBubbleText.text = text;
+            #endregion
+
+            #region Audio Playing
+            if (character.Equals('?') || character.Equals('!'))
+            {
+                audioSource.pitch = startPitch + curve.Evaluate(1) + .1f;
+                audioSource.Play();
+            }
+            else if (!System.Char.IsWhiteSpace(character))
+            {
+                audioSource.pitch = startPitch + curve.Evaluate(Random.value);
+                audioSource.Play();
+            }
+            #endregion
+
+            #region Waiting
             for (int i = 0; i < waitForFramesNumber; i++)
             {
                 yield return null;
             }
+            if (character.Equals(','))
+            {
+                for (int i = 0; i < waitForFramesNumber * 2; i++)
+                {
+                    yield return null;
+                }
+            }
+            if (character.Equals('.'))
+            {
+                for (int i = 0; i < waitForFramesNumber * 4; i++)
+                {
+                    yield return null;
+                }
+            }
+            #endregion
         }
         if (!moreLines)
         {
