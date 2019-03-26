@@ -8,6 +8,8 @@ public class StarExitButton : Singleton<StarExitButton>
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject starPuzzle;
 
+    private bool transitioning = false;
+
     public void DisableStarPuzzle()
     {
         StartCoroutine(ToggleStarPuzzle(false));
@@ -20,6 +22,8 @@ public class StarExitButton : Singleton<StarExitButton>
 
     public IEnumerator ToggleStarPuzzle(bool on)
     {
+        if (transitioning) yield break;
+        transitioning = true;
         fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
 
         while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
@@ -31,5 +35,6 @@ public class StarExitButton : Singleton<StarExitButton>
         starPuzzle.SetActive(on);
         UnityEngine.Cursor.visible = on;
         fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
+        transitioning = false;
     }
 }
