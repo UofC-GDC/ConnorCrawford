@@ -21,8 +21,15 @@ public class DummyThing : Thing
                 }
                 else
                 {
-                    audioSource = sourceTemp;
-                    audioSource.PlayDelayed(delayTime);
+                    if (sourceTemp.clip == null)
+                    {
+                        noAudio = true;
+                    }
+                    else
+                    {
+                        audioSource = sourceTemp;
+                        audioSource.PlayDelayed(delayTime);
+                    }
                 }
             }
             else if (!audioSource.isPlaying)
