@@ -84,6 +84,7 @@ public class DialogueManager : Singleton<DialogueManager>
     private IEnumerator _PlayLine(string line, bool moreLines, GameObject speechBubble, TextMeshPro speechBubbleText)
     {
         var text = "";
+        char lastChar = ' ';
         foreach (var character in line)
         {
             #region Update Bubble
@@ -95,6 +96,10 @@ public class DialogueManager : Singleton<DialogueManager>
             if (character.Equals('?') || character.Equals('!'))
             {
                 audioSource.pitch = startPitch + curve.Evaluate(1) + .1f;
+                audioSource.Play();
+            }
+            else if (character.Equals(lastChar))
+            {
                 audioSource.Play();
             }
             else if (!System.Char.IsWhiteSpace(character))
@@ -124,6 +129,8 @@ public class DialogueManager : Singleton<DialogueManager>
                 }
             }
             #endregion
+
+            lastChar = character;
         }
         if (!moreLines)
         {
