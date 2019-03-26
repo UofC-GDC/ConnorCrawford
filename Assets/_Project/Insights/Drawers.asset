@@ -14,8 +14,6 @@ MonoBehaviour:
   text:
   - insightOption:
     - "I think there\u2019s an old lunch box in there somewhere."
-  - insightOption:
-    - '*Sniff* *Snif* '
-  - insightOption:
+    - '''Sniff'' ''Sniff'''
     - 'Yep. Pee-ew. Definitely an old lunch in there. '
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
