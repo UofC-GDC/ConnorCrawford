@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Clock : Singleton<Clock>
 {
-    [SerializeField] private int waitForFramesSpin;
+    #region Setup
+    [SerializeField] private int waitForFramesSpin = 5;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     private int currentClockIndex = 0;
+    private Sprite[] clockSprites;
 
     private void Start()
     {
-        Sprite[] sprites = Resources.LoadAll<Sprite>("clock");
+        clockSprites = Resources.LoadAll<Sprite>("clock");
     }
+    #endregion
 
     #region Refrence / Lookup / Static
     private static int TimeToClockIndex(int hour, int minute)
@@ -49,38 +52,53 @@ public class Clock : Singleton<Clock>
     };
     #endregion
 
-    //public void SetClock(int i)
-    //{
-    //    var tup = timeLookUp[i];
-    //    var nextIndex = TimeToClockIndex(tup.Item1, tup.Item2);
-
-    //    StartCoroutine(SpinToIndex(nextIndex));
-    //}
-
-    ////private IEnumerator SpinToIndex(int indexToSpinTo)
-    ////{
-    ////    if (indexToSpinTo < currentClockIndex)
-    ////    {
-    ////        StartCoroutine(SpinToIndex(maxxy));
-    ////        //fixitBacktO begiining
-    ////    }
-    ////    else if (indexToSpinTo == currentClockIndex)
-    ////        yield break;
-
-    ////    while (currentClockIndex < indexToSpinTo)
-    ////    {
-    ////        //Set to index++
-    ////        spriteRenderer.sprite =
-    ////        //WIP
-    ////        for (int i = 0; i < waitForFramesSpin; i++)
-    ////        {
-    ////            yield return null;
-    ////        }
-    ////    }
-    ////}
-
-    private void Update()
+    #region Methods
+    public void SetClock(int i)
     {
+        var tup = timeLookUp[i];
+        var nextIndex = TimeToClockIndex(tup.Item1, tup.Item2);
 
+        StartCoroutine(SpinToIndex(nextIndex));
     }
+
+    private IEnumerator SpinToIndex(int indexToSpinTo)
+    {
+        if (indexToSpinTo < currentClockIndex)
+        {
+            yield return StartCoroutine(SpinToIndex(clockSprites.Length -1));
+            Debug.Log("Line After Starting Couroutine. Don't want this line to play until above is done.");
+            for (int i = 0; i < waitForFramesSpin; i++)
+            {
+                yield return null;
+            }
+            spriteRenderer.sprite = clockSprites[currentClockIndex = 0];
+        }
+        else if (indexToSpinTo == currentClockIndex)
+            yield break;
+
+        while (currentClockIndex < indexToSpinTo)
+        {
+            spriteRenderer.sprite = clockSprites[++currentClockIndex];
+
+            for (int i = 0; i < waitForFramesSpin; i++)
+            {
+                yield return null;
+            }
+        }
+    }
+    #endregion
+
+    //#region Testing
+    //[Header("Testing")]
+
+    //[Range(0, 95)]
+    //[SerializeField] private int iToSetTo = 0;
+
+    //[ContextMenu("SetClockToProvidedIntI")]
+    //private void SetClockToProvidedIntI()
+    //{
+    //    spriteRenderer.sprite = clockSprites[iToSetTo];
+    //    StartCoroutine(SpinToIndex(iToSetTo));
+    //}
+    //#endregion
 }
