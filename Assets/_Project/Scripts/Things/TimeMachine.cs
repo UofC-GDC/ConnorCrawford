@@ -28,25 +28,26 @@ public class TimeMachine : Thing
         }
         else if (!unlocked)
         {
-            unlocked = true;
-            return null;
-            //if (heldTime >= 3f && heldTime <= 4f && !Input.GetMouseButtonDown(1))
-            //{
-            //    //Unlock Time Machine
-            //    Debug.Log("TIME MACHINE UNLOCKED!");
-            //    unlocked = true;
-            //    return null;
-            //}
-            //else if (Input.GetMouseButtonDown(1))
-            //{
-            //    heldTime += Time.deltaTime;
-            //    return new DoInteractionState();
-            //}
-            //else
-            //{
-            //    heldTime = 0;
-            //    return base.Action(env, ref player);
-            //}
+            //unlocked = true;
+            //return null;
+            if (heldTime >= 3f && heldTime <= 4f && !Input.GetMouseButtonDown(1))
+            {
+                //Unlock Time Machine
+                Debug.Log("TIME MACHINE UNLOCKED!");
+                unlocked = true;
+                return null;
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                heldTime += Time.deltaTime;
+                return new DoInteractionState();
+            }
+            else
+            {
+                heldTime = 0;
+                //return base.Action(env, ref player);
+                return new DoInteractionState();
+            }
         }
         else if (readyToTimeTravel)
         {
