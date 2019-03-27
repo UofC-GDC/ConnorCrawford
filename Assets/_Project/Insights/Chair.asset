@@ -16,4 +16,13 @@ MonoBehaviour:
     - The best chair that money can buy
   - insightOption:
     - For sitting. Or putting tons of clothes on top of. Nothing else.
+  - insightOption:
+    - It has a squeaky wheel.
+  - insightOption:
+    - I wanna go for a spin.
+  - insightOption:
+    - 'Chair Info:'
+    - 4 wheels
+    - Sturdy frame
+    - 'Top speed: 23kph'
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

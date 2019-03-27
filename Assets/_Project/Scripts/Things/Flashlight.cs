@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flashlight : Thing
 {
     [SerializeField] private new SpriteRenderer renderer;
+    [SerializeField] private Transform flashLightHolder;
 
     private void Start()
     {
@@ -14,20 +15,44 @@ public class Flashlight : Thing
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        switch (DarknessManager.Instance.currentFlashLightState)
+        if (env.player.inventory != null)
         {
-            case DarknessManager.FlashLightState.ground:
-                renderer.enabled = false;
-                DarknessManager.Instance.PickupFlashlight();
-                break;
-            case DarknessManager.FlashLightState.inHand:
-                if (env.player.inventory.GetType() == typeof(BluePaper))
-                    DarknessManager.Instance.BlueifyFlashlight();
-                break;
-            case DarknessManager.FlashLightState.blue:
+            if (env.player.inventory.GetType() == typeof(BluePaper))
+            {
+                DarknessManager.Instance.BlueifyFlashlight();
+                player.inventory = null;
+            }
+            else if (env.player.inventory.GetType() == typeof(Battery))
+            {
+                DarknessManager.Instance.PowerFlashlight();
+                player.inventory = null;
+            }
+            else if (!DarknessManager.Instance.flashlightInHand)
+            {
+                PickupFlashlight();
                 return base.Action(env, ref player);
+            }
+            else
+            {
+                return base.Action(env, ref player);
+            }
+        }
+        else if (!DarknessManager.Instance.flashlightInHand)
+        {
+            PickupFlashlight();
+        }
+        else
+        {
+            return base.Action(env, ref player);
         }
 
         return null;
+    }
+
+    private void PickupFlashlight()
+    {
+        DarknessManager.Instance.PickupFlashlight();
+        renderer.transform.SetParent(flashLightHolder, true);
+        renderer.transform.localPosition = Vector3.zero;
     }
 }

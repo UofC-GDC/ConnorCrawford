@@ -15,10 +15,15 @@ public abstract class Interatable3D : MonoBehaviour {
 		}
 	}
 
-	public virtual void interact() {
+	public virtual void interactLeft(StateManager.Env env, ref Player player) {
 		interaction = false;
 	}
 
-	protected virtual void interactStart() {}
+    public virtual void interactRight(StateManager.Env env, ref Player player)
+    {
+        interaction = false;
+    }
+
+    protected virtual void interactStart() {}
 	protected virtual void interactEnd() { }
 }

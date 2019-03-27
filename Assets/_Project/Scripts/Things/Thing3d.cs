@@ -7,6 +7,6 @@ public class Thing3d : Thing {
 		viewer = FindObjectOfType<Viewer3D>();
 	}
 	public override State Action(StateManager.Env env, ref Player player) {
-		return viewer.Display(Model);
+		return viewer.Display(Model, env, ref player);
 	}
 }

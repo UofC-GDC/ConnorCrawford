@@ -22,4 +22,14 @@ MonoBehaviour:
     - "More like\u2026"
     - Pastel!
     - "Get it? Because of the game\u2019s color pallet? "
+  - insightOption:
+    - How's my little fishy???
+  - insightOption:
+    - Want some food?
+  - insightOption:
+    - Pascal why are you so orange?
+  - insightOption:
+    - Pascal is my fish.
+  - insightOption:
+    - Just keep swimming
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

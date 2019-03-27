@@ -11,5 +11,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
   m_Name: IntroCutsceneInsight
   m_EditorClassIdentifier: 
-  text: []
+  text:
+  - insightOption:
+    - Hi! I'm Conner!
+  - insightOption:
+    - I've got to go to school
+  - insightOption:
+    - but I've got a little more to say
+  - insightOption:
+    - To continue on a subject, click the next button
+    - Great!
+  - insightOption:
+    - Left click on objects in my room
+    - to see what I have to say about them
+  - insightOption:
+    - 'Right click to have me interact '
+    - with the objects in my room
+  - insightOption:
+    - I'd practice with you but I'm late for school!
   style: {fileID: 0}

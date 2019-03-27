@@ -115,8 +115,41 @@ public static class Extensions
         return layerNumber - 1;
     }
 
+    public static bool ApproximatelyEquality(this Vector3 a, Vector3 b)
+    {
+        return Mathf.Approximately(a.x, b.x) && Mathf.Approximately(a.y, b.y) && Mathf.Approximately(a.z, b.z);
+    }
+
     public static void Log(this GameObject gameObject, string message)
     {
         Debug.Log(message, gameObject);
+    }
+
+    public static bool SetEquals<T>(this HashSet<T> a, HashSet<T> b) where T : System.IEquatable<T>
+    {
+        if (a.Count != b.Count) return false;
+
+        foreach (var itemA in a)
+        {
+            var searchForItem = false;
+            foreach (var itemB in b)
+            {
+                if ((System.IEquatable<T>)(itemA)==(System.IEquatable<T>)itemB)
+                {
+                    searchForItem = true;
+                    break;
+                }
+                else
+                {
+                    searchForItem = false;
+                }
+            }
+            if (!searchForItem)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

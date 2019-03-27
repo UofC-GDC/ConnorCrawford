@@ -17,6 +17,8 @@ public class GetInputState : State
         RaycastHit2D hit2D;
         RaycastHit hit3D;
 
+        if (Camera.main == null) return new StartState();
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit3D)) ;
             //agent.SetDestination(hit3D.point);

@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class DarknessManager : Singleton<DarknessManager> 
 {
-    public enum FlashLightState
-    {
-        ground,
-        inHand,
-        blue
-    }
 
     [SerializeField] private Light              roomLight;
     [SerializeField] private ScreenSpaceShader  nightPallete;
+    [SerializeField] private ScreenSpaceShader  blueFlashlightEffect;
     [SerializeField] private GameObject         flashLightDark;
     [SerializeField] private GameObject         pureDark;
+    [SerializeField] private GameObject         flashLightUI;
+    [SerializeField] private GameObject         flashLightUIBlue;
+    [SerializeField] private GameObject         cursor;
     [SerializeField] private Door               door;
+    [SerializeField] private GameObject         doorLoc;
+    [SerializeField] private Animator           starsFullAnimator;
 
 
-                        public bool roomLightOn     = true;
+                        public bool roomLightOn         = true;
 
-    [HideInInspector]   public FlashLightState currentFlashLightState = FlashLightState.ground;
-    [HideInInspector]   public bool flashlightOn    = false;
-    [HideInInspector]   public bool flashlightBlue  = false;
+    /*[HideInInspector]*/   public bool flashlightInHand    = false;
+    /*[HideInInspector]*/   public bool flashlightPowered   = false;
+    /*[HideInInspector]*/   public bool flashlightBlue      = false;
 
-                        public bool day             = true;
-                        public bool doorOpen        = true;
+                        public bool day                 = true;
+                        public bool doorOpen            = true;
 
 
     private void Start()
@@ -59,23 +59,42 @@ public class DarknessManager : Singleton<DarknessManager>
     #region Flashlight Methods
     public void ResetFlashlight()
     {
-        currentFlashLightState = FlashLightState.ground;
-        flashlightOn    = false;
-        flashlightBlue  = false;
+        flashlightPowered   = false;
+        flashlightBlue      = false;
+        flashlightInHand    = false;
+
+        blueFlashlightEffect.enabled = false;
     }
 
-    public void PickupFlashlight()
+    public void PowerFlashlight()
     {
-        currentFlashLightState = FlashLightState.inHand;
-        flashlightOn    = true;
-        flashlightBlue  = false;
+        flashlightPowered = true;
+        if (!flashlightBlue)
+            Clock.Instance.SetClock(4);
     }
 
     public void BlueifyFlashlight()
     {
-        currentFlashLightState = FlashLightState.inHand;
-        flashlightOn    = true;
         flashlightBlue  = true;
+        Clock.Instance.SetClock(5);
+    }
+
+    public void PickupFlashlight()
+    {
+        flashlightInHand = true;
+
+        flashLightUI.transform.SetParent(cursor.transform, false);
+        flashLightUI.transform.localPosition = new Vector3(0, 0, .25f);
+
+        flashLightUIBlue.transform.SetParent(cursor.transform, false);
+        flashLightUIBlue.transform.localPosition = new Vector3(0,0,1);
+
+        flashLightDark.transform.SetParent(cursor.transform, false);
+        flashLightDark.transform.localPosition = new Vector3(-0.633f, -0.202f, 0);
+        flashLightDark.transform.localRotation = Quaternion.Euler(Vector3.zero);
+
+        if(!flashlightBlue && !flashlightPowered)
+            Clock.Instance.SetClock(3);
     }
     #endregion
 
@@ -116,27 +135,55 @@ public class DarknessManager : Singleton<DarknessManager>
     {
         if (!roomLightOn && !day && !doorOpen)
         {
-            if (flashlightOn)
-            {
-                flashLightDark.SetActive(true);
-            }
-            else
+            if (!flashlightPowered)
             {
                 pureDark.SetActive(true);
-                if (badBlackTimer <= 5f)
+                flashLightUI.SetActive(false);
+                flashLightUIBlue.SetActive(false);
+                if (badBlackTimer <= 10f)
                     badBlackTimer += Time.deltaTime;
                 else
                 {
                     runTheDoorCutscene = true;
                 }
             }
+            else 
+            {
+                flashLightDark.SetActive(true);
+                flashLightUI.SetActive(false);
+                flashLightUIBlue.SetActive(false);
+                if (flashlightBlue)
+                {
+                    blueFlashlightEffect.enabled = true;
+                }
+            }
+            starsFullAnimator.SetBool("FadeIn", true);
+            starsFullAnimator.SetBool("FadeOut", false);
         }
         else
         {
+            if (flashlightPowered)
+            {
+                flashLightUI.SetActive(true);
+                if (flashlightBlue)
+                {
+                    flashLightUIBlue.SetActive(true);
+                    flashLightUI.SetActive(false);
+                }
+            }
+            else
+            {
+                flashLightUI.SetActive(false);
+                flashLightUIBlue.SetActive(false);
+            }
+
             runTheDoorCutscene = false;
             badBlackTimer = 0;
             flashLightDark.SetActive(false);
             pureDark.SetActive(false);
+            starsFullAnimator.SetBool("FadeOut", true);
+            starsFullAnimator.SetBool("FadeIn", false);
+            blueFlashlightEffect.enabled = false;
         }
     }
 
@@ -144,7 +191,7 @@ public class DarknessManager : Singleton<DarknessManager>
     {
         CutScene c = (CutScene)ScriptableObject.CreateInstance(typeof(CutScene));
         var line1 = new CutScene.Line();
-        line1.arg = door.gameObject;
+        line1.arg = doorLoc;
         line1.verb = CutScene.Verb.WalkTo;
 
         var line2 = new CutScene.Line();

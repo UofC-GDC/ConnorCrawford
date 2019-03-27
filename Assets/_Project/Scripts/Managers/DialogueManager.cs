@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
-    [SerializeField] private GameObject speechBubble;
-    [SerializeField] private TextMeshPro speechBubbleText;
-    [SerializeField] private GameObject nextButton;
     [Tooltip("The number of frames to pause for after each character.")]
     [Range(0, 60)]
     [SerializeField] private int waitForFramesNumber;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AnimationCurve curve;
+    private float startPitch;
 
     private IEnumerator<string> lineEnumerator;
 
@@ -19,28 +19,40 @@ public class DialogueManager : Singleton<DialogueManager>
         private set;
     }
 
-    public void SetupLines(List<string> lines, TextMeshPro style)
+    private void Start()
+    {
+        startPitch = audioSource.pitch;
+    }
+
+    public void SetupLines(List<string> lines, GameObject speechBubble, TextMeshPro style, GameObject nextButton)
     {
         speechBubble.SetActive(true);
         StopAllCoroutines();
         lineEnumerator = lines.GetEnumerator();
         lineEnumerator.MoveNext();
+        this.speechBubble = speechBubble;
+        this.speechBubbleText = style;
+        this.nextButton = nextButton;
         PlayNextLine();
         doneLines = false;
     }
+
+    GameObject speechBubble;
+    TextMeshPro speechBubbleText;
+    GameObject nextButton;
 
     public void PlayNextLine()
     {
         //Debug.Log("Playing Next Line");
         if (lineEnumerator == null)
         {
-            ResetSpeechBubble();
+            ResetSpeechBubble(speechBubble, speechBubbleText);
             return;
         }
 
         if (lineEnumerator.Current == null)
         {
-            ResetSpeechBubble();
+            ResetSpeechBubble(speechBubble, speechBubbleText);
             return;
         }
 
@@ -50,12 +62,12 @@ public class DialogueManager : Singleton<DialogueManager>
             lineEnumerator.MoveNext();
             var moreLines = lineEnumerator.Current != null;
             nextButton.SetActive(moreLines);
-            PlayLine(lineToPlay, moreLines);
+            PlayLine(lineToPlay, moreLines, speechBubble, speechBubbleText);
             return;
         }
     }
 
-    private void ResetSpeechBubble()
+    private void ResetSpeechBubble(GameObject speechBubble, TextMeshPro speechBubbleText)
     {
         doneLines = true;
         lineEnumerator = null;
@@ -63,28 +75,67 @@ public class DialogueManager : Singleton<DialogueManager>
         speechBubble.SetActive(false);
     }
 
-    private void PlayLine(string line, bool moreLines)
+    private void PlayLine(string line, bool moreLines, GameObject speechBubble, TextMeshPro speechBubbleText)
     {
         StopAllCoroutines();
-        StartCoroutine(_PlayLine(line, moreLines));
+        StartCoroutine(_PlayLine(line, moreLines, speechBubble, speechBubbleText));
     }
 
-    private IEnumerator _PlayLine(string line, bool moreLines)
+    private IEnumerator _PlayLine(string line, bool moreLines, GameObject speechBubble, TextMeshPro speechBubbleText)
     {
         var text = "";
+        char lastChar = ' ';
         foreach (var character in line)
         {
+            #region Update Bubble
             text += character;
             speechBubbleText.text = text;
+            #endregion
+
+            #region Audio Playing
+            if (character.Equals('?') || character.Equals('!'))
+            {
+                audioSource.pitch = startPitch + curve.Evaluate(1) + .1f;
+                audioSource.Play();
+            }
+            else if (character.Equals(lastChar))
+            {
+                audioSource.Play();
+            }
+            else if (!System.Char.IsWhiteSpace(character))
+            {
+                audioSource.pitch = startPitch + curve.Evaluate(Random.value);
+                audioSource.Play();
+            }
+            #endregion
+
+            #region Waiting
             for (int i = 0; i < waitForFramesNumber; i++)
             {
                 yield return null;
             }
+            if (character.Equals(','))
+            {
+                for (int i = 0; i < waitForFramesNumber * 2; i++)
+                {
+                    yield return null;
+                }
+            }
+            if (character.Equals('.'))
+            {
+                for (int i = 0; i < waitForFramesNumber * 4; i++)
+                {
+                    yield return null;
+                }
+            }
+            #endregion
+
+            lastChar = character;
         }
         if (!moreLines)
         {
             yield return new WaitForSeconds(1.25f);
-            ResetSpeechBubble();
+            ResetSpeechBubble(speechBubble, speechBubbleText);
         }
     }
 }

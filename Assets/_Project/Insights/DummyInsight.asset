@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - insightOption:
-    - 
+    - You have hit a test insight
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

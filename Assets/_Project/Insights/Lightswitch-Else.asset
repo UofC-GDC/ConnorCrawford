@@ -15,4 +15,10 @@ MonoBehaviour:
   - insightOption:
     - "Ah, my good old\u2026"
     - '... lightswitch'
+  - insightOption:
+    - The switch of darkness
+  - insightOption:
+    - That's the light.
+    - Well, not the light, the lightswitch.
+    - The light is on the roof.
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

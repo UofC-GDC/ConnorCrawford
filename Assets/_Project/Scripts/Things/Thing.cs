@@ -17,7 +17,8 @@ abstract public class Thing : MonoBehaviour
 
     private void Awake()
     {
-        insightEnumerator = insight.text.GetEnumerator();
+        if (insight!=null)
+            insightEnumerator = insight.text.GetEnumerator();
     }
 
     public virtual void OnLeftClick()

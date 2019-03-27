@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: NightPallette
   m_Shader: {fileID: 4800000, guid: e0dc81e30124d204ca6eed62aa194424, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -74,8 +74,4 @@ Material:
     m_Colors:
     - _Color: {r: 0.6886792, g: 0.496352, b: 0.16567281, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-<<<<<<< HEAD
     - _Multiplier: {r: 0.6862745, g: 0.54901963, b: 0.81960785, a: 1}
-=======
-    - _Multiplier: {r: 0.6871768, g: 0.548878, b: 0.818, a: 0.67058825}
->>>>>>> e3e2d1ae6c35b07259e1f069db815269fab7f554

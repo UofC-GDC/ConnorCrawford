@@ -13,17 +13,17 @@ public class BlinkingLight : MonoBehaviour
     {
         frameCount++;   
 
-        if (frameCount % 3 != 0) return;
+        if (frameCount % 12 != 0) return;
 
         var rand = Random.value;
 
         switch (image.enabled)
         {
             case true:
-                if (rand < 0.75) image.enabled = false;
+                if (rand < 0.85) image.enabled = false;
                 break;
             case false:
-                if (rand > 0.75) image.enabled = true;
+                if (rand > 0.85) image.enabled = true;
                 break;
         }
 	}

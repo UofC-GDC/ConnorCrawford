@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f46cfa30198c9b43aae10092757d629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  insight: {fileID: 11400000, guid: d962346f92f6d1946b1611ec378dbfc8, type: 2}
   roomLight: {fileID: 0}
   animator: {fileID: 95662366209452386}
   lightSound: {fileID: 82456562949641490}

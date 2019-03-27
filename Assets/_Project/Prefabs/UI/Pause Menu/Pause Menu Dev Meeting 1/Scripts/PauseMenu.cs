@@ -17,8 +17,11 @@ public class PauseMenu : MonoBehaviour
     // Only have it here so I can make it appear/disapear when resuming/pausing
     [SerializeField] GameObject pauseClosingField;
 
+    bool cursorStatePrePause;
+
     public void Resume()
     {
+        UnityEngine.Cursor.visible = cursorStatePrePause;
         pauseMenu.SetActive(false);
         pauseClosingField.SetActive(false);
         pauseButton.SetActive(true);
@@ -28,6 +31,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        cursorStatePrePause = UnityEngine.Cursor.visible;
+        UnityEngine.Cursor.visible = true;
         pauseMenu.SetActive(true);
         pauseClosingField.SetActive(true);
         pauseButton.SetActive(false);

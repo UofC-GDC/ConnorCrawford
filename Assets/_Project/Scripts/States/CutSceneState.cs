@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CutSceneState : State
 {
-
     CutScene scene;
     IEnumerator<CutScene.Line> cutSceneEnumerator;
 
@@ -12,7 +11,6 @@ public class CutSceneState : State
     {
         scene = cutScene;
         cutSceneEnumerator = scene.script.GetEnumerator();
-        //cutSceneEnumerator.MoveNext();
     }
 
     public State DoAction(State prevState, StateManager.Env curr_env, ref StateManager.Env? new_env)
@@ -20,33 +18,41 @@ public class CutSceneState : State
         Debug.Log("Entering next Scene");
         if (cutSceneEnumerator.MoveNext())
         {
+            CutScene.Line currentLine = cutSceneEnumerator.Current;
             State next = new GetInputState();
-            var localEnv = curr_env;
+            StateManager.Env localEnv = curr_env;
+
             RaycastHit fake = new RaycastHit();
-            fake.point = cutSceneEnumerator.Current.arg.transform.position;
+            fake.point = currentLine.arg.transform.position;
             localEnv.hit3D = fake;
-            localEnv.target = cutSceneEnumerator.Current.arg.GetComponent<Thing>();
-            switch (cutSceneEnumerator.Current.verb)
+            localEnv.target = currentLine.arg.GetComponent<Thing>();
+
+            switch (currentLine.verb)
             {
                 case CutScene.Verb.WalkTo:
                     next = new WalkingState();
+                    localEnv.rightClicked = false;
+                    localEnv.leftClicked = false;
                     break;
                 case CutScene.Verb.DisplayInsight:
-                    next = new DisplayInsight();
+                    next = new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, null, StateManager.Instance.connerTextMesh);
+                    localEnv.rightClicked = false;
+                    localEnv.leftClicked = true;
                     break;
                 case CutScene.Verb.DoAction:
                     next = new DoInteractionState();
+                    localEnv.rightClicked = true;
+                    localEnv.leftClicked = false;
                     break;
             }
 
-           // cutSceneEnumerator.MoveNext();
             new_env = localEnv;
-            Debug.Log("Next is: " + next);
+            Debug.Log("The next state is: " + next);
             return next;
         }
         else
         {
-            Debug.Log("Cutscene Over");
+            Debug.Log("Cutscene Over.");
             return new GetInputState();
         }
     }

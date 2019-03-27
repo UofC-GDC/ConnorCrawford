@@ -214,7 +214,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 12
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
     spaceCount: 2
     wordCount: 3
     linkCount: 0
-    lineCount: 3
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -516,7 +516,8 @@ AudioSource:
   m_GameObject: {fileID: 992718607}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243039177569205858, guid: afde001d1de64b24098b995de63c9b22,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: bcdd75338d002034db8e2afd9f6c754e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -611,7 +612,8 @@ AudioSource:
   m_GameObject: {fileID: 992718607}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243277688747070386, guid: afde001d1de64b24098b995de63c9b22,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 09c02c31c78a6b541aa78a93e9ae27ca, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
