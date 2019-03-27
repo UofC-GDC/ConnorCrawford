@@ -12,6 +12,8 @@ public class Manual : Thing
 
     public override State Action(StateManager.Env env, ref Player player)
     {
+        if (DarknessManager.Instance.flashlightPowered && DarknessManager.Instance.flashlightInHand && DarknessManager.Instance.flashlightBlue)
+            Clock.Instance.SetClock(6);
         return new DisplayInsight(speechBubble, nextButton, manualTarget, textMesh);
     }
 }

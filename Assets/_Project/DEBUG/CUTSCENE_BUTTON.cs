@@ -10,6 +10,7 @@ public class CUTSCENE_BUTTON : Thing
     [SerializeField] private GameObject doorPos;
     [SerializeField] private GameObject fadeInPanel;
     [SerializeField] private GameObject fadeOutPanel;
+    [SerializeField] private GameObject clockSetter;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -20,6 +21,12 @@ public class CUTSCENE_BUTTON : Thing
     {
         CutScene cutscene = (CutScene) ScriptableObject.CreateInstance(typeof(CutScene));
         List<CutScene.Line> cutsceneScript = new List<CutScene.Line>();
+
+        CutScene.Line line0 = new CutScene.Line();
+        line0.arg = clockSetter;
+        line0.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line0);
 
         CutScene.Line line1 = new CutScene.Line();
         line1.arg = target;

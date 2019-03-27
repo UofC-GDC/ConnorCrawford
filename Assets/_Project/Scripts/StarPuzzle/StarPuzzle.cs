@@ -117,6 +117,7 @@ public class StarPuzzle : MonoBehaviour
 
         if (puzzle2Done)
         {
+            Clock.Instance.SetClock(7);
             StarExitButton.Instance.DisableStarPuzzle();
         }
         else

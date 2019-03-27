@@ -5,6 +5,8 @@ using UnityEngine;
 public class Clock : Singleton<Clock>
 {
     #region Setup
+    [SerializeField] private int startInState = 1;
+
     [SerializeField] private int waitForFramesSpin = 5;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -14,6 +16,7 @@ public class Clock : Singleton<Clock>
     private void Start()
     {
         clockSprites = Resources.LoadAll<Sprite>("clock");
+        SetClock(startInState);
     }
     #endregion
 
