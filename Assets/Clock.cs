@@ -5,10 +5,11 @@ using UnityEngine;
 public class Clock : Singleton<Clock>
 {
     #region Setup
-    [SerializeField] private int startInState = 1;
+    [SerializeField] private int startInState = 2;
 
     [SerializeField] private int waitForFramesSpin = 5;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private AudioSource audioSource;
 
     private int currentClockIndex = 0;
     private Sprite[] clockSprites;
@@ -17,6 +18,7 @@ public class Clock : Singleton<Clock>
     {
         clockSprites = Resources.LoadAll<Sprite>("clock");
         SetClock(startInState);
+        audioSource.loop = true;
     }
     #endregion
 
@@ -42,16 +44,17 @@ public class Clock : Singleton<Clock>
         {5, new System.Tuple<int, int>(12+6, 15)},
         {6, new System.Tuple<int, int>(12+6, 30)},
         {7, new System.Tuple<int, int>(12+7, 15)},
-        {8, new System.Tuple<int, int>(8, 45)},
-        {9, new System.Tuple<int, int>(9, 00)},
-        {10, new System.Tuple<int, int>(9, 15)},
-        {11, new System.Tuple<int, int>(11, 30)},
-        {12, new System.Tuple<int, int>(12+1, 15)},
-        {13, new System.Tuple<int, int>(12+3, 45)},
-        {14, new System.Tuple<int, int>(12+4, 00)},
-        {15, new System.Tuple<int, int>(12+4, 15)},
-        {16, new System.Tuple<int, int>(4, 30)},
-        {17, new System.Tuple<int, int>(7, 30)}
+        {8, new System.Tuple<int, int>(12+8, 00)},
+        {9, new System.Tuple<int, int>(8, 45)},
+        {10, new System.Tuple<int, int>(9, 00)},
+        {11, new System.Tuple<int, int>(9, 15)},
+        {12, new System.Tuple<int, int>(11, 30)},
+        {13, new System.Tuple<int, int>(12+1, 15)},
+        {14, new System.Tuple<int, int>(12+3, 45)},
+        {15, new System.Tuple<int, int>(12+4, 00)},
+        {16, new System.Tuple<int, int>(12+4, 15)},
+        {17, new System.Tuple<int, int>(4, 30)},
+        {18, new System.Tuple<int, int>(7, 30)},
     };
     #endregion
 
@@ -66,6 +69,9 @@ public class Clock : Singleton<Clock>
 
     private IEnumerator SpinToIndex(int indexToSpinTo)
     {
+        if (!audioSource.isPlaying)
+            audioSource.Play();
+
         if (indexToSpinTo < currentClockIndex)
         {
             yield return StartCoroutine(SpinToIndex(clockSprites.Length -1));
@@ -76,8 +82,10 @@ public class Clock : Singleton<Clock>
             }
             spriteRenderer.sprite = clockSprites[currentClockIndex = 0];
         }
-        else if (indexToSpinTo == currentClockIndex)
+        else if (indexToSpinTo == currentClockIndex) {
+            audioSource.Stop();
             yield break;
+        }
 
         while (currentClockIndex < indexToSpinTo)
         {
@@ -88,6 +96,7 @@ public class Clock : Singleton<Clock>
                 yield return null;
             }
         }
+        audioSource.Stop();
     }
     #endregion
 
