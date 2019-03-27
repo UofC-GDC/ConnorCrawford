@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RadioInteract : RotateBase 
+public class RadioInteract : RotateBase
 {
     private bool battery = false;
 
-    public override void interactRight(StateManager.Env env, ref Player player)
+    public override void interact(StateManager.Env env, ref Player player)
     {
         if (!battery)
         {
