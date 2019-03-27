@@ -4,36 +4,70 @@ using UnityEngine;
 
 public class CUTSCENE_BUTTON : Thing 
 {
+    [SerializeField] private GameObject target;
+    [SerializeField] private GameObject loc2;
     [SerializeField] private GameObject door;
+    [SerializeField] private GameObject doorPos;
+    [SerializeField] private GameObject fadeInPanel;
+    [SerializeField] private GameObject fadeOutPanel;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        StarExitButton.Instance.ActivateStarPuzzle();
-        return null;
-        //return DoorCutscene();
+        return Cutscene();
     }
 
-    public State DoorCutscene()
+    public State Cutscene()
     {
-        CutScene c = (CutScene)ScriptableObject.CreateInstance(typeof(CutScene));
+        CutScene cutscene = (CutScene) ScriptableObject.CreateInstance(typeof(CutScene));
+        List<CutScene.Line> cutsceneScript = new List<CutScene.Line>();
 
-        var line1 = new CutScene.Line();
-        line1.arg = door.gameObject;
+        CutScene.Line line1 = new CutScene.Line();
+        line1.arg = target;
         line1.verb = CutScene.Verb.WalkTo;
 
+        cutsceneScript.Add(line1);
+
+        CutScene.Line line1andAHalf = new CutScene.Line();
+        line1andAHalf.arg = loc2;
+        line1andAHalf.verb = CutScene.Verb.WalkTo;
+
+        cutsceneScript.Add(line1andAHalf);
+
         var line2 = new CutScene.Line();
-        line2.arg = door.gameObject;
+        line2.arg = target;
         line2.verb = CutScene.Verb.DisplayInsight;
 
-        var line3 = new CutScene.Line();
-        line3.arg = door.gameObject;
+        for (int i = 0; i < 7; i++)
+        {
+            cutsceneScript.Add(line2);
+        }
+
+        CutScene.Line line3 = new CutScene.Line();
+        line3.arg = fadeInPanel;
         line3.verb = CutScene.Verb.DoAction;
 
-        c.script = new List<CutScene.Line>();
-        c.script.Add(line3);
-        c.script.Add(line1);
-        //c.script.Add(line2);
+        cutsceneScript.Add(line3);
 
-        return c.MakeState();
+        CutScene.Line line4 = new CutScene.Line();
+        line4.arg = doorPos;
+        line4.verb = CutScene.Verb.WalkTo;
+
+        cutsceneScript.Add(line4);
+
+        CutScene.Line line5 = new CutScene.Line();
+        line5.arg = door;
+        line5.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line5);
+
+        CutScene.Line line6 = new CutScene.Line();
+        line6.arg = fadeOutPanel;
+        line6.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line6);
+
+        cutscene.script = cutsceneScript;
+
+        return cutscene.MakeState();
     }
 }
