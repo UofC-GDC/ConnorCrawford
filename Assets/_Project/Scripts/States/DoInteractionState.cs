@@ -10,7 +10,15 @@ public class DoInteractionState : State
 
         new_env = curr_env;
 
-        if (maybeState != null) return maybeState;
-        else return StateManager.controller;
+        if (maybeState != null)
+        {
+            //Debug.Log("Returning " + maybeState);
+            return maybeState;
+        }
+        else
+        {
+            //Debug.Log("returning default");
+            return StateManager.controller;
+        }
     }
 }
