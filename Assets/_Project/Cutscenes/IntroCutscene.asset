@@ -16,5 +16,3 @@ MonoBehaviour:
     arg: {fileID: 1170414466428402, guid: 8c359e2bebf442540870dbfafc648756, type: 2}
   - verb: 1
     arg: {fileID: 1170414466428402, guid: 8c359e2bebf442540870dbfafc648756, type: 2}
-  - verb: 1
-    arg: {fileID: 1170414466428402, guid: 8c359e2bebf442540870dbfafc648756, type: 2}

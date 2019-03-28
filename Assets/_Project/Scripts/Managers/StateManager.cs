@@ -18,6 +18,8 @@ public class StateManager : Singleton<StateManager>
     public GameObject connerSpeechBubble;
     public GameObject connerNextButton;
     public TextMeshPro connerTextMesh;
+    public AudioSource connerAudioSource;
+    public AnimationCurve connerAudioCurve;
 
 #if SM_DEBUG
     public CutScene testScene;
@@ -71,6 +73,14 @@ public class StateManager : Singleton<StateManager>
 		public RaycastHit2D hit;
         public RaycastHit hit3D;
         public readonly NavMeshAgent agent;
-	}
+
+        public override string ToString()
+        {
+            return
+                "rightClick=" + rightClicked + " " +
+                "leftClick=" + leftClicked;
+
+        }
+    }
 
 }

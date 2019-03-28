@@ -117,10 +117,12 @@ public class StarPuzzle : MonoBehaviour
 
         if (puzzle2Done)
         {
+            Clock.Instance.SetClock(8);
             StarExitButton.Instance.DisableStarPuzzle();
         }
         else
         {
+            Clock.Instance.SetClock(7);
             fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
         }
 
