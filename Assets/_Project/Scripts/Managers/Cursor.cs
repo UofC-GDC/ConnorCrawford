@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DarknessManager.cs;
 
 public class Cursor : Singleton<Cursor> 
 {
@@ -11,6 +12,8 @@ public class Cursor : Singleton<Cursor>
 
     [SerializeField] private Sprite cursorNoInv;
     [SerializeField] private Sprite cursorInv;
+    [SerializeField] private Sprite diamondCursorNoInv;
+    [SerializeField] private Sprite diamondCursorInv;
 
     private void Start()
     {
@@ -31,11 +34,17 @@ public class Cursor : Singleton<Cursor>
 
         if (StateManager.Instance.env.player.inventory == null)
         {
-            image.sprite = cursorNoInv;
+            if (flashlightBlue)
+                image.sprite = diamondCursorNoInv;
+            else 
+                image.sprite = cursorNoInv;
         }
         else
         {
-            image.sprite = cursorInv;
+            if (flashlightBlue)
+                image.sprite = diamondCursorInv;
+            else 
+                image.sprite = cursorInv;
         }
     }
 }
