@@ -35,7 +35,7 @@ public class CutSceneState : State
                     localEnv.leftClicked = false;
                     break;
                 case CutScene.Verb.DisplayInsight:
-                    next = new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, null, StateManager.Instance.connerTextMesh);
+                    next = new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, null, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
                     localEnv.rightClicked = false;
                     localEnv.leftClicked = true;
                     break;
