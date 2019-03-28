@@ -341,6 +341,31 @@ MonoBehaviour:
   connerSpeechBubble: {fileID: 1643749530}
   connerNextButton: {fileID: 2130016139}
   connerTextMesh: {fileID: 1718918316}
+  connerAudioSource: {fileID: 598451137}
+  connerAudioCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &18190605
 Transform:
   m_ObjectHideFlags: 0
@@ -367,40 +392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitForFramesNumber: 5
-  audioSource: {fileID: 598451137}
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 0.25
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.39999998
-    - serializedVersion: 3
-      time: 1
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &18190607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7732,6 +7723,13 @@ MonoBehaviour:
   nextButton: {fileID: 477938500}
   textMesh: {fileID: 1687883497}
   manualTarget: {fileID: 187191849}
+  audioSource: {fileID: 0}
+  animationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1030462212
 Prefab:
   m_ObjectHideFlags: 0
@@ -8661,6 +8659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a053b3bb8c5222b45a9d86182a8ead40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateAxis: {x: 0, y: 1, z: 0}
   rotateSpeed: 400
 --- !u!4 &1143608147 stripped
 Transform:
