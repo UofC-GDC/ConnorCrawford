@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 
-public class RotateBase : Interatable3D {
+public class RotateBase : Interatable3D
+{
 
+	public Vector3 rotateAxis = Vector3.up;
 	public float rotateSpeed = 400;
 	private float mouseX;
 
-	public override void interactLeft(StateManager.Env env, ref Player player) {
+	public override void interact(StateManager.Env env, ref Player player) {
 		float delta = mouseX - Input.mousePosition.x;
 		float modifier = rotateSpeed / Screen.height;//Not a typo, screen HEIGHT
-		transform.Rotate(0, delta * modifier, 0);
+		transform.RotateAround(transform.position, transform.TransformDirection(rotateAxis), delta * modifier);
 		mouseX = Input.mousePosition.x;
 	}
 
-    protected override void interactStart() {
+	protected override void interactStart() {
 		mouseX = Input.mousePosition.x;
 	}
 }
