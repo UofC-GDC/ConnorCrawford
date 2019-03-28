@@ -71,6 +71,14 @@ public class StateManager : Singleton<StateManager>
 		public RaycastHit2D hit;
         public RaycastHit hit3D;
         public readonly NavMeshAgent agent;
-	}
+
+        public override string ToString()
+        {
+            return
+                "rightClick=" + rightClicked + " " +
+                "leftClick=" + leftClicked;
+
+        }
+    }
 
 }

@@ -19,6 +19,8 @@ public class TimeMachine : Thing
 
     public override State Action(StateManager.Env env, ref Player player)
     {
+        print(env);
+        print(Input.GetMouseButton(1));
         if (!open)
         {
             lidAnimator.SetTrigger("Open");
@@ -30,14 +32,14 @@ public class TimeMachine : Thing
         {
             //unlocked = true;
             //return null;
-            if (heldTime >= 3f && heldTime <= 4f && !Input.GetMouseButtonDown(1))
+            if (heldTime >= 3f && heldTime <= 4f && !Input.GetMouseButton(1))
             {
                 //Unlock Time Machine
                 Debug.Log("TIME MACHINE UNLOCKED!");
                 unlocked = true;
                 return null;
             }
-            else if (Input.GetMouseButtonDown(1))
+            else if (Input.GetMouseButton(1))
             {
                 heldTime += Time.deltaTime;
                 return new DoInteractionState();
@@ -45,8 +47,8 @@ public class TimeMachine : Thing
             else
             {
                 heldTime = 0;
-                //return base.Action(env, ref player);
-                return new DoInteractionState();
+                return base.Action(env, ref player);
+                //return new DoInteractionState();
             }
         }
         else if (readyToTimeTravel)
