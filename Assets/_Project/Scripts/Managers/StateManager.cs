@@ -18,6 +18,8 @@ public class StateManager : Singleton<StateManager>
     public GameObject connerSpeechBubble;
     public GameObject connerNextButton;
     public TextMeshPro connerTextMesh;
+    public AudioSource connerAudioSource;
+    public AnimationCurve connerAudioCurve;
 
 #if SM_DEBUG
     public CutScene testScene;

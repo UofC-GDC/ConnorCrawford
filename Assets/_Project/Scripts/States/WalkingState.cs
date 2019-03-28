@@ -25,7 +25,7 @@ public class WalkingState : State
                 // Do a thing
                 if (curr_env.leftClicked)
                 {
-                    return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, null, StateManager.Instance.connerTextMesh);
+                    return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, null, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
                 }
 
                 if (curr_env.rightClicked)

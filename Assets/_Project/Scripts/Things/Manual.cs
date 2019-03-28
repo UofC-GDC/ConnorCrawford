@@ -9,11 +9,14 @@ public class Manual : Thing
     [SerializeField] private GameObject nextButton;
     [SerializeField] private TextMeshPro textMesh;
     [SerializeField] private Thing manualTarget;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AnimationCurve animationCurve;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
         if (DarknessManager.Instance.flashlightPowered && DarknessManager.Instance.flashlightInHand && DarknessManager.Instance.flashlightBlue)
             Clock.Instance.SetClock(6);
-        return new DisplayInsight(speechBubble, nextButton, manualTarget, textMesh);
+
+        return new DisplayInsight(speechBubble, nextButton, manualTarget, textMesh, audioSource, animationCurve);
     }
 }

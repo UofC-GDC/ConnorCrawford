@@ -9,13 +9,18 @@ public class DisplayInsight : State
     GameObject nextButton;
     Thing target;
     TextMeshPro textMesh;
+    AudioSource audioSource;
+    AnimationCurve curve;
 
-    public DisplayInsight(GameObject speechBubble, GameObject nextButton, Thing newTarget, TextMeshPro textMesh)
+
+    public DisplayInsight(GameObject speechBubble, GameObject nextButton, Thing newTarget, TextMeshPro textMesh, AudioSource audioSource, AnimationCurve curve)
     {
         this.target = newTarget;
         this.speechBubble = speechBubble;
         this.nextButton = nextButton;
         this.textMesh = textMesh;
+        this.audioSource = audioSource;
+        this.curve = curve;
     }
 
     InsightOption option;
@@ -36,9 +41,9 @@ public class DisplayInsight : State
             if (option != null)
             {
                 if (target == null)
-                    DialogueManager.Instance.SetupLines(option.insightOption, speechBubble, textMesh, nextButton);
+                    DialogueManager.Instance.SetupLines(option.insightOption, speechBubble, textMesh, nextButton, audioSource, curve);
                 else
-                    DialogueManager.Instance.SetupLines(option.insightOption, speechBubble, textMesh, nextButton);
+                    DialogueManager.Instance.SetupLines(option.insightOption, speechBubble, textMesh, nextButton, audioSource, curve);
             }
         }
 

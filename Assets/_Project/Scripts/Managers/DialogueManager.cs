@@ -8,8 +8,8 @@ public class DialogueManager : Singleton<DialogueManager>
     [Tooltip("The number of frames to pause for after each character.")]
     [Range(0, 60)]
     [SerializeField] private int waitForFramesNumber;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AnimationCurve curve;
+    private AudioSource audioSource;
+    private AnimationCurve curve;
     private float startPitch;
 
     private IEnumerator<string> lineEnumerator;
@@ -19,12 +19,7 @@ public class DialogueManager : Singleton<DialogueManager>
         private set;
     }
 
-    private void Start()
-    {
-        startPitch = audioSource.pitch;
-    }
-
-    public void SetupLines(List<string> lines, GameObject speechBubble, TextMeshPro style, GameObject nextButton)
+    public void SetupLines(List<string> lines, GameObject speechBubble, TextMeshPro style, GameObject nextButton, AudioSource audioSource, AnimationCurve curve)
     {
         speechBubble.SetActive(true);
         StopAllCoroutines();
@@ -35,6 +30,10 @@ public class DialogueManager : Singleton<DialogueManager>
         this.nextButton = nextButton;
         PlayNextLine();
         doneLines = false;
+
+        startPitch = audioSource.pitch;
+        this.audioSource = audioSource;
+        this.curve = curve;
     }
 
     GameObject speechBubble;
