@@ -20,9 +20,9 @@ public class DarknessManager : Singleton<DarknessManager>
 
                         public bool roomLightOn         = true;
 
-    /*[HideInInspector]*/   public bool flashlightInHand    = false;
-    /*[HideInInspector]*/   public bool flashlightPowered   = false;
-    /*[HideInInspector]*/   public bool flashlightBlue      = false;
+    [HideInInspector]   public bool flashlightInHand    = false;
+    [HideInInspector]   public bool flashlightPowered   = false;
+    [HideInInspector]   public bool flashlightBlue      = false;
 
                         public bool day                 = true;
                         public bool doorOpen            = true;
