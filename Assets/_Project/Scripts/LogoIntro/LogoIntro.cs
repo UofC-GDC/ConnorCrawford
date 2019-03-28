@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class LogoIntro : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSource logoAudio;
     [SerializeField] private Animator panelAnimator;
     [SerializeField] private Animator logoAnimator;
@@ -12,7 +11,6 @@ public class LogoIntro : MonoBehaviour
     void Start ()
     {
         DontDestroyOnLoad(this.gameObject);
-        audioSource.Play();
         StartCoroutine(Intro());
     }
 
