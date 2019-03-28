@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RadioInteract : RotateBase
+public class RadioInteract : Interatable3D
 {
     private bool battery = false;
 

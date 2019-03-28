@@ -25,8 +25,7 @@ public class Viewer3D : MonoBehaviour {
 			Deactivate();
 			Activate(gameObject);
 		}
-		bool mouseDown = Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1);
-		if (mouseDown) {
+		if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) {
 			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			Physics.Raycast(ray, out hit);
@@ -44,7 +43,7 @@ public class Viewer3D : MonoBehaviour {
 			}
 		}
 		if(mouseOver != null){
-			if(mouseOver.interaction && mouseDown) {
+			if(mouseOver.interaction && Input.GetMouseButton(0) || Input.GetMouseButton(1)) {
 				mouseOver.interact(env, ref player);
 			} else {
 				mouseOver.interaction = false;
