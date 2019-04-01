@@ -414,8 +414,8 @@ MonoBehaviour:
   door: {fileID: 333565157}
   doorLoc: {fileID: 1937628312}
   starsFullAnimator: {fileID: 1735054141}
-  daytimeSound: {fileID: 0}
-  nighttimeSound: {fileID: 0}
+  daytimeSound: {fileID: 1981291642}
+  nighttimeSound: {fileID: 1247276635}
   roomLightOn: 1
   flashlightInHand: 0
   flashlightPowered: 0
@@ -8659,8 +8659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a053b3bb8c5222b45a9d86182a8ead40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateAxis: {x: 0, y: 1, z: 0}
-  rotateSpeed: 400
 --- !u!4 &1143608147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4354282873236312, guid: 9cdc8284d2dfe884ca33803ccd50792b,
