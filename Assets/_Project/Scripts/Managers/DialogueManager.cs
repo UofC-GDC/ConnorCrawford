@@ -28,19 +28,19 @@ public class DialogueManager : Singleton<DialogueManager>
         this.speechBubble = speechBubble;
         this.speechBubbleText = style;
         this.nextButton = nextButton;
-        PlayNextLine();
-        doneLines = false;
-
         startPitch = audioSource.pitch;
         this.audioSource = audioSource;
         this.curve = curve;
+        doneLines = false;
+
+        PlayNextLine();
     }
 
     GameObject speechBubble;
     TextMeshPro speechBubbleText;
     GameObject nextButton;
 
-    public void PlayNextLine()
+    private void PlayNextLine()
     {
         //Debug.Log("Playing Next Line");
         if (lineEnumerator == null)
