@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 66b5409eb389ca947b727dfe982e1236
+guid: 541c7cec669f43240a8989edcc2878b2
 TextureImporter:
   fileIDToRecycleName:
     21300000: Cursor_0
     21300002: Cursor_1
-    21300004: diamondCursor_0
-    21300006: diamondCursor_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -121,41 +119,41 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: diamondCursor_0
+      name: Cursor_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 11
-        width: 55
-        height: 56
+        x: 19
+        y: 15
+        width: 53
+        height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56bccd0672c0aa54f92610ea0c9593c5
+      spriteID: bbb90cc4c87b6e04ea21e23ef8d58c7f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: diamondCursor_1
+      name: Cursor_1
       rect:
         serializedVersion: 2
-        x: 86
-        y: 13
-        width: 55
-        height: 56
+        x: 88
+        y: 15
+        width: 51
+        height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fd7bdfc110a1f24b97cc29787d2b3b1
+      spriteID: 03ebc71ce1fbdb64aa1680bce3a3651a
       vertices: []
       indices: 
       edges: []

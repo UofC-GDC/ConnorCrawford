@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DarknessManager.cs;
 
 public class Cursor : Singleton<Cursor> 
 {
@@ -34,14 +33,14 @@ public class Cursor : Singleton<Cursor>
 
         if (StateManager.Instance.env.player.inventory == null)
         {
-            if (flashlightBlue)
+            if (DarknessManager.Instance.flashlightBlue)
                 image.sprite = diamondCursorNoInv;
             else 
                 image.sprite = cursorNoInv;
         }
         else
         {
-            if (flashlightBlue)
+            if (DarknessManager.Instance.flashlightBlue)
                 image.sprite = diamondCursorInv;
             else 
                 image.sprite = cursorInv;
