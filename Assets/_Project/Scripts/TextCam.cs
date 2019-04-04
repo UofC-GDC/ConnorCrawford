@@ -11,15 +11,16 @@ public class TextCam : MonoBehaviour
     int wait = 0;
 	private void Update () 
     {
-        if (wait == 0)
+        if (wait != 5)
         {
             wait++;
         }
         else { 
             cam.gameObject.SetActive(true);
-            cam.orthographicSize = mainCam.orthographicSize;
             UnityEngine.Cursor.visible = false;
             enabled = false;
         }
+
+        cam.orthographicSize = mainCam.orthographicSize;
     }
 }
