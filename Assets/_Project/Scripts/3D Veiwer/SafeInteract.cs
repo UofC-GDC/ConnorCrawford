@@ -15,12 +15,12 @@ public class SafeInteract : Interatable3D {
 			{ 144, 'g'}, { 168, 'h' }, { 192, 'i' },
 			{ 216, 'j'}, { 240, 'k' }, { 264, 'l' },
 			{ 288, 'm'}, { 312, 'n' }, { 336, 'o' }
-        };;
+        };
 
 	//Not sure if this is right (what am I doing)
-	protected override void interact(StateManager.Env env, ref Player player){
+	public override void interact(StateManager.Env env, ref Player player){
 		float delta = mouseY - Input.mousePosition.y;
-		float modifier = rotateSpeed / Screen.length; 
+		float modifier = rotateSpeed / Screen.width; 
 		transform.RotateAround(transform.position, transform.TransformDirection(rotateAxis), delta * modifier);
 		updateFields();
 	}
@@ -40,6 +40,6 @@ public class SafeInteract : Interatable3D {
 		//and measured from positive y-axis instead of x-axis
 		float realtiveY = Input.mousePosition.y/Screen.height - 0.5f;
 		float relativeX = Input.mousePosition.x/Screen.width - 0.5f;
-		angle = Mathf.Atan2(realtiveY, relativeX) + Mathf.pi/2; // in radians
+		angle = Mathf.Atan2(realtiveY, relativeX) + Mathf.PI/2;  //in radians.
 	}
 }
