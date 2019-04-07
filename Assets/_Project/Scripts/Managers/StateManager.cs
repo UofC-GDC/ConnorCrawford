@@ -14,6 +14,8 @@ using TMPro;
 public class StateManager : Singleton<StateManager>
 {
 
+    public bool completeDarkness = false;
+
     public NavMeshAgent agent;
     public GameObject connerSpeechBubble;
     public GameObject connerNextButton;
@@ -54,14 +56,32 @@ public class StateManager : Singleton<StateManager>
 
 	private void Update()
 	{
-		var prev = previousSate;
+        if (completeDarkness)
+        {
+            var env2 = env;
+            env2.leftClicked = false;
+            env = env2;
+        }
+        var prev = previousSate;
 		previousSate = currentState;
 		Env? next = null;
-		currentState = currentState.DoAction(prev, env, ref next); // State Transition
+        if (completeDarkness)
+        {
+            var env2 = env;
+            env2.leftClicked = false;
+            env = env2;
+        }
+        currentState = currentState.DoAction(prev, env, ref next); // State Transition
         var type = currentState.GetType();
         if (type == typeof(GetInputState) || type == typeof(CutSceneState)) controller = currentState;
 		env = next ?? env;
-	}
+        if (completeDarkness)
+        {
+            var env2 = env;
+            env2.leftClicked = false;
+            env = env2;
+        }
+    }
 
 	// The Game State
 	public struct Env

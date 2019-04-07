@@ -190,6 +190,7 @@ public class DarknessManager : Singleton<DarknessManager>
     {
         if (!roomLightOn && !day && !doorOpen)
         {
+            StateManager.Instance.completeDarkness = true;
             if (!flashlightPowered)
             {
                 pureDark.SetActive(true);
@@ -217,6 +218,7 @@ public class DarknessManager : Singleton<DarknessManager>
         }
         else
         {
+            StateManager.Instance.completeDarkness = false;
             if (flashlightPowered)
             {
                 flashLightUI.SetActive(true);
