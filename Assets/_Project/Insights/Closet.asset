@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - insightOption:
-    - My clothes and rock collection are in here
+    - Wow, there's a ton of stuff in here. I should take a look around.
   - insightOption:
     - I come here to get dressed every morning
   - insightOption:

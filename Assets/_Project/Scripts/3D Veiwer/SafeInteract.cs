@@ -19,10 +19,11 @@ public class SafeInteract : Interatable3D
 
 	public override void interact(StateManager.Env env, ref Player player)
     {
-		float delta = mouseY - Input.mousePosition.y;
-		float modifier = rotateSpeed / Screen.width; 
-		transform.RotateAround(transform.position, transform.TransformDirection(rotateAxis), delta * modifier);
-		UpdateFields();
+        float delta = mouseY - Input.mousePosition.y;
+		float modifier = rotateSpeed / Screen.width;
+        UpdateFields();
+        //transform.RotateAround(transform.position, transform.TransformDirection(rotateAxis), delta * modifier);
+        transform.Rotate(Vector3.right, delta * angle);
 	}
 	
 	protected override void interactStart()
@@ -45,4 +46,8 @@ public class SafeInteract : Interatable3D
 		float relativeX = Input.mousePosition.x/Screen.width - 0.5f;
 		angle = Mathf.Atan2(realtiveY, relativeX) + Mathf.PI/2;  //in radians.
 	}
+
+    #region Nothing to see here
+    private void Start(){}
+    #endregion
 }

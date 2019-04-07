@@ -13,6 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - insightOption:
+    - 'How does time travel work here? '
+    - Is it more like Back to the Future
+    - or more like Ocarina of Time?
+  - insightOption:
     - "It\u2019s like a big old pot"
   - insightOption:
     - I wonder how it works
@@ -24,7 +28,10 @@ MonoBehaviour:
     - "Just what I\u2019ve always wanted"
     - A. Uhhhh. What is this thing?
   - insightOption:
-    - 'How does time travel work here? '
-    - Is it more like Back to the Future
-    - 'or more like Ocarina of Time?  '
+    - 'How much would this sell for?  '
+  - insightOption:
+    - Can this double as a submarine?
+    - If only I had 14 people to help me carry this.
+  - insightOption:
+    - 'If this ever stops working I could always use it as a storage space.  '
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

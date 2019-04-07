@@ -32,4 +32,9 @@ MonoBehaviour:
     - Pascal is my fish.
   - insightOption:
     - Just keep swimming
+  - insightOption:
+    - This gold fish isn't even gold!
+    - I hope I didn't hurt his feelings...
+  - insightOption:
+    - I wish I could travel to the future to see how big you'd get!
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

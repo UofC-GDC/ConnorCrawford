@@ -16,4 +16,14 @@ MonoBehaviour:
     - 'These books are too scary for me! - '
     - Is what a baby would say-
     - 'I read cool books. '
+  - insightOption:
+    - Why is every book a New York Times Bestseller?
+  - insightOption:
+    - Why is every book a New York Times Bestseller?
+  - insightOption:
+    - I've got books about math, encyclopedias about baseball,
+    - but nothing about time travel!
+  - insightOption:
+    - I've got books about math, encyclopedias about baseball,
+    - but nothing about time travel!
   style: {fileID: 0}

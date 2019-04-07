@@ -7,20 +7,29 @@ public class TextCam : MonoBehaviour
     [SerializeField] private Camera cam;
 
     [SerializeField] private Camera mainCam;
-	
-    int wait = 0;
-	private void Update () 
-    {
-        if (wait != 5)
-        {
-            wait++;
-        }
-        else { 
-            cam.gameObject.SetActive(true);
-            UnityEngine.Cursor.visible = false;
-            enabled = false;
-        }
 
+    private void OnEnable()
+    {
+        StartCoroutine(TheFunction());
+    }
+
+    private IEnumerator TheFunction()
+    {
+        cam.gameObject.SetActive(true);
+        for (int i = 0; i < 5f; i++)
+        {
+            cam.orthographicSize = mainCam.orthographicSize;
+            yield return null;
+        }
+        cam.gameObject.SetActive(false);
+        yield return null;
+        cam.gameObject.SetActive(true);
+        UnityEngine.Cursor.visible = false;
+        cam.orthographicSize = mainCam.orthographicSize;
+    }
+
+    private void LateUpdate()
+    {
         cam.orthographicSize = mainCam.orthographicSize;
     }
 }

@@ -14,4 +14,9 @@ public class RadioInteract : Interatable3D
             player.inventory = gameObject.AddComponent<Battery>();
         }
     }
+
+    private void Start()
+    {
+        
+    }
 }

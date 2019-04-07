@@ -9,9 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
-  m_Name: Carpet
+  m_Name: Carpet-PostTT
   m_EditorClassIdentifier: 
   text:
+  - insightOption:
+    - 'So time travel is possible. Next thing you know, this carpet will fly! '
   - insightOption:
     - Fuzzy on my feet
   - insightOption:

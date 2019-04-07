@@ -10,11 +10,13 @@ public class StarExitButton : Singleton<StarExitButton>
 
     private bool transitioning = false;
 
+    [ContextMenu("DisableStarPuzzle")]
     public void DisableStarPuzzle()
     {
         StartCoroutine(ToggleStarPuzzle(false));
     }
 
+    [ContextMenu("ActivateStarPuzzle")]
     public void ActivateStarPuzzle()
     {
         StartCoroutine(ToggleStarPuzzle(true));

@@ -17,4 +17,9 @@ MonoBehaviour:
     - "Mom keeps this in the cupboard so I don\u2019t use up aaall the battery. "
   - insightOption:
     - I'm gonna invent a solar-powered flashlight one day.
+  - insightOption:
+    - If I lost my flashlight I'd feel...
+    - De-lighted!
+  - insightOption:
+    - 'The flashlight. The most important component of telling a ghost story.  '
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

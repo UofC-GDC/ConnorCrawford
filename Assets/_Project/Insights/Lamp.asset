@@ -16,4 +16,19 @@ MonoBehaviour:
     - "That\u2019s my lamp. "
     - "It\u2019s boring but I like to wear the lampshade as a hat,"
     - hehehe
+  - insightOption:
+    - What did one light bulb say to the other?
+    - You're de-light-ful!
+    - I only know the one light joke.
+  - insightOption:
+    - The best way to read at night
+  - insightOption:
+    - I do not use that as a nightlight!
+    - where would you get such an idea...
+  - insightOption:
+    - Lamp or Flashlight.
+    - 'Which would blind me faster?  '
+  - insightOption:
+    - Let there be light!
+    - 'Not much, but enough.  '
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
