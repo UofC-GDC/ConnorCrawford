@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : Singleton<PauseMenu>
 {
     public static bool paused = false;
 

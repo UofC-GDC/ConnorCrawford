@@ -16,6 +16,11 @@ public class CUTSCENE_BUTTON : Thing
     [SerializeField] private GameObject outroLines;
     [SerializeField] private GameObject credits;
 
+    private void Start()
+    {
+        
+    }
+
     public override State Action(StateManager.Env env, ref Player player)
     {
         //return IntroCutscene();
