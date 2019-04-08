@@ -5,16 +5,23 @@ using UnityEngine.Audio;
 
 public class AudioManager : Singleton<AudioManager> 
 {
-    [SerializeField] private AudioMixerSnapshot mainTheme;
+    [SerializeField] private AudioMixerSnapshot mainThemeDay;
+    [SerializeField] private AudioMixerSnapshot mainThemeNight;
     [SerializeField] private AudioMixerSnapshot starTheme;
     [SerializeField] private AudioMixerSnapshot timeTravelTheme;
 
     [SerializeField] private float transitionTime = 5f;
 
-    [ContextMenu("MainTheme")]
-    public void MainTheme()
+    [ContextMenu("MainThemeDay")]
+    public void MainThemeDay()
     {
-        mainTheme.TransitionTo(transitionTime);
+        mainThemeDay.TransitionTo(transitionTime);
+    }
+
+    [ContextMenu("MainThemeNight")]
+    public void MainThemeNight()
+    {
+        mainThemeNight.TransitionTo(transitionTime);
     }
 
     [ContextMenu("StarTheme")]

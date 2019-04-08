@@ -17621,7 +17621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcba3877ba432645b87ad3a3240a152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTheme: {fileID: 245809335987344448, guid: afde001d1de64b24098b995de63c9b22,
+  mainThemeDay: {fileID: 245809335987344448, guid: afde001d1de64b24098b995de63c9b22,
+    type: 2}
+  mainThemeNight: {fileID: 245939397340645898, guid: afde001d1de64b24098b995de63c9b22,
     type: 2}
   starTheme: {fileID: 245181925233259358, guid: afde001d1de64b24098b995de63c9b22,
     type: 2}

@@ -155,6 +155,7 @@ public class DarknessManager : Singleton<DarknessManager>
         day = true;
 
         PlayDaytimeSound();
+        AudioManager.Instance.MainThemeDay();
     }
 
     [ContextMenu("Nighttime Start")]
@@ -164,6 +165,7 @@ public class DarknessManager : Singleton<DarknessManager>
         day = false;
 
         PlayNighttimeSound();
+        AudioManager.Instance.MainThemeNight();
     }
     #endregion
 
