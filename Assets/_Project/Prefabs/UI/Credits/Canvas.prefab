@@ -83,64 +83,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Creative Director
-
-    Caelum Sloan
-
-
-    Dialogue and Story
-
-    Caelum Sloan
-
-
-    Additional Dialogue
-
-    Jacob Lansang
-
-
-    Concept Art
-
-    Zahra Ghavasieh
-
-
-    Conner Crawford Idle Art
-
-    Zahra Ghavasieh
-
-
-    Trash Bin Art
-
-    Zahra Ghavasieh
-
-
-    Light Switch Art
-
-    Zahra Ghavasieh
-
-
-    Front Door Art
-
-    Zahra Ghavasieh
-
-
-    2D Art
-
-    Safeena Meghiji
-
-
-    Pause Menu
-
-    Brian Cruz
-
-
-    Intern
-
-    Kaynen Mitchell
-
-
-    Clock Tick Sound
-
-    DeepFrozenApps - http://soundbible.com/2044-Tick.html'
+  m_text: "Creative Director\nCaelum Sloan\n\n\nDESIGN AND STORY\n\nOriginal Design
+    by\nCaelum Sloan\n\nConcept Art\nZahra Ghavasieh\n\nDialogue and Story\nCaelum
+    Sloan\n\nAdditional Dialogue\nJacob Lansang\n\n\nART\n\nConner Crawford\nZahra
+    Ghavasieh\n\nTrash Bin\nZahra Ghavasieh\n\nLight Switch\nZahra Ghavasieh\n\nDoor\nZahra
+    Ghavasieh\n\nTime Travel Machine\nZahra Ghavasieh\n\nBreaker Box\nZahra Ghavasieh\n\nCloset
+    and Items\nZahra Ghavasieh\n\nShelves and Items\nZahra Ghavasieh\n\nBed\nZahra
+    Ghavasieh\n\nChair\nZahra Ghavasieh\n\nClock\nZahra Ghavasieh\n\nStars and Constellations\nZahra
+    Ghavasieh\n\nDoor Note Animation\nZahra Ghavasieh\n\nLamp\nZahra Ghavasieh and
+    Caelum Sloan\n\nRadio\nSafeena Meghiji\n\nMusic Notes\nJasmine Roebuck\n\nFish
+    (Pascal)\nCassandra Lui\n\n\nUSER INTERFACE\n\nPause Button\nMackey Huang \n\nPause
+    Menu Art and Code\nBrian Cruz\n\nCursor\nCassandra Lui\n\n\nProgramming\n\n\nIntern\nKaynen
+    Mitchell\n\nClock Tick Sound\nDeepFrozenApps - http://soundbible.com/2044-Tick.html"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
