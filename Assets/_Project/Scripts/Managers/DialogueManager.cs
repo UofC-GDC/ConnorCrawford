@@ -62,6 +62,7 @@ public class DialogueManager : Singleton<DialogueManager>
             var moreLines = lineEnumerator.Current != null;
             nextButton.SetActive(moreLines);
             PlayLine(lineToPlay, moreLines, speechBubble, speechBubbleText);
+            audioSource.pitch = startPitch;
             return;
         }
     }
@@ -71,6 +72,7 @@ public class DialogueManager : Singleton<DialogueManager>
         doneLines = true;
         lineEnumerator = null;
         speechBubbleText.text = "";
+        audioSource.pitch = startPitch;
         speechBubble.SetActive(false);
     }
 

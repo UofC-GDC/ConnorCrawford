@@ -17,10 +17,6 @@ public class DarknessManager : Singleton<DarknessManager>
     [SerializeField] private GameObject         doorLoc;
     [SerializeField] private Animator           starsFullAnimator;
 
-    // Sounds when switching between day and night
-    [SerializeField] private AudioSource        daytimeSound;
-    [SerializeField] private AudioSource        nighttimeSound;
-
 
                         public bool roomLightOn         = true;
 
@@ -45,53 +41,8 @@ public class DarknessManager : Singleton<DarknessManager>
         if (doorOpen)   OpenDoor();
         else            CloseDoor();
 
-        SetupSoundscape();
         ManageLight();
     }
-
-    #region Sounds
-    private void SetupSoundscape()
-    {
-        // In case you forget to turn loop on
-        daytimeSound.loop = true;
-        nighttimeSound.loop = true;
-
-        if (day)
-        {
-            daytimeSound.Play();
-        }
-        else
-        {
-            nighttimeSound.Play();
-        }
-    }
-
-    private void PlayDaytimeSound()
-    {
-        if (nighttimeSound.isPlaying)
-        {
-            nighttimeSound.Stop();
-            daytimeSound.Play();
-        }
-        else
-        {
-            daytimeSound.Play();
-        }
-    }
-
-    private void PlayNighttimeSound()
-    {
-        if (daytimeSound.isPlaying)
-        {
-            nighttimeSound.Play();
-            daytimeSound.Stop();
-        }
-        else
-        {
-            nighttimeSound.Play();
-        }
-    }
-    #endregion
 
     #region Room Light Methods
     public void RoomLightOn()
@@ -154,7 +105,6 @@ public class DarknessManager : Singleton<DarknessManager>
         nightPallete.enabled = false;
         day = true;
 
-        PlayDaytimeSound();
         AudioManager.Instance.MainThemeDay();
     }
 
@@ -164,7 +114,6 @@ public class DarknessManager : Singleton<DarknessManager>
         nightPallete.enabled = true;
         day = false;
 
-        PlayNighttimeSound();
         AudioManager.Instance.MainThemeNight();
     }
     #endregion
