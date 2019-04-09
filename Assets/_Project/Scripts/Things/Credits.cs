@@ -18,6 +18,7 @@ public class Credits : Thing
         {
             rooollllllCredits = true;
             animator.SetTrigger("Credits");
+            AudioManager.Instance.StarTheme();
             return new DoInteractionState();
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Null"))
