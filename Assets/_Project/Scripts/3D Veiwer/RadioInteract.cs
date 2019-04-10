@@ -2,9 +2,10 @@
 
 public class RadioInteract : Interatable3D
 {
-    private bool battery = false;
+    [HideInInspector] public bool battery = false;
     
     [SerializeField] private GameObject radioSlider;
+    [SerializeField] private Desk desk;
 
     public Vector3 rotateAxis = Vector3.up;
     public float rotateSpeed = 400;
@@ -45,6 +46,8 @@ public class RadioInteract : Interatable3D
         else
         {
             battery = true;
+            if (player.inventory != null && player.inventory.GetType() == typeof(BluePaper))
+                desk.paper = false;
             player.inventory = gameObject.AddComponent<Battery>();
         }
     }

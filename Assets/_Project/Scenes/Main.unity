@@ -8025,7 +8025,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insight: {fileID: 11400000, guid: 6587af232bfced94a8f24c28b0936076, type: 2}
+  paper: 0
   dummy: {fileID: 11400000, guid: 7276a5d17768c3f4eb3304dd5ed13146, type: 2}
+  radio: {fileID: 1135284977}
 --- !u!1 &781116767 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1201232123194178, guid: 79d2b0b0383d6ca43986639f0c12b379,
@@ -9656,6 +9658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insight: {fileID: 11400000, guid: cb94471ae19a57e418dd9630d6b28608, type: 2}
   fadeInOutPanelAnimator: {fileID: 1289716142}
+  connerAnimator: {fileID: 1777202743}
   playAllTheSoundEffeccts: {fileID: 746387884}
   doneSounds: 0
 --- !u!95 &933321566 stripped
@@ -11218,7 +11221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a053b3bb8c5222b45a9d86182a8ead40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battery: 0
   radioSlider: {fileID: 0}
+  desk: {fileID: 778883900}
   rotateAxis: {x: 0, y: 1, z: 0}
   rotateSpeed: 400
 --- !u!4 &1143608147 stripped

@@ -5,6 +5,7 @@ using UnityEngine;
 public class OutroCutscene : Thing
 {
     [SerializeField] private Animator fadeInOutPanelAnimator;
+    [SerializeField] private Animator connerAnimator;
     [SerializeField] private PlayAllTheSoundEffects playAllTheSoundEffeccts;
 
     private bool letsGo = false;
@@ -44,7 +45,15 @@ public class OutroCutscene : Thing
     private IEnumerator action()
     {
         letsGo = true;
-        //Fade out Conner
+
+        connerAnimator.SetBool("Cutscene", true);
+        connerAnimator.SetTrigger("FadeOut");
+
+        while (!connerAnimator.GetCurrentAnimatorStateInfo(0).IsName("FadedOut"))
+        {
+            yield return null;
+        }
+
         fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
 
         while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
@@ -69,7 +78,12 @@ public class OutroCutscene : Thing
             yield return null;
         }
 
-        //Fade in Conner
+        connerAnimator.SetTrigger("FadeIn");
+
+        while (!connerAnimator.GetCurrentAnimatorStateInfo(0).IsName("IdleSouth"))
+        {
+            yield return null;
+        }
 
         letsGo = false;
         allDone = true;
