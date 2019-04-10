@@ -13,6 +13,7 @@ public class AudioManager : Singleton<AudioManager>
     [Header("AudioSources")]
     [SerializeField] private AudioSource starThemeSource;
     [SerializeField] private AudioSource timeTravelThemeSource;
+    [SerializeField] private AudioSource credits;
 
     [SerializeField] private float transitionTime = 5f;
 
@@ -42,5 +43,12 @@ public class AudioManager : Singleton<AudioManager>
         timeTravelTheme.TransitionTo(transitionTime);
         if (!timeTravelThemeSource.isPlaying)
             timeTravelThemeSource.PlayDelayed(transitionTime / 2);
+    }
+
+    [ContextMenu("Credits")]
+    public void Credits()
+    {
+        starTheme.TransitionTo(transitionTime);
+        credits.PlayDelayed(transitionTime / 2);
     }
 }

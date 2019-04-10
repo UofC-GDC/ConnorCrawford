@@ -20,6 +20,9 @@ public class TimeMachine : Thing
     [SerializeField] private Animator clockAnimator;
 
     [SerializeField] private Animator realClockAnimator;
+    [SerializeField] private AudioSource whirring;
+
+    [SerializeField] private Animator galaxy;
 
     private float heldTime = 0f;
 
@@ -133,7 +136,9 @@ public class TimeMachine : Thing
             clockAnimator.SetTrigger("Leggo");
             realClockAnimator.enabled = true;
             realClockAnimator.SetTrigger("TimeTravel");
+            whirring.Play();
             print("TRAVELING THROUGH TIME!!!");
+            StartCoroutine(TimeTravelSequence());
             return null;
         }
         else
@@ -154,4 +159,12 @@ public class TimeMachine : Thing
         open = true;
         yield break;
     }
+
+    private IEnumerator TimeTravelSequence()
+    {
+        yield return new WaitForSecondsRealtime(6f);
+
+        galaxy.SetTrigger("Galaxy");
+    }
+
 }

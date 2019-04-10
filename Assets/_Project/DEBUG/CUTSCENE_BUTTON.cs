@@ -16,6 +16,8 @@ public class CUTSCENE_BUTTON : Thing
     [SerializeField] private GameObject outroLines;
     [SerializeField] private GameObject credits;
 
+    [SerializeField] private PlayAllTheSoundEffects playAllTheSoundEffects;
+
     private void Start()
     {
         
@@ -170,7 +172,10 @@ public class CUTSCENE_BUTTON : Thing
         line12.verb = CutScene.Verb.WalkTo;
 
         cutsceneScript.Add(line12);
+
         //Fade out Conner
+        //Play sounds
+
         //Fade to black
         CutScene.Line line14 = new CutScene.Line();
         line14.arg = fadeOutPanel;

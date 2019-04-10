@@ -35,7 +35,7 @@ AudioMixerController:
     - a14c2035285e2ce4bab6ad946de00b9f
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: 245870537694708368}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ AudioMixerSnapshotController:
     2813a3f54b82b8c4f969d49f5942d3ad: -80
     c2a95d5b1aaed3c45be72c441f9293b3: -80
     791a54eb632b2bc4dbab2c02f61be832: 0.04171297
-    3b9aacbd9ea0cc64aa334241dc1cea4c: -5
+    3b9aacbd9ea0cc64aa334241dc1cea4c: 5
     38136bcd74c28744e888988fc35856f9: -80
     1f8777df0781da3449412bdf16424430: -39.703533
   m_TransitionOverrides: {}
@@ -319,7 +319,7 @@ AudioMixerSnapshotController:
     2ad0a1f56fb24bb47822c93cab6707ff: -80
     2813a3f54b82b8c4f969d49f5942d3ad: -80
     791a54eb632b2bc4dbab2c02f61be832: 0.04171297
-    3b9aacbd9ea0cc64aa334241dc1cea4c: -5
+    3b9aacbd9ea0cc64aa334241dc1cea4c: 5
     38136bcd74c28744e888988fc35856f9: -0.002441872
   m_TransitionOverrides: {}
 --- !u!245 &245809335987344448
@@ -337,7 +337,7 @@ AudioMixerSnapshotController:
     e76f5ab52bb658a4da9f3149b5d1f0d4: 10
     c2a95d5b1aaed3c45be72c441f9293b3: -80
     791a54eb632b2bc4dbab2c02f61be832: 0.04171297
-    3b9aacbd9ea0cc64aa334241dc1cea4c: -5
+    3b9aacbd9ea0cc64aa334241dc1cea4c: 5
     38136bcd74c28744e888988fc35856f9: -80
   m_TransitionOverrides: {}
 --- !u!245 &245870537694708368
@@ -356,7 +356,7 @@ AudioMixerSnapshotController:
     2ad0a1f56fb24bb47822c93cab6707ff: -80
     2813a3f54b82b8c4f969d49f5942d3ad: -80
     791a54eb632b2bc4dbab2c02f61be832: 0.04171297
-    3b9aacbd9ea0cc64aa334241dc1cea4c: -5
+    3b9aacbd9ea0cc64aa334241dc1cea4c: 5
     38136bcd74c28744e888988fc35856f9: -80
   m_TransitionOverrides: {}
 --- !u!245 &245939397340645898
@@ -379,7 +379,7 @@ AudioMixerSnapshotController:
     7e484b48260940546a0dae53c0494769: 0.8
     791a54eb632b2bc4dbab2c02f61be832: 0.04171297
     625e7d6c14229da499f8b18800b4f39b: 1
-    3b9aacbd9ea0cc64aa334241dc1cea4c: -5
+    3b9aacbd9ea0cc64aa334241dc1cea4c: 5
     38136bcd74c28744e888988fc35856f9: -80
     7bdd7dddaa1613e418f85370961148f8: 3.2
   m_TransitionOverrides: {}
