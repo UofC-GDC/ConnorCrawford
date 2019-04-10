@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BlinkingLight : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer image;
+    [SerializeField] private AudioSource bloop;
 
     private int frameCount = 0;
 
@@ -20,10 +21,10 @@ public class BlinkingLight : MonoBehaviour
         switch (image.enabled)
         {
             case true:
-                if (rand < 0.85) image.enabled = false;
+                if (rand < 0.85) { image.enabled = false; }
                 break;
             case false:
-                if (rand > 0.85) image.enabled = true;
+                if (rand > 0.85) { image.enabled = true; bloop.Play(); }
                 break;
         }
 	}
