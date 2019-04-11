@@ -4829,6 +4829,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 8f8e0a8be70edcc4ea453b517a8829b3, type: 2}
+  m_Camera: {fileID: 0}
+  m_PreviousProfile: {fileID: 0}
+  m_RenderingInSceneView: 0
 --- !u!20 &598451133
 Camera:
   m_ObjectHideFlags: 0
@@ -12217,7 +12220,7 @@ Prefab:
     - target: {fileID: 82101000583834390, guid: 3e10b9b70105a04459f79f4e61d67286,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1234446816559788, guid: 3e10b9b70105a04459f79f4e61d67286, type: 2}
       propertyPath: m_Name
@@ -14614,7 +14617,7 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1476130461}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243277688747070386, guid: afde001d1de64b24098b995de63c9b22,
     type: 2}
