@@ -29,7 +29,7 @@ public class OutroCutscene : Thing
             }
             else if (doneSounds && !leggo2)
             {
-                StartCoroutine(actionPart2());
+                StartCoroutine(actionPart2(env, player));
             }
             else if (leggo2)
             {
@@ -70,7 +70,7 @@ public class OutroCutscene : Thing
 
     private bool leggo2 = false;
 
-    private IEnumerator actionPart2()
+    private IEnumerator actionPart2(StateManager.Env env, Player player)
     {
         leggo2 = true;
         //Remove objects or change scene or whatever.
@@ -81,6 +81,8 @@ public class OutroCutscene : Thing
         {
             yield return null;
         }
+
+        door.Action(env, ref player);
 
         connerAnimator.SetTrigger("FadeIn");
 
