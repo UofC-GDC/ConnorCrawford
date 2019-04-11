@@ -81,8 +81,6 @@ public class StateManager : Singleton<StateManager>
             env2.leftClicked = false;
             env = env2;
         }
-
-        print(env.player.inventory.GetType().ToString());
     }
 
 	// The Game State
