@@ -10,6 +10,8 @@ public class PlayAllTheSoundEffects : Thing
     private int i = 0;
     private bool start = false;
 
+    [SerializeField] private bool exitToCutscene = true;
+
     public override State Action(StateManager.Env env, ref Player player)
     {
         if (i < soundEffects.Count)
@@ -33,8 +35,13 @@ public class PlayAllTheSoundEffects : Thing
         {
             i = 0;
             start = false;
-            outroCutscene.doneSounds = true;
-            return outroCutscene.Action(env, ref player);
+            if (exitToCutscene)
+            {
+                outroCutscene.doneSounds = true;
+                return outroCutscene.Action(env, ref player);
+            }
+            else
+                return null;
         }
     }
 }

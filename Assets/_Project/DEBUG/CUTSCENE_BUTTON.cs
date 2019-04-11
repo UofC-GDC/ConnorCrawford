@@ -12,11 +12,14 @@ public class CUTSCENE_BUTTON : Thing
     [SerializeField] private GameObject fadeInPanel;
     [SerializeField] private GameObject fadeOutPanel;
     [SerializeField] private GameObject clockSetter;
-    //[Header("Outro")]
+    [Header("Outro")]
     [SerializeField] private GameObject outroLines;
     [SerializeField] private GameObject credits;
 
     [SerializeField] private PlayAllTheSoundEffects playAllTheSoundEffects;
+    [SerializeField] private Mom mommy;
+    [SerializeField] private GameObject tummyGrumble;
+    [SerializeField] private FadeOutConner fadeOutConner;
 
     private void Start()
     {
@@ -159,7 +162,18 @@ public class CUTSCENE_BUTTON : Thing
         cutsceneScript.Add(line9);
 
         // Tummy grumble
+        CutScene.Line line9andAHalf = new CutScene.Line();
+        line9andAHalf.arg = tummyGrumble;
+        line9andAHalf.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line9andAHalf);
+
         // Mom sounds
+        CutScene.Line line10 = new CutScene.Line();
+        line10.arg = mommy.gameObject;
+        line10.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line10);
 
         CutScene.Line line11 = new CutScene.Line();
         line11.arg = outroLines;
@@ -173,8 +187,12 @@ public class CUTSCENE_BUTTON : Thing
 
         cutsceneScript.Add(line12);
 
-        //Fade out Conner
-        //Play sounds
+        //Fade Out Conner
+        CutScene.Line line13 = new CutScene.Line();
+        line13.arg = fadeOutConner.gameObject;
+        line13.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line13);
 
         //Fade to black
         CutScene.Line line14 = new CutScene.Line();

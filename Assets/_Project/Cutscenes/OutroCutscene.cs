@@ -7,17 +7,18 @@ public class OutroCutscene : Thing
     [SerializeField] private Animator fadeInOutPanelAnimator;
     [SerializeField] private Animator connerAnimator;
     [SerializeField] private PlayAllTheSoundEffects playAllTheSoundEffeccts;
+    [SerializeField] private Door door;
 
     private bool letsGo = false;
     private bool allDone = false;
 
-    public bool doneSounds = false;
+    [HideInInspector] public bool doneSounds = false;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
         if (!letsGo && !allDone)
         { 
-            StartCoroutine(action());
+            StartCoroutine(action(env, player));
             return new DoInteractionState();
         }
         else if (letsGo)
@@ -42,7 +43,7 @@ public class OutroCutscene : Thing
 
     private bool donePart1 = false;
 
-    private IEnumerator action()
+    private IEnumerator action(StateManager.Env env, Player player)
     {
         letsGo = true;
 
@@ -53,6 +54,9 @@ public class OutroCutscene : Thing
         {
             yield return null;
         }
+
+        //Close door 
+        door.Action(env, ref player);
 
         fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
 
@@ -84,6 +88,8 @@ public class OutroCutscene : Thing
         {
             yield return null;
         }
+
+        connerAnimator.SetBool("Cutscene", false);
 
         letsGo = false;
         allDone = true;
