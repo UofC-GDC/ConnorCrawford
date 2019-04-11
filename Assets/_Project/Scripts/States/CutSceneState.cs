@@ -15,7 +15,7 @@ public class CutSceneState : State
 
     public State DoAction(State prevState, StateManager.Env curr_env, ref StateManager.Env? new_env)
     {
-        Debug.Log("Entering next Scene");
+        //Debug.Log("Entering next Scene");
         if (cutSceneEnumerator.MoveNext())
         {
             CutScene.Line currentLine = cutSceneEnumerator.Current;
@@ -47,12 +47,12 @@ public class CutSceneState : State
             }
 
             new_env = localEnv;
-            Debug.Log("The next state is: " + next);
+            //Debug.Log("The next state is: " + next);
             return next;
         }
         else
         {
-            Debug.Log("Cutscene Over.");
+            //Debug.Log("Cutscene Over.");
             return new GetInputState();
         }
     }

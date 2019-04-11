@@ -6,7 +6,7 @@ public class Desk : Thing
 {
     [HideInInspector] public bool paper = false;
     [SerializeField] private Insight dummy;
-    [SerializeField] private RadioInteract radio;
+    [SerializeField] private BatteryInteract battery;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -16,7 +16,7 @@ public class Desk : Thing
             var paperThing = gameObject.AddComponent<BluePaper>();
             paperThing.insight = dummy;
             if (player.inventory != null && player.inventory.GetType() == typeof(Battery))
-                radio.battery = false;
+                battery.battery = false;
             player.inventory = paperThing;
         }
         else
