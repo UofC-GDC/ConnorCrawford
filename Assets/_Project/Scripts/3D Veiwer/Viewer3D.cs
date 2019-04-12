@@ -13,13 +13,15 @@ public class Viewer3D : MonoBehaviour {
 	void Activate(GameObject gameObject) {
 		active = gameObject;
 		active.SetActive(true);
-	}
+        UnityEngine.Cursor.visible = true;
+    }
 	void Deactivate() {
 		if (active != null) {
 			active.SetActive(false);
 			active = null;
 		}
-	}
+        UnityEngine.Cursor.visible = false;
+    }
 	public State Display(GameObject gameObject, StateManager.Env env, ref Player player) {
 		if(gameObject != active) {
 			Deactivate();
