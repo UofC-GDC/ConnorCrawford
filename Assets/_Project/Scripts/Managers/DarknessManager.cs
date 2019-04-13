@@ -73,6 +73,11 @@ public class DarknessManager : Singleton<DarknessManager>
             Clock.Instance.SetClock(4);
     }
 
+    public void DePowerFlashlight()
+    {
+        flashlightPowered = false;
+    }
+
     public void BlueifyFlashlight()
     {
         flashlightBlue  = true;

@@ -7,6 +7,7 @@ public class MoveWithMouse : Interatable3D
     [SerializeField] private GameObject itsAbird;
     [SerializeField] private Camera cameraToShootLasersFrom;
     [SerializeField] private LayerMask layerMaskToShoot;
+    [SerializeField] private GameObject batteries;
 
     public override void interact(StateManager.Env env, ref Player player)
     {
@@ -28,6 +29,8 @@ public class MoveWithMouse : Interatable3D
     protected override void interactStart()
     {
         base.interactStart();
+        if (!batteries.activeSelf)
+            batteries.SetActive(true);
         itsAbird.SetActive(true);
     }
 

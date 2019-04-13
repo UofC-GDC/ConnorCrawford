@@ -13,6 +13,8 @@ public class Flashlight : Thing
         DarknessManager.Instance.ResetFlashlight();
     }
 
+    Battery myBattery = null;
+
     public override State Action(StateManager.Env env, ref Player player)
     {
         if (env.player.inventory != null)
@@ -25,6 +27,7 @@ public class Flashlight : Thing
             else if (env.player.inventory.GetType() == typeof(Battery))
             {
                 DarknessManager.Instance.PowerFlashlight();
+                myBattery = (Battery)player.inventory;
                 player.inventory = null;
             }
             else if (!DarknessManager.Instance.flashlightInHand)
@@ -43,6 +46,12 @@ public class Flashlight : Thing
         }
         else
         {
+            if (DarknessManager.Instance.flashlightPowered)
+            {
+                DarknessManager.Instance.DePowerFlashlight();
+                player.inventory = myBattery;
+                myBattery = null;
+            }
             return base.Action(env, ref player);
         }
 

@@ -16,7 +16,7 @@ public class Desk : Thing
             var paperThing = gameObject.AddComponent<BluePaper>();
             paperThing.insight = dummy;
             if (player.inventory != null && player.inventory.GetType() == typeof(Battery))
-                battery.battery = false;
+                battery.battery1 = false;
             player.inventory = paperThing;
         }
         else
