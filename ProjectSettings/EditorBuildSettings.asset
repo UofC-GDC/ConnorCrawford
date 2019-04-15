@@ -11,7 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/LogoIntro.unity
     guid: 995976a0b87307f48b43cefd9707b66a
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Project/Scenes/Main.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/_Project/Scenes/Morning(Clean).unity
+    guid: 7c747f87db02abe48a81785dd9a0cba7
+  - enabled: 1
+    path: Assets/_Project/Scenes/Night(Dirty).unity
+    guid: 22d2078155c202a41a42be5459c88125
   m_configObjects: {}

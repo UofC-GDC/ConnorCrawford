@@ -1,13 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MakeItFadeOut : MakeItFadeIn 
+﻿public class MakeItFadeOut : MakeItFadeIn 
 {
     public override State Action(StateManager.Env env, ref Player player)
     {
-        fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
+        if (!start)
+        {
+            start = true;
+            fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
+            return new DoInteractionState();
+        }
+        else
+        {
+            if (!black) return new DoInteractionState();
+            else
+            {
+                start = false;
+                return null;
+            }
+        }
+    }
 
-        return null;
+    protected override void Update()
+    {
+        if (fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
+        {
+            black = true;
+        }
+        else
+        {
+            black = false;
+        }
     }
 }

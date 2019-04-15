@@ -24,6 +24,10 @@ public class TimeMachine : Thing
 
     [SerializeField] private Animator galaxy;
 
+    [Header("new")]
+    [SerializeField] private Thing fadeOutPanel;
+    [SerializeField] private Thing credits;
+
     private float heldTime = 0f;
 
     private bool blink1 = false;
@@ -132,13 +136,15 @@ public class TimeMachine : Thing
         }
         else if (readyToTimeTravel)
         {
-            AudioManager.Instance.TimeTravelTheme();
+            //AudioManager.Instance.TimeTravelTheme();
             clockAnimator.SetTrigger("Leggo");
             realClockAnimator.enabled = true;
             realClockAnimator.SetTrigger("TimeTravel");
-            whirring.Play();
+            //whirring.Play();
             print("TRAVELING THROUGH TIME!!!");
-            StartCoroutine(TimeTravelSequence());
+            //StartCoroutine(TimeTravelSequence());
+            fadeOutPanel.Action(env, ref player);
+            credits.Action(env, ref player);
             return null;
         }
         else

@@ -8,15 +8,29 @@ public class BreakerBox : Thing3d
     [SerializeField] private Collider2D colliderClosed;
     [SerializeField] private Collider2D colliderOpen;
     [SerializeField] private GameObject breakerBoxDoor;
+    [SerializeField] private GameObject brokenEffect;
 
     [Header("Match with start state. Do not touch during gameplay")]
     public bool broken = false;
     public bool open = false;
 
+    protected override void Start()
+    {
+        base.Start();
+        SetOpenClose(open);
+        SetBroken(broken);
+    }
+
     public void SetOpenClose(bool open)
     {
         if (open)   Open();
         else        Close();
+    }
+
+    public void SetBroken(bool broken)
+    {
+        if (broken) Broken();
+        else Fixed();
     }
 
     public override State Action(StateManager.Env env, ref Player player)
@@ -47,5 +61,17 @@ public class BreakerBox : Thing3d
         colliderOpen.enabled = true;
         breakerBoxDoor.SetActive(false);
         open = false;
+    }
+
+    private void Broken()
+    {
+        broken = true;
+        brokenEffect.SetActive(true);
+    }
+
+    private void Fixed()
+    {
+        broken = false;
+        brokenEffect.SetActive(false);
     }
 }

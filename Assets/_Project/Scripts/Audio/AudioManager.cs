@@ -15,7 +15,7 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioSource timeTravelThemeSource;
     [SerializeField] private AudioSource credits;
 
-    [SerializeField] private float transitionTime = 5f;
+    [SerializeField] public float transitionTime = 5f;
 
     [ContextMenu("MainThemeDay")]
     public void MainThemeDay()

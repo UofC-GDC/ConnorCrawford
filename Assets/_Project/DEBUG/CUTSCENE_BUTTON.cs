@@ -12,6 +12,11 @@ public class CUTSCENE_BUTTON : Thing
     [SerializeField] private GameObject fadeInPanel;
     [SerializeField] private GameObject fadeOutPanel;
     [SerializeField] private GameObject clockSetter;
+    [SerializeField] private GameObject changeSceneNight;
+    [Header("IntroPt2")]
+    [SerializeField] private GameObject makeNoteFall;
+    [SerializeField] private GameObject fadeInConner;
+    [SerializeField] private GameObject enterRoom;
     [Header("Outro")]
     [SerializeField] private GameObject outroLines;
     [SerializeField] private GameObject credits;
@@ -28,14 +33,20 @@ public class CUTSCENE_BUTTON : Thing
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        //return IntroCutscene();
-        return OutroCutscene();
+        return IntroCutscene();
+        //return OutroCutscene();
     }
 
     public State IntroCutscene()
     {
         CutScene cutscene = (CutScene) ScriptableObject.CreateInstance(typeof(CutScene));
         List<CutScene.Line> cutsceneScript = new List<CutScene.Line>();
+
+        CutScene.Line lineMinus1 = new CutScene.Line();
+        lineMinus1.arg = fadeInPanel;
+        lineMinus1.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(lineMinus1);
 
         CutScene.Line line0 = new CutScene.Line();
         line0.arg = clockSetter;
@@ -64,12 +75,6 @@ public class CUTSCENE_BUTTON : Thing
             cutsceneScript.Add(line2);
         }
 
-        CutScene.Line line3 = new CutScene.Line();
-        line3.arg = fadeInPanel;
-        line3.verb = CutScene.Verb.DoAction;
-
-        cutsceneScript.Add(line3);
-
         CutScene.Line line4 = new CutScene.Line();
         line4.arg = doorPos;
         line4.verb = CutScene.Verb.WalkTo;
@@ -83,10 +88,99 @@ public class CUTSCENE_BUTTON : Thing
         cutsceneScript.Add(line5);
 
         CutScene.Line line6 = new CutScene.Line();
-        line6.arg = fadeOutPanel;
+        line6.arg = fadeOutConner.gameObject;
         line6.verb = CutScene.Verb.DoAction;
 
         cutsceneScript.Add(line6);
+
+        cutsceneScript.Add(line5); //Close door
+
+        //Play loud locking sound
+
+        CutScene.Line line7 = new CutScene.Line();
+        line7.arg = fadeOutPanel;
+        line7.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line7);
+
+        CutScene.Line line8 = new CutScene.Line();
+        line8.arg = changeSceneNight;
+        line8.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line8);
+
+        cutscene.script = cutsceneScript;
+
+        return cutscene.MakeState();
+    }
+
+    public State IntroCutscenePart2()
+    {
+        CutScene cutscene = (CutScene)ScriptableObject.CreateInstance(typeof(CutScene));
+        List<CutScene.Line> cutsceneScript = new List<CutScene.Line>();
+
+        CutScene.Line line0 = new CutScene.Line();
+        line0.arg = clockSetter; // Set to correct value!
+        line0.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line0);
+
+        CutScene.Line line1 = new CutScene.Line();
+        line1.arg = makeNoteFall;
+        line1.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line1);
+
+        CutScene.Line line1point5 = new CutScene.Line();
+        line1point5.arg = fadeOutConner.gameObject;
+        line1point5.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line1point5);
+
+        CutScene.Line line2 = new CutScene.Line();
+        line2.arg = fadeInPanel;
+        line2.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line2);
+
+        CutScene.Line line3 = new CutScene.Line();
+        line3.arg = door;
+        line3.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line3);
+
+        CutScene.Line line4 = new CutScene.Line();
+        line4.arg = fadeInConner;
+        line4.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line4);
+
+        CutScene.Line line5 = new CutScene.Line();
+        line5.arg = enterRoom;
+        line5.verb = CutScene.Verb.WalkTo;
+
+        cutsceneScript.Add(line5);
+
+        CutScene.Line line6 = new CutScene.Line();
+        line6.arg = enterRoom;
+        line6.verb = CutScene.Verb.DisplayInsight;
+
+        for (int i = 0; i < 4; i++)
+        {
+            cutsceneScript.Add(line6);
+        }
+
+        CutScene.Line line7 = new CutScene.Line();
+        line7.arg = target;
+        line7.verb = CutScene.Verb.WalkTo;
+
+        cutsceneScript.Add(line7);
+
+        CutScene.Line line8 = new CutScene.Line();
+        line8.arg = loc2;
+        line8.verb = CutScene.Verb.WalkTo;
+
+        cutsceneScript.Add(line8);
 
         cutscene.script = cutsceneScript;
 

@@ -110,6 +110,8 @@ public class StarPuzzle : MonoBehaviour
 
     private bool transitioning = false;
 
+    public bool complete=false;
+
     private IEnumerator ActivateStarPuzzle2(bool puzzle2Done)
     {
         transitioning = true;
@@ -119,6 +121,7 @@ public class StarPuzzle : MonoBehaviour
         {
             Clock.Instance.SetClock(8);
             StarExitButton.Instance.DisableStarPuzzle();
+            complete = true;
         }
         else
         {

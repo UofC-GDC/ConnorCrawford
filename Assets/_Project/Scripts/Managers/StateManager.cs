@@ -22,6 +22,7 @@ public class StateManager : Singleton<StateManager>
     public TextMeshPro connerTextMesh;
     public AudioSource connerAudioSource;
     public AnimationCurve connerAudioCurve;
+    public CUTSCENE_BUTTON cutsceneManager;
 
 #if SM_DEBUG
     public CutScene testScene;
@@ -42,11 +43,15 @@ public class StateManager : Singleton<StateManager>
 		private set;
 	}
 
+    [SerializeField] private bool day;
+
     private void Awake()
     {
         previousSate = null;
 #if !SM_DEBUG
-        currentState = new StartState();
+        env = new Env();
+        currentState = day ? cutsceneManager.IntroCutscene() : cutsceneManager.IntroCutscenePart2();
+        controller = currentState;
 #else
         env = new Env();
         currentState = new CutSceneState(testScene);
