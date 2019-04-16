@@ -11096,6 +11096,12 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  manualAudioCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &1019512041
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15438,6 +15444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1476130462}
   rigidbody: {fileID: 1805137586}
+  chairRollingAudioSource: {fileID: 1476130464}
 --- !u!82 &1476130464
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15445,11 +15452,11 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1476130461}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243277688747070386, guid: afde001d1de64b24098b995de63c9b22,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 449a935655bb5854088a510ca8f1844c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
