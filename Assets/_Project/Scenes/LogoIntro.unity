@@ -958,6 +958,7 @@ MonoBehaviour:
   logoAudio: {fileID: 992718610}
   panelAnimator: {fileID: 906159467}
   logoAnimator: {fileID: 512315188}
+  transitionTime: 2
 --- !u!82 &992718610
 AudioSource:
   m_ObjectHideFlags: 0
