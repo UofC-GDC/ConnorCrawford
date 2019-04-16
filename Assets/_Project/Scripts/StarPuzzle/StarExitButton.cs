@@ -8,8 +8,8 @@ public class StarExitButton : Singleton<StarExitButton>
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject starPuzzle;
     [SerializeField] private StarPuzzle starPuzzleMan;
-    [SerializeField] private Thing fadeOutPanel;
-    [SerializeField] private Thing credits;
+    //[SerializeField] private Thing fadeOutPanel;
+    //[SerializeField] private Thing credits;
 
     private bool transitioning = false;
 
@@ -18,12 +18,12 @@ public class StarExitButton : Singleton<StarExitButton>
     {
         AudioManager.Instance.MainThemeNight();
         StartCoroutine(ToggleStarPuzzle(false));
-        if (starPuzzleMan.complete)
-        {
-            var p = new Player();
-            fadeOutPanel.Action(new StateManager.Env(), ref p);
-            credits.Action(new StateManager.Env(), ref p);
-        }
+        //if (starPuzzleMan.complete)
+        //{
+        //    var p = new Player();
+        //    fadeOutPanel.Action(new StateManager.Env(), ref p);
+        //    credits.Action(new StateManager.Env(), ref p);
+        //}
     }
 
     [ContextMenu("ActivateStarPuzzle")]

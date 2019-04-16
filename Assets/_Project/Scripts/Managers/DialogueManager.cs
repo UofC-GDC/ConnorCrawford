@@ -6,8 +6,10 @@ using UnityEngine;
 public class DialogueManager : Singleton<DialogueManager>
 {
     [Tooltip("The number of frames to pause for after each character.")]
-    [Range(0, 60)]
-    [SerializeField] private int waitForFramesNumber;
+    [Range(0, .25f)]
+    [SerializeField] private float waitForSeconds;
+    [Range(0, .25f)]
+    [SerializeField] private float endPauseTime;
     private AudioSource audioSource;
     private AnimationCurve curve;
     private float startPitch;
@@ -111,23 +113,15 @@ public class DialogueManager : Singleton<DialogueManager>
             #endregion
 
             #region Waiting
-            for (int i = 0; i < waitForFramesNumber; i++)
-            {
-                yield return null;
-            }
+            yield return new WaitForSecondsRealtime(waitForSeconds);
+
             if (character.Equals(','))
             {
-                for (int i = 0; i < waitForFramesNumber * 2; i++)
-                {
-                    yield return null;
-                }
+                yield return new WaitForSecondsRealtime(waitForSeconds * 2);
             }
             if (character.Equals('.'))
             {
-                for (int i = 0; i < waitForFramesNumber * 4; i++)
-                {
-                    yield return null;
-                }
+                yield return new WaitForSecondsRealtime(waitForSeconds * 4);
             }
             #endregion
 
@@ -135,7 +129,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         if (!moreLines)
         {
-            yield return new WaitForSeconds(1.25f);
+            yield return new WaitForSecondsRealtime(endPauseTime * line.Length);
             ResetSpeechBubble(speechBubble, speechBubbleText);
         }
     }
