@@ -13,10 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - insightOption:
-    - This is where I get all of my construction paper
+    - These drawers are where I get all of my construction paper
     - "...but I don\u2019t do a lot of crafts anymore."
   - insightOption:
-    - "I\u2019ve got so much colored paper. Who needs that much blue paper?!"
+    - "I\u2019ve got so much colored paper in these drawers. Who needs that much blue
+      paper?!"
   - insightOption:
     - There's gotta be something in this desk
     - I can use besides all the trash I shoved underneath.
