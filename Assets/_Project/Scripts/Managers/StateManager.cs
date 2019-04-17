@@ -28,7 +28,7 @@ public class StateManager : Singleton<StateManager>
     public CutScene testScene;
 #endif
 
-    State currentState;
+    public State currentState;
 	State previousSate;
 
 #if !SM_DEBUG
