@@ -13,7 +13,6 @@ using TMPro;
  **/
 public class StateManager : Singleton<StateManager>
 {
-
     public bool completeDarkness = false;
 
     public NavMeshAgent agent;
