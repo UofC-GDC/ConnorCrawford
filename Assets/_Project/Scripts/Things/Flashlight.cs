@@ -6,6 +6,9 @@ public class Flashlight : Thing
 {
     [SerializeField] private new SpriteRenderer renderer;
     [SerializeField] private Transform flashLightHolder;
+    [SerializeField] private Thing flashlightPickupInsightObject;
+    [SerializeField] private Thing flashlightPowerInsightObject;
+    [SerializeField] private Thing flashlightBlueInsightObject;
 
     private void Start()
     {
@@ -29,6 +32,8 @@ public class Flashlight : Thing
                 DarknessManager.Instance.PowerFlashlight();
                 myBattery = (Battery)player.inventory;
                 player.inventory = null;
+                if (!DarknessManager.Instance.flashlightBlue)
+                    return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, flashlightPowerInsightObject, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
             }
             else if (!DarknessManager.Instance.flashlightInHand)
             {
@@ -43,6 +48,8 @@ public class Flashlight : Thing
         else if (!DarknessManager.Instance.flashlightInHand)
         {
             PickupFlashlight();
+            if (!DarknessManager.Instance.flashlightPowered)
+                return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, flashlightPickupInsightObject, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
         }
         else
         {

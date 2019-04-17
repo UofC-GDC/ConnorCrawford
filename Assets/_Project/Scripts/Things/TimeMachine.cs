@@ -27,6 +27,7 @@ public class TimeMachine : Thing
     [Header("new")]
     [SerializeField] private Thing fadeOutPanel;
     [SerializeField] private Thing credits;
+    [SerializeField] private Thing timeMachineInsight;
 
     private float heldTime = 0f;
 
@@ -60,7 +61,7 @@ public class TimeMachine : Thing
                     LED.SetActive(true);
                     LED.GetComponent<BlinkingLight>().enabled = true;
                 }
-                return null;
+                return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, timeMachineInsight, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
             }
             else if (Input.GetMouseButton(1))
             {
