@@ -56,28 +56,33 @@ public class Cursor : Singleton<Cursor>
                 image.sprite = cursorInv;
         }
 
-        //if (StateManager.Instance.currentState.GetType() != typeof(GetInputState))
-        //{
-        //    var leftClicked = Input.GetMouseButtonDown(0);
-        //    var rightClicked = Input.GetMouseButtonDown(1);
+        if (StateManager.Instance.currentState.GetType() != typeof(GetInputState))
+        {
+            image.color = Color.grey;
+            //var leftClicked = Input.GetMouseButtonDown(0);
+            //var rightClicked = Input.GetMouseButtonDown(1);
 
-        //    if (leftClicked || rightClicked) ShakeMouse();
+            //if (leftClicked || rightClicked) ShakeMouse();
 
-        //    //RaycastHit2D hit2D;
-        //    //RaycastHit hit3D;
+            //RaycastHit2D hit2D;
+            //RaycastHit hit3D;
 
-        //    //Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    //if (Physics.Raycast(ray2, out hit3D)) ;
+            //Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //if (Physics.Raycast(ray2, out hit3D)) ;
 
-        //    //hit2D = Physics2D.GetRayIntersection(ray2);
-        //    //var target = hit2D ? hit2D.collider.gameObject.GetComponent<Thing>() : null;
+            //hit2D = Physics2D.GetRayIntersection(ray2);
+            //var target = hit2D ? hit2D.collider.gameObject.GetComponent<Thing>() : null;
 
-        //    //localEnv.hit = hit2D;
-        //    //localEnv.hit3D = hit3D;
+            //localEnv.hit = hit2D;
+            //localEnv.hit3D = hit3D;
 
-        //    //new_env = localEnv;
-        //    //if (leftClicked || rightClicked) return new WalkingState();
-        //    //return this;
-        //}
+            //new_env = localEnv;
+            //if (leftClicked || rightClicked) return new WalkingState();
+            //return this;
+        }
+        else
+        {
+            image.color = Color.white;
+        }
     }
 }
