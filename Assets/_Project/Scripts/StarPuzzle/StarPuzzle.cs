@@ -76,6 +76,13 @@ public class StarPuzzle : MonoBehaviour
             {
                 allDone = true;
                 lineRenderer.positionCount--;
+                if (lineRenderer.positionCount == 0 || lineRenderer.positionCount == 1)
+                {
+                    lineRenderer.positionCount = 0;
+                    allDone = false;
+                    connections.Clear();
+                    lastStar = null;
+                }
             }
             else
             {
