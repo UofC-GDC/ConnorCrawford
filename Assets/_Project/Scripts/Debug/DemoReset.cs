@@ -11,5 +11,9 @@ public class DemoReset : Singleton<DemoReset>
         { 
             SceneManager.LoadScene("Night(Dirty)");
         }
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            SceneManager.LoadScene("Morning(Clean)");
+        }
     }
 }

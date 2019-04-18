@@ -3964,6 +3964,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a64009707160544aeb556ed6d01441, type: 2}
   m_IsPrefabAsset: 0
+--- !u!95 &489761743 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95997479784720124, guid: 76a64009707160544aeb556ed6d01441,
+    type: 2}
+  m_PrefabInternal: {fileID: 489761742}
 --- !u!114 &498503937 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114638683459398570, guid: b98af90800a8da346a65041c5eff87b6,
@@ -4789,7 +4794,6 @@ GameObject:
   - component: {fileID: 598451135}
   - component: {fileID: 598451134}
   - component: {fileID: 598451137}
-  - component: {fileID: 598451131}
   - component: {fileID: 598451129}
   - component: {fileID: 598451130}
   - component: {fileID: 598451138}
@@ -4824,18 +4828,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 2100000, guid: a23566b3ced7e804cb9229bd2b1ea350, type: 2}
---- !u!114 &598451131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114052396255453404, guid: 44d1939b4c527d6428d4ebd86d3fe499,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 598451128}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &598451133
 Camera:
   m_ObjectHideFlags: 0
@@ -5889,7 +5881,8 @@ Prefab:
       propertyPath: orthographic size
       value: 7.07
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114492786345938676, guid: 08178b1cf77a332418fced7b6e43346b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 08178b1cf77a332418fced7b6e43346b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &677074585
@@ -16366,6 +16359,21 @@ Prefab:
       propertyPath: endPauseTime
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114322058811993386, guid: a23d4d060ed95b043ad55df0cf461303,
+        type: 2}
+      propertyPath: storySpeechBubble
+      value: 
+      objectReference: {fileID: 1643749530}
+    - target: {fileID: 114322058811993386, guid: a23d4d060ed95b043ad55df0cf461303,
+        type: 2}
+      propertyPath: storyNextButton
+      value: 
+      objectReference: {fileID: 2130016139}
+    - target: {fileID: 114322058811993386, guid: a23d4d060ed95b043ad55df0cf461303,
+        type: 2}
+      propertyPath: storyTextMesh
+      value: 
+      objectReference: {fileID: 1718918316}
     m_RemovedComponents:
     - {fileID: 114492242841858178, guid: a23d4d060ed95b043ad55df0cf461303, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a23d4d060ed95b043ad55df0cf461303, type: 2}
@@ -19861,6 +19869,16 @@ Prefab:
       propertyPath: radioSongs.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: b786d2961f6321848bc2c5d0493ed811, type: 3}
+    - target: {fileID: 114493650474502478, guid: da14bdaf9ef632c439cdc25a9a47c519,
+        type: 2}
+      propertyPath: battery
+      value: 
+      objectReference: {fileID: 788274183}
+    - target: {fileID: 114493650474502478, guid: da14bdaf9ef632c439cdc25a9a47c519,
+        type: 2}
+      propertyPath: notesAnimator
+      value: 
+      objectReference: {fileID: 489761743}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da14bdaf9ef632c439cdc25a9a47c519, type: 2}
   m_IsPrefabAsset: 0
