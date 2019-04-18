@@ -37,7 +37,7 @@ public class Cursor : Singleton<Cursor>
         ms = true;
         var prevCol = image.color;
         image.color = Color.red;
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.1f);
         image.color = prevCol;
         ms = false;
     }
