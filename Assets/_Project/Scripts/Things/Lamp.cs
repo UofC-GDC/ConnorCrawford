@@ -34,7 +34,8 @@ public class Lamp : Thing
         }
 
         lampSound.pitch = soundPitch;
-        animator.SetTrigger(triggerString);
+        if(DarknessManager.Instance.day)
+            animator.SetTrigger(triggerString);
         lampSound.Play();
 
         return null;

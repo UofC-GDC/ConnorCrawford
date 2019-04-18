@@ -11646,7 +11646,6 @@ GameObject:
   - component: {fileID: 637233249}
   - component: {fileID: 966325971}
   - component: {fileID: 966325970}
-  - component: {fileID: 966325969}
   - component: {fileID: 966325968}
   - component: {fileID: 966325967}
   - component: {fileID: 966325966}
@@ -11665,7 +11664,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 966325965}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f23046c7c7adcbf489e379c29bd2d11c, type: 2}
   m_CullingMode: 0
@@ -11683,7 +11682,7 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 966325965}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243277688747070386, guid: afde001d1de64b24098b995de63c9b22,
     type: 2}
@@ -11780,7 +11779,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 966325965}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f46cfa30198c9b43aae10092757d629, type: 3}
   m_Name: 
@@ -11789,19 +11788,6 @@ MonoBehaviour:
   roomLight: {fileID: 836561266}
   animator: {fileID: 966325966}
   lightSound: {fileID: 966325967}
---- !u!114 &966325969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 966325965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2059ed12cd34b4f9381de5d47c94e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  insight: {fileID: 11400000, guid: d962346f92f6d1946b1611ec378dbfc8, type: 2}
-  delayTime: 0.345
 --- !u!61 &966325970
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14372,7 +14358,6 @@ GameObject:
   - component: {fileID: 217633693}
   - component: {fileID: 1243278909}
   - component: {fileID: 1243278908}
-  - component: {fileID: 1243278907}
   - component: {fileID: 1243278906}
   - component: {fileID: 1243278905}
   - component: {fileID: 1243278904}
@@ -14391,7 +14376,7 @@ Animator:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1243278903}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6a6a97e18d79ab942b87164516e2d3ef, type: 2}
   m_CullingMode: 0
@@ -14409,7 +14394,7 @@ AudioSource:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1243278903}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243277688747070386, guid: afde001d1de64b24098b995de63c9b22,
     type: 2}
@@ -14506,7 +14491,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1243278903}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5131295cd7f1ae54785ff38f5612acc6, type: 3}
   m_Name: 
@@ -14514,19 +14499,6 @@ MonoBehaviour:
   insight: {fileID: 11400000, guid: e18865bad4e872049920664e2816baa6, type: 2}
   animator: {fileID: 1243278904}
   lampSound: {fileID: 1243278905}
---- !u!114 &1243278907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1243278903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2059ed12cd34b4f9381de5d47c94e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  insight: {fileID: 11400000, guid: e18865bad4e872049920664e2816baa6, type: 2}
-  delayTime: 0.345
 --- !u!61 &1243278908
 BoxCollider2D:
   m_ObjectHideFlags: 0

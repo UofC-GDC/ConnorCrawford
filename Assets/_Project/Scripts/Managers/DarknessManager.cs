@@ -47,11 +47,13 @@ public class DarknessManager : Singleton<DarknessManager>
     #region Room Light Methods
     public void RoomLightOn()
     {
+        if (!day) return;
         roomLightOn = roomLight.enabled = true;
     }
 
     public void RoomLightOff()
     {
+        if (!day) return;
         roomLightOn = roomLight.enabled = false;
     }
     #endregion
