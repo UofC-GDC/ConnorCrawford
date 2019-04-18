@@ -14,4 +14,6 @@ MonoBehaviour:
   text:
   - insightOption:
     - Wooo. Let's see what this thing can do
+    - It's a good thing I put up my glow in the dark stars based on the real night
+      sky
   style: {fileID: 0}

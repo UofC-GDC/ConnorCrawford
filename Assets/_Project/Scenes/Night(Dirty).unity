@@ -19574,6 +19574,22 @@ Prefab:
       propertyPath: flashlightPowerInsightObject
       value: 
       objectReference: {fileID: 777752119}
+    - target: {fileID: 1201232123194178, guid: 79d2b0b0383d6ca43986639f0c12b379, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023638731062238, guid: 79d2b0b0383d6ca43986639f0c12b379, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023638731062238, guid: 79d2b0b0383d6ca43986639f0c12b379, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023638731062238, guid: 79d2b0b0383d6ca43986639f0c12b379, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79d2b0b0383d6ca43986639f0c12b379, type: 2}
   m_IsPrefabAsset: 0

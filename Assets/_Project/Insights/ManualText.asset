@@ -13,6 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - insightOption:
+    - WELCOME TO YOUR TIME MACHINE MANUAL
     - To activate the TIME MACHINE
-    - RIGHT CLICK on it for 3 SECONDS
+    - RIGHT CLICK on it for 3 SECONDS.
+    - The TIME MACHINE will need to know your location.
+    - Please enter your location by marking two constellations
+    - visible in your night sky.
   style: {fileID: 0}
