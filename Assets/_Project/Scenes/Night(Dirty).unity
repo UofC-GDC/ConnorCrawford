@@ -5256,7 +5256,7 @@ Transform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603535377 stripped
 GameObject:
@@ -8754,7 +8754,7 @@ Prefab:
         type: 2}
       propertyPath: Model
       value: 
-      objectReference: {fileID: 1304607509}
+      objectReference: {fileID: 0}
     - target: {fileID: 1473682989328392, guid: 50623a1879ce8754e9c48fb2f466f33b, type: 2}
       propertyPath: m_Name
       value: BreakerBox
@@ -9827,7 +9827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insight: {fileID: 11400000, guid: 7276a5d17768c3f4eb3304dd5ed13146, type: 2}
-  Model: {fileID: 677074586}
+  Model: {fileID: 0}
 --- !u!61 &877705028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14288,7 +14288,7 @@ Transform:
   - {fileID: 1466272479}
   - {fileID: 1799827645}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1279588687
 GameObject:
@@ -14397,11 +14397,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 214650761}
---- !u!1 &1304607509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1588924777919076, guid: b49cbcd545cab46a8bc3301fac22ad63,
-    type: 2}
-  m_PrefabInternal: {fileID: 305638773}
 --- !u!1 &1304880897
 GameObject:
   m_ObjectHideFlags: 0

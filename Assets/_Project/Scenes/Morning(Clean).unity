@@ -9330,7 +9330,7 @@ Prefab:
         type: 2}
       propertyPath: Model
       value: 
-      objectReference: {fileID: 1304607509}
+      objectReference: {fileID: 0}
     - target: {fileID: 114986333208813820, guid: 50623a1879ce8754e9c48fb2f466f33b,
         type: 2}
       propertyPath: broken
@@ -9655,7 +9655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insight: {fileID: 11400000, guid: 7276a5d17768c3f4eb3304dd5ed13146, type: 2}
-  Model: {fileID: 677074586}
+  Model: {fileID: 0}
 --- !u!61 &877705028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13476,11 +13476,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 214650761}
---- !u!1 &1304607509 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1588924777919076, guid: b49cbcd545cab46a8bc3301fac22ad63,
-    type: 2}
-  m_PrefabInternal: {fileID: 305638773}
 --- !u!1 &1304880897
 GameObject:
   m_ObjectHideFlags: 0
@@ -16364,12 +16359,12 @@ Prefab:
     - target: {fileID: 114768753714632384, guid: a23d4d060ed95b043ad55df0cf461303,
         type: 2}
       propertyPath: waitForSeconds
-      value: 0.05
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 114768753714632384, guid: a23d4d060ed95b043ad55df0cf461303,
         type: 2}
       propertyPath: endPauseTime
-      value: 0.0503
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114492242841858178, guid: a23d4d060ed95b043ad55df0cf461303, type: 2}

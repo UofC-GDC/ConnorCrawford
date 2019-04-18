@@ -129,7 +129,7 @@ public class DialogueManager : Singleton<DialogueManager>
         }
         if (!moreLines)
         {
-            yield return new WaitForSecondsRealtime(endPauseTime * line.Length);
+            yield return new WaitForSecondsRealtime(endPauseTime * Mathf.Clamp(line.Length, 0, 8f));
             ResetSpeechBubble(speechBubble, speechBubbleText);
         }
     }

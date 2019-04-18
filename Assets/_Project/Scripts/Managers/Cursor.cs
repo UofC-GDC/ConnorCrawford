@@ -26,20 +26,28 @@ public class Cursor : Singleton<Cursor>
         Debug.Log("Mouse says you cannot", this);
         mouseShake.Play();
         StopAllCoroutines();
+        StopAllCoroutines();
         StartCoroutine(MouseShake());
     }
 
+    bool ms = false;
+
     private IEnumerator MouseShake()
     {
+        ms = true;
+        var prevCol = image.color;
         image.color = Color.red;
         yield return new WaitForSeconds(.3f);
-        image.color = Color.white;
+        image.color = prevCol;
+        ms = false;
     }
 
     private void Update()
     {
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         transform.localPosition = ray.origin + ray.direction.normalized * cursorDistance;
+
+        if (ms) return;
 
         if (StateManager.Instance.env.player.inventory == null)
         {
