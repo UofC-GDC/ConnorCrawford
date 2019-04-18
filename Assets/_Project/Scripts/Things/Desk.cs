@@ -19,7 +19,7 @@ public class Desk : Thing
             if (player.inventory != null && player.inventory.GetType() == typeof(Battery))
                 battery.battery1 = false;
             player.inventory = paperThing;
-            return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, bluePaperInsight, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
+            return new DisplayInsight(StateManager.Instance.storySpeechBubble, StateManager.Instance.storyNextButton, bluePaperInsight, StateManager.Instance.storyTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
         }
         else
         {

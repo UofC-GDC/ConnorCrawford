@@ -61,7 +61,7 @@ public class TimeMachine : Thing
                     LED.SetActive(true);
                     LED.GetComponent<BlinkingLight>().enabled = true;
                 }
-                return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, timeMachineInsight, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
+                return new DisplayInsight(StateManager.Instance.storySpeechBubble, StateManager.Instance.storyNextButton, timeMachineInsight, StateManager.Instance.storyTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
             }
             else if (Input.GetMouseButton(1))
             {

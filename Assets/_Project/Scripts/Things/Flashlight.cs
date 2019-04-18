@@ -33,7 +33,7 @@ public class Flashlight : Thing
                 myBattery = (Battery)player.inventory;
                 player.inventory = null;
                 if (!DarknessManager.Instance.flashlightBlue)
-                    return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, flashlightPowerInsightObject, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
+                    return new DisplayInsight(StateManager.Instance.storySpeechBubble, StateManager.Instance.storyNextButton, flashlightPowerInsightObject, StateManager.Instance.storyTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
             }
             else if (!DarknessManager.Instance.flashlightInHand)
             {
@@ -49,7 +49,7 @@ public class Flashlight : Thing
         {
             PickupFlashlight();
             if (!DarknessManager.Instance.flashlightPowered)
-                return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, flashlightPickupInsightObject, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
+                return new DisplayInsight(StateManager.Instance.storySpeechBubble, StateManager.Instance.storyNextButton, flashlightPickupInsightObject, StateManager.Instance.storyTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
         }
         else
         {

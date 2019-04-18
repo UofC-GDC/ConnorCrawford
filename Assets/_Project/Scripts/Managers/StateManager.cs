@@ -16,9 +16,16 @@ public class StateManager : Singleton<StateManager>
     public bool completeDarkness = false;
 
     public NavMeshAgent agent;
+
+    [Header("ConnerText")]
     public GameObject connerSpeechBubble;
     public GameObject connerNextButton;
     public TextMeshPro connerTextMesh;
+    [Header("Story Text")]
+    public GameObject storySpeechBubble;
+    public GameObject storyNextButton;
+    public TextMeshPro storyTextMesh;
+
     public AudioSource connerAudioSource;
     public AnimationCurve connerAudioCurve;
     public CUTSCENE_BUTTON cutsceneManager;
