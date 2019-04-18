@@ -8,6 +8,8 @@ public class Radio : Thing3d
     [SerializeField] private AudioSource source;
     [SerializeField] private BatteryInteract battery;
 
+    [SerializeField] private Animator notesAnimator;
+
     private int i = 0;
 
     //protected new void Start()
@@ -30,7 +32,9 @@ public class Radio : Thing3d
         //    source.Play();
         //}
 
-
         source.enabled = !battery.battery1 || !battery.battery2;
+        notesAnimator.SetBool("NotesVisible", !battery.battery1 || !battery.battery2);
+
+        notesAnimator.SetBool("Color", !battery.battery1 && !battery.battery2);
     }
 }

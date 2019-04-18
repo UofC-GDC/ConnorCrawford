@@ -31,18 +31,21 @@ public class CutSceneState : State
             {
                 case CutScene.Verb.WalkTo:
                     next = new WalkingState();
-                    localEnv.rightClicked = false;
+                    localEnv.rightClicked = false; //ADD MIDDLE CLICK FALSE OR WHATEVER TO THIS SHIT DON'T CLOSE ME BEFORE YOU'VE DONE THIS!!
                     localEnv.leftClicked = false;
+                    localEnv.middleClicked = false;
                     break;
                 case CutScene.Verb.DisplayInsight:
                     next = new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, null, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
                     localEnv.rightClicked = false;
                     localEnv.leftClicked = true;
+                    localEnv.middleClicked = false;
                     break;
                 case CutScene.Verb.DoAction:
                     next = new DoInteractionState();
                     localEnv.rightClicked = true;
                     localEnv.leftClicked = false;
+                    localEnv.middleClicked = false;
                     break;
             }
 

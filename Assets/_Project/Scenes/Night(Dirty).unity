@@ -4113,8 +4113,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1818112049310126, guid: 76a64009707160544aeb556ed6d01441, type: 2}
       propertyPath: m_Layer
-      value: 12
+      value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 212953779431843570, guid: 76a64009707160544aeb556ed6d01441,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 212953779431843570, guid: 76a64009707160544aeb556ed6d01441,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 212953779431843570, guid: 76a64009707160544aeb556ed6d01441,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 212953779431843570, guid: 76a64009707160544aeb556ed6d01441,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212953779431843570, guid: 76a64009707160544aeb556ed6d01441,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a64009707160544aeb556ed6d01441, type: 2}
   m_IsPrefabAsset: 0
@@ -19176,6 +19201,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &1740638122 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95997479784720124, guid: 76a64009707160544aeb556ed6d01441,
+    type: 2}
+  m_PrefabInternal: {fileID: 489761742}
 --- !u!1 &1758531599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1170414466428402, guid: 8c359e2bebf442540870dbfafc648756,
@@ -20817,6 +20847,11 @@ Prefab:
       propertyPath: battery
       value: 
       objectReference: {fileID: 788274183}
+    - target: {fileID: 114493650474502478, guid: da14bdaf9ef632c439cdc25a9a47c519,
+        type: 2}
+      propertyPath: notesAnimator
+      value: 
+      objectReference: {fileID: 1740638122}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da14bdaf9ef632c439cdc25a9a47c519, type: 2}
   m_IsPrefabAsset: 0

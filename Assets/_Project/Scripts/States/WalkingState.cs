@@ -32,6 +32,11 @@ public class WalkingState : State
                 {
                     return new DoInteractionState();
                 }
+
+                if (curr_env.middleClicked)
+                {
+                    return new GetInputState();
+                }
             }
             else
             {

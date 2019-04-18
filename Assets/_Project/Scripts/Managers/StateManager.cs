@@ -93,7 +93,8 @@ public class StateManager : Singleton<StateManager>
 		public Player player;
 		public bool rightClicked;
 		public bool leftClicked;
-		public Thing target;
+        public bool middleClicked;
+        public Thing target;
 		public RaycastHit2D hit;
         public RaycastHit hit3D;
         public readonly NavMeshAgent agent;
@@ -102,8 +103,8 @@ public class StateManager : Singleton<StateManager>
         {
             return
                 "rightClick=" + rightClicked + " " +
-                "leftClick=" + leftClicked;
-
+                "leftClick=" + leftClicked + " " +
+                "middleClicked=" + middleClicked;
         }
     }
 

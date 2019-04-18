@@ -13,6 +13,7 @@ public class GetInputState : State
 
         localEnv.leftClicked = Input.GetMouseButtonDown(0);
         localEnv.rightClicked = Input.GetMouseButtonDown(1);
+        localEnv.middleClicked = Input.GetMouseButtonDown(2);
 
         RaycastHit2D hit2D;
         RaycastHit hit3D;
@@ -37,7 +38,7 @@ public class GetInputState : State
         localEnv.hit3D = hit3D;
 
         new_env = localEnv;
-        if (localEnv.leftClicked || localEnv.rightClicked) return new WalkingState();
+        if (localEnv.leftClicked || localEnv.rightClicked || localEnv.middleClicked) return new WalkingState();
         return this;
     }
 }

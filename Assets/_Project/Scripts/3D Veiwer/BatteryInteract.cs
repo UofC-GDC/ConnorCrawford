@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class BatteryInteract : Interatable3D
 {
-    [HideInInspector]
     public bool battery1 = false;
-    [HideInInspector]
     public bool battery2 = true;
     [SerializeField] private Desk desk;
     [SerializeField] private GameObject battery1Vis;
@@ -20,7 +18,7 @@ public class BatteryInteract : Interatable3D
     private void Start()
     {
         battery1Real = gameObject.AddComponent<Battery>();
-        //battery2Real = gameObject.AddComponent<Battery>();
+        battery2Real = gameObject.AddComponent<Battery>();
     }
 
     public override void interact(StateManager.Env env, ref Player player)
