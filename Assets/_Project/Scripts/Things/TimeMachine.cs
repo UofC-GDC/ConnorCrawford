@@ -37,8 +37,6 @@ public class TimeMachine : Thing
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        print(env);
-        print(Input.GetMouseButton(1));
         if (!open)
         {
             lidAnimator.SetTrigger("Open");
@@ -53,7 +51,6 @@ public class TimeMachine : Thing
             if (heldTime >= 3f && !Input.GetMouseButtonDown(1) || heldTime >= 4.1f)
             {
                 //Unlock Time Machine
-                Debug.Log("TIME MACHINE UNLOCKED!");
                 unlocked = true;
                 gearsAnimator.SetTrigger("Gears");
                 foreach (var LED in LEDs)

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -31,30 +32,34 @@ public class StarPuzzle : MonoBehaviour
 
     Vector3 mousePos;
 
-    bool allDone = false;
     bool youDidIt = false;
 
     private void Update()
     {
-        if (allDone)
-        {
+        if (lineRenderer.positionCount > 2)
+        { 
             foreach (var starSolution in starSolutions)
             {
                 var putItInHere = new Vector3[lineRenderer.positionCount];
                 lineRenderer.GetPositions(putItInHere);
-                if (!CheckListEqual(putItInHere, starSolution))
+
+                var nowPutItInHere = new Vector3[lineRenderer.positionCount-1];
+                nowPutItInHere = putItInHere.Take(putItInHere.Count() - 1).ToArray();
+
+                if (!CheckListEqual(nowPutItInHere, starSolution))
                 {
                     youDidIt = false;
                 }
                 else
                 {
                     youDidIt = true;
+                    lineRenderer.positionCount = starSolution.solutionOption.Count;
                     break;
                 }
             }
         }
 
-        if (allDone && youDidIt)
+        if (youDidIt)
         {
             if (!puzzle2.activeInHierarchy)
             { 
@@ -69,32 +74,13 @@ public class StarPuzzle : MonoBehaviour
             }
         }
 
+        if (youDidIt || transitioning) return;
 
         if (Input.GetMouseButtonUp(1))
         {
-            if (!allDone)
-            {
-                allDone = true;
-                lineRenderer.positionCount--;
-                if (lineRenderer.positionCount == 0 || lineRenderer.positionCount == 1)
-                {
-                    lineRenderer.positionCount = 0;
-                    allDone = false;
-                    connections.Clear();
-                    lastStar = null;
-                }
-            }
-            else
-            {
-                lineRenderer.positionCount = 0;
-                allDone = false;
-                connections.Clear();
-                lastStar = null;
-            }
-        }
-
-        if (allDone)
-        {
+            lineRenderer.positionCount = 0;
+            connections.Clear();
+            lastStar = null;
             return;
         }
 
@@ -143,7 +129,6 @@ public class StarPuzzle : MonoBehaviour
 
 
         lineRenderer.positionCount = 0;
-        allDone = false;
         youDidIt = false;
         connections.Clear();
         lastStar = null;
