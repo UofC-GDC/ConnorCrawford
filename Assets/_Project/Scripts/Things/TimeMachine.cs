@@ -144,9 +144,8 @@ public class TimeMachine : Thing
             //whirring.Play();
             print("TRAVELING THROUGH TIME!!!");
             //StartCoroutine(TimeTravelSequence());
-            fadeOutPanel.Action(env, ref player);
-            credits.Action(env, ref player);
-            return null;
+            //fadeOutPanel.Action(env, ref player);
+            return credits.Action(env, ref player);
         }
         else
         {

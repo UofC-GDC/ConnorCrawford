@@ -76,6 +76,8 @@ public class DialogueManager : Singleton<DialogueManager>
         speechBubbleText.text = "";
         audioSource.pitch = startPitch;
         speechBubble.SetActive(false);
+        skip = false;
+        firstChar = true;
     }
 
     private void PlayLine(string line, bool moreLines, GameObject speechBubble, TextMeshPro speechBubbleText)
@@ -84,12 +86,21 @@ public class DialogueManager : Singleton<DialogueManager>
         StartCoroutine(_PlayLine(line, moreLines, speechBubble, speechBubbleText));
     }
 
+    bool firstChar = true;
+
     private IEnumerator _PlayLine(string line, bool moreLines, GameObject speechBubble, TextMeshPro speechBubbleText)
     {
         var text = "";
         char lastChar = ' ';
+
+        firstChar = true;
+        skip = false;
         foreach (var character in line)
         {
+            if (skip)
+                break;
+            if (firstChar) firstChar = false;
+
             #region Update Bubble
             text += character;
             speechBubbleText.text = text;
@@ -127,10 +138,28 @@ public class DialogueManager : Singleton<DialogueManager>
 
             lastChar = character;
         }
+        if (skip)
+        {
+            speechBubbleText.text = line;
+            audioSource.Play();
+            firstChar = true;
+        }
         if (!moreLines)
         {
-            yield return new WaitForSecondsRealtime(endPauseTime * Mathf.Clamp(line.Length, 0, 8f));
+            var maxwait = skip ? 16f : 8f;
+            yield return new WaitForSecondsRealtime(endPauseTime * Mathf.Clamp(line.Length, 0, maxwait));
             ResetSpeechBubble(speechBubble, speechBubbleText);
+        }
+        skip = false;
+    }
+
+    bool skip = false;
+
+    private void Update()
+    {
+        if (StateManager.Instance.currentState.GetType() == typeof(DisplayInsight) && Input.GetMouseButtonDown(0) && !firstChar)
+        {
+            skip = true;
         }
     }
 }

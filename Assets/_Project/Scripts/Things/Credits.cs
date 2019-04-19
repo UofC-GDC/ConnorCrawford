@@ -18,7 +18,7 @@ public class Credits : Thing
         {
             rooollllllCredits = true;
             animator.SetTrigger("Credits");
-            AudioManager.Instance.Credits();
+            AudioManager.Instance.TimeTravelTheme();
             return new DoInteractionState();
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).IsName("Null"))
