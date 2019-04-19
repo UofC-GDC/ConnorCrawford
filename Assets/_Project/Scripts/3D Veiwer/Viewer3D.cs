@@ -4,9 +4,12 @@ public class Viewer3D : MonoBehaviour {
 	private GameObject active;
 	private Interatable3D mouseOver;
 	private Camera cam;
+    [SerializeField] private AudioSource bbSource;
 
-	// Use this for initialization
-	void Start () {
+    float bbVol = 0;
+
+    // Use this for initialization
+    void Start () {
 		cam = GetComponent<Camera>();
 	}
 
@@ -14,6 +17,7 @@ public class Viewer3D : MonoBehaviour {
 		active = gameObject;
 		active.SetActive(true);
         UnityEngine.Cursor.visible = true;
+        bbSource.volume = 0;
     }
 	void Deactivate() {
 		if (active != null) {
@@ -21,10 +25,12 @@ public class Viewer3D : MonoBehaviour {
 			active = null;
 		}
         UnityEngine.Cursor.visible = false;
+        bbSource.volume = bbVol;
     }
 	public State Display(GameObject gameObject, StateManager.Env env, ref Player player) {
 		if(gameObject != active) {
-			Deactivate();
+            bbVol = bbSource.volume;
+            Deactivate();
 			Activate(gameObject);
 		}
 		if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) {

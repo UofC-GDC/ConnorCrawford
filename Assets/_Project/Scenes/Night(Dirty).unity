@@ -3106,6 +3106,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114359996752990426, guid: b49cbcd545cab46a8bc3301fac22ad63,
+        type: 2}
+      propertyPath: bbSource
+      value: 
+      objectReference: {fileID: 1360245240}
     m_RemovedComponents:
     - {fileID: 114456330126640916, guid: b49cbcd545cab46a8bc3301fac22ad63, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: b49cbcd545cab46a8bc3301fac22ad63, type: 2}
@@ -15903,6 +15908,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224821977462701030, guid: c4a7a36b504d30944b82e4e6e4864cd2,
     type: 2}
   m_PrefabInternal: {fileID: 1977545802}
+--- !u!82 &1360245240 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82193520655491142, guid: 50623a1879ce8754e9c48fb2f466f33b,
+    type: 2}
+  m_PrefabInternal: {fileID: 772156365}
 --- !u!1 &1364127093
 GameObject:
   m_ObjectHideFlags: 0
@@ -22951,6 +22961,11 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 1329bede2aaf7984ab03a7d3e5c20dec, type: 3}
+    - target: {fileID: 82101000583834390, guid: 3e10b9b70105a04459f79f4e61d67286,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.206
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e10b9b70105a04459f79f4e61d67286, type: 2}
   m_IsPrefabAsset: 0

@@ -6,7 +6,8 @@ public class Thing3d : Thing {
 	protected virtual void Start() {
 		viewer = FindObjectOfType<Viewer3D>();
 	}
-	public override State Action(StateManager.Env env, ref Player player) {
+	public override State Action(StateManager.Env env, ref Player player)
+    {
         if (Model == null) return base.Action(env, ref player);
 		return viewer.Display(Model, env, ref player);
 	}
