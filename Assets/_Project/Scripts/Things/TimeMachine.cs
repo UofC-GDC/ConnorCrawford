@@ -50,7 +50,7 @@ public class TimeMachine : Thing
         {
             //unlocked = true;
             //return null;
-            if (heldTime >= 3f && heldTime <= 4f && !Input.GetMouseButton(1))
+            if (heldTime >= 3f && !Input.GetMouseButton(1))
             {
                 //Unlock Time Machine
                 Debug.Log("TIME MACHINE UNLOCKED!");
