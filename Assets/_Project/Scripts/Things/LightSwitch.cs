@@ -6,6 +6,7 @@ public class LightSwitch : Thing
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource lightSound;
     [SerializeField] private Thing doorUhOhInsight;
+    [SerializeField] private Thing powerOutInsight;
 
     private void Start()
     {
@@ -17,6 +18,8 @@ public class LightSwitch : Thing
 
     private string triggerString = "";
     private float soundPitch = 1;
+
+    bool firstTime = true;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -39,6 +42,11 @@ public class LightSwitch : Thing
         animator.SetTrigger(triggerString);
         lightSound.Play();
 
+        if (firstTime)
+        {
+            firstTime = false;
+            return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, powerOutInsight, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
+        }
         return null;
     }
 }

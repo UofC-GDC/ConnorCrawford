@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - insightOption:
+    - Whoah that's not supposed to do that.
+    - I think it's broken.
+  - insightOption:
     - "I\u2019m really not allowed to touch that or mom gets mad."
     - "It\u2019s just a bunch of boring switches anyway."
   - insightOption:

@@ -7,6 +7,8 @@ public class Lamp : Thing
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource lampSound;
 
+    [SerializeField] private Thing powerOutInsight;
+
     private void Start()
     {
         animator.SetTrigger("LampOn");
@@ -17,6 +19,8 @@ public class Lamp : Thing
     private bool lightOn = true;
     private string triggerString = "";
     private float soundPitch = 1;
+
+    bool firstTime = true;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -38,6 +42,11 @@ public class Lamp : Thing
             animator.SetTrigger(triggerString);
         lampSound.Play();
 
+        if (firstTime)
+        {
+            firstTime = false;
+            return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, powerOutInsight, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
+        }
         return null;
     }
 }

@@ -6760,6 +6760,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 0.0998, y: -0.1023, z: 0.0522}
   end: {x: -0.1269, y: -0.1023, z: 0.0522}
+--- !u!1 &689529176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689529177}
+  - component: {fileID: 689529178}
+  m_Layer: 0
+  m_Name: PowerOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &689529177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 689529176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1273846179}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &689529178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 689529176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2059ed12cd34b4f9381de5d47c94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insight: {fileID: 11400000, guid: f0389c4cb4476e7429c7c4aa502824f7, type: 2}
+  delayTime: 0.345
 --- !u!1 &690621228
 GameObject:
   m_ObjectHideFlags: 0
@@ -12128,6 +12170,7 @@ MonoBehaviour:
   animator: {fileID: 966325966}
   lightSound: {fileID: 966325967}
   doorUhOhInsight: {fileID: 2041491559}
+  powerOutInsight: {fileID: 689529178}
 --- !u!61 &966325970
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14915,6 +14958,7 @@ MonoBehaviour:
   insight: {fileID: 11400000, guid: e18865bad4e872049920664e2816baa6, type: 2}
   animator: {fileID: 1243278904}
   lampSound: {fileID: 1243278905}
+  powerOutInsight: {fileID: 689529178}
 --- !u!61 &1243278908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15243,6 +15287,7 @@ Transform:
   - {fileID: 1844775174}
   - {fileID: 1466272479}
   - {fileID: 1799827645}
+  - {fileID: 689529177}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
