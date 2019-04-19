@@ -9,6 +9,7 @@ public class Manual : Thing
     [SerializeField] private GameObject nextButton;
     [SerializeField] private TextMeshPro textMesh;
     [SerializeField] private Thing manualTarget;
+    [SerializeField] private Thing fakeManualTarget;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AnimationCurve animationCurve;
 
@@ -17,6 +18,9 @@ public class Manual : Thing
         if (DarknessManager.Instance.flashlightPowered && DarknessManager.Instance.flashlightInHand && DarknessManager.Instance.flashlightBlue)
             Clock.Instance.SetClock(6);
 
-        return new DisplayInsight(speechBubble, nextButton, manualTarget, textMesh, audioSource, animationCurve);
+        if(DarknessManager.Instance.flashlightPowered && DarknessManager.Instance.flashlightInHand && DarknessManager.Instance.flashlightBlue)
+            return new DisplayInsight(speechBubble, nextButton, manualTarget, textMesh, audioSource, animationCurve);
+
+        return new DisplayInsight(speechBubble, nextButton, fakeManualTarget, textMesh, audioSource, animationCurve);
     }
 }

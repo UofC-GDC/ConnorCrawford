@@ -5,6 +5,7 @@ public class LightSwitch : Thing
     [SerializeField] private Light roomLight;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource lightSound;
+    [SerializeField] private Thing doorUhOhInsight;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class LightSwitch : Thing
 
     public override State Action(StateManager.Env env, ref Player player)
     {
-        if (DarknessManager.Instance.doorOpen) return base.Action(env, ref player);
+        if (DarknessManager.Instance.doorOpen) return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, doorUhOhInsight, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
 
         if (!DarknessManager.Instance.roomLightOn)
         {
