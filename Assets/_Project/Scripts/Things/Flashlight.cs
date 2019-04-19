@@ -18,6 +18,8 @@ public class Flashlight : Thing
 
     Battery myBattery = null;
 
+    bool played = false;
+
     public override State Action(StateManager.Env env, ref Player player)
     {
         if (env.player.inventory != null)
@@ -32,8 +34,11 @@ public class Flashlight : Thing
                 DarknessManager.Instance.PowerFlashlight();
                 myBattery = (Battery)player.inventory;
                 player.inventory = null;
-                if (!DarknessManager.Instance.flashlightBlue)
+                if (!DarknessManager.Instance.flashlightBlue && !played)
+                {
+                    played = true;
                     return new DisplayInsight(StateManager.Instance.storySpeechBubble, StateManager.Instance.storyNextButton, flashlightPowerInsightObject, StateManager.Instance.storyTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
+                }
             }
             else if (!DarknessManager.Instance.flashlightInHand)
             {
