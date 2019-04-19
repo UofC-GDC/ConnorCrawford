@@ -13,7 +13,7 @@ public class GetInputState : State
 
         localEnv.leftClicked = Input.GetMouseButtonDown(0);
         localEnv.rightClicked = Input.GetMouseButtonDown(1);
-        localEnv.middleClicked = Input.GetMouseButtonDown(2);
+        localEnv.middleClicked = Input.GetMouseButton(2);
 
         RaycastHit2D hit2D;
         RaycastHit hit3D;
