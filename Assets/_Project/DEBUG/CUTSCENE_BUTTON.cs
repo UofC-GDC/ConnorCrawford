@@ -12,6 +12,7 @@ public class CUTSCENE_BUTTON : Thing
     [SerializeField] private GameObject fadeInPanel;
     [SerializeField] private GameObject fadeOutPanel;
     [SerializeField] private GameObject clockSetter;
+    [SerializeField] private GameObject clockSetter2;
     [SerializeField] private GameObject changeSceneNight;
     [Header("IntroPt2")]
     [SerializeField] private GameObject makeNoteFall;
@@ -49,7 +50,7 @@ public class CUTSCENE_BUTTON : Thing
         cutsceneScript.Add(lineMinus1);
 
         CutScene.Line line0 = new CutScene.Line();
-        line0.arg = clockSetter;
+        line0.arg = clockSetter2;
         line0.verb = CutScene.Verb.DoAction;
 
         cutsceneScript.Add(line0);

@@ -14,5 +14,4 @@ MonoBehaviour:
   text:
   - insightOption:
     - Now I can finally see in the dark!
-    - Too bad I still can't read that red book though.
   style: {fileID: 0}
