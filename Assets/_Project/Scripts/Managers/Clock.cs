@@ -75,7 +75,6 @@ public class Clock : Singleton<Clock>
         if (indexToSpinTo < currentClockIndex)
         {
             yield return StartCoroutine(SpinToIndex(clockSprites.Length -1));
-            Debug.Log("Line After Starting Couroutine. Don't want this line to play until above is done.");
             for (int i = 0; i < waitForFramesSpin; i++)
             {
                 yield return null;

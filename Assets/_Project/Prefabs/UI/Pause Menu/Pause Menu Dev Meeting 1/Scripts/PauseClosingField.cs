@@ -11,7 +11,6 @@ public class PauseClosingField : MonoBehaviour, IPointerDownHandler
     {
         pauseMenu = UIWithPauseMenu.GetComponent<PauseMenu>();
 
-        Debug.Log("Being clicked!!");
         pauseMenu.Resume();
     }
 }

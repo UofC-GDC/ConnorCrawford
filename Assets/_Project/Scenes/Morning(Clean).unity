@@ -11036,6 +11036,7 @@ MonoBehaviour:
   nextButton: {fileID: 477938500}
   textMesh: {fileID: 1687883497}
   manualTarget: {fileID: 187191849}
+  fakeManualTarget: {fileID: 0}
   audioSource: {fileID: 1019512041}
   animationCurve:
     serializedVersion: 2
@@ -14216,7 +14217,7 @@ Prefab:
     - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114523130764544714, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
@@ -14250,6 +14251,65 @@ Prefab:
         type: 2}
       propertyPath: m_ReceiveShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224924317073007866, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224924317073007866, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224924317073007866, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_margin.z
+      value: 8.009702
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_margin.w
+      value: 2.878325
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_margin.y
+      value: 2.7430067
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_margin.x
+      value: 10.000778
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944527968705832, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
@@ -14746,7 +14806,7 @@ GameObject:
   - component: {fileID: 1424621496}
   - component: {fileID: 1424621495}
   - component: {fileID: 1424621493}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14759,8 +14819,8 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424621491}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.39996696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2130016140}
@@ -14768,7 +14828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.2}
+  m_AnchoredPosition: {x: 0, y: -1.1999791}
   m_SizeDelta: {x: 37.9, y: 15.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424621493
@@ -17260,7 +17320,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 100000
+  m_DynamicPixelsPerUnit: 1
 --- !u!223 &1643749534
 Canvas:
   m_ObjectHideFlags: 0
@@ -22288,7 +22348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2130016140
 RectTransform:
   m_ObjectHideFlags: 0

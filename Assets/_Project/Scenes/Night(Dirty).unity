@@ -1349,16 +1349,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 213316974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.40008822}
+  m_LocalScale: {x: 180.96657, y: 180.96657, z: 180.96657}
   m_Children: []
   m_Father: {fileID: 1855047448}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.2}
+  m_AnchoredPosition: {x: 0.000010786448, y: -1.2000489}
   m_SizeDelta: {x: 37.9, y: 15.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213316976
@@ -1408,8 +1408,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 1
+  m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2894,7 +2894,7 @@ Transform:
   - {fileID: 2037373415}
   - {fileID: 1627585385}
   m_Father: {fileID: 1279588688}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &374008350 stripped
 Camera:
@@ -4181,8 +4181,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.174}
   m_LocalScale: {x: 0.011937012, y: 0.011937012, z: 0.011937012}
-  m_Children:
-  - {fileID: 756075603}
+  m_Children: []
   m_Father: {fileID: 598439319}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5064,6 +5063,7 @@ RectTransform:
   m_Children:
   - {fileID: 1687883496}
   - {fileID: 477938501}
+  - {fileID: 756075603}
   m_Father: {fileID: 1477504991}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6473,12 +6473,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2085340483}
   m_Layer: 0
-  m_Name: StarPuzzle 2
+  m_Name: StarPuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &691800902
 GameObject:
   m_ObjectHideFlags: 0
@@ -8425,16 +8425,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 756075602}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.4}
+  m_LocalRotation: {x: -0.000000014901174, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1787748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 477938501}
-  m_RootOrder: 0
+  m_Father: {fileID: 598439319}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.2}
+  m_AnchoredPosition: {x: 0.66999996, y: -0.13132422}
   m_SizeDelta: {x: 37.9, y: 15.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &756075604
@@ -8484,8 +8484,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 1
+  m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8533,7 +8533,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -14900,8 +14900,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 93014841}
-  - {fileID: 2085340483}
   - {fileID: 350099515}
+  - {fileID: 2085340483}
   - {fileID: 849024038}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -14916,12 +14916,12 @@ GameObject:
   m_Component:
   - component: {fileID: 350099515}
   m_Layer: 0
-  m_Name: StarPuzzle
+  m_Name: StarPuzzle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1289716142 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95077166627546248, guid: c4a7a36b504d30944b82e4e6e4864cd2,
@@ -14991,7 +14991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1304880898}
   m_Layer: 0
-  m_Name: Stars2
+  m_Name: Stars1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15773,6 +15773,65 @@ Prefab:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224924317073007866, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224924317073007866, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224924317073007866, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_margin.z
+      value: 8.009584
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_margin.y
+      value: 2.1225991
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_margin.w
+      value: 2.2566943
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944527968705832, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635,
+        type: 2}
+      propertyPath: m_margin.x
+      value: 10.001055
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
   m_IsPrefabAsset: 0
@@ -16302,8 +16361,8 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424621491}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.40009633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2130016140}
@@ -16311,7 +16370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1.2}
+  m_AnchoredPosition: {x: -0.000010786448, y: -1.2000651}
   m_SizeDelta: {x: 37.9, y: 15.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424621493
@@ -17828,7 +17887,7 @@ GameObject:
   - component: {fileID: 1597881628}
   - component: {fileID: 1597881629}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Demo Reset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18063,7 +18122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1627585385}
   m_Layer: 0
-  m_Name: Stars1
+  m_Name: Stars2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23895,8 +23954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 2037373416}
   starCamera: {fileID: 849024037}
-  puzzle1: {fileID: 1288656136}
-  puzzle2: {fileID: 690621228}
+  puzzle1: {fileID: 690621228}
+  puzzle2: {fileID: 1288656136}
   fadeInOutPanelAnimator: {fileID: 1289716142}
   lineRendererAnimator: {fileID: 2037373420}
   mainCamera: {fileID: 598451128}
@@ -24373,7 +24432,7 @@ Transform:
   - {fileID: 2111052090}
   - {fileID: 1304880898}
   m_Father: {fileID: 1279588688}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2111052089
 GameObject:
@@ -24517,8 +24576,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 2111052091}
   starCamera: {fileID: 849024037}
-  puzzle1: {fileID: 1288656136}
-  puzzle2: {fileID: 1304880897}
+  puzzle1: {fileID: 690621228}
+  puzzle2: {fileID: 1288656136}
   fadeInOutPanelAnimator: {fileID: 1289716142}
   lineRendererAnimator: {fileID: 2111052095}
   mainCamera: {fileID: 598451128}
@@ -24753,7 +24812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2130016140
 RectTransform:
   m_ObjectHideFlags: 0

@@ -37,6 +37,7 @@ public class StarExitButton : Singleton<StarExitButton>
     {
         if (transitioning) yield break;
         transitioning = true;
+        fadeInOutPanelAnimator.SetFloat("speed", 5f);
         fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
 
         while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Black"))
@@ -49,5 +50,12 @@ public class StarExitButton : Singleton<StarExitButton>
         UnityEngine.Cursor.visible = on;
         fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
         transitioning = false;
+
+        while (!fadeInOutPanelAnimator.GetCurrentAnimatorStateInfo(0).IsName("Transparent"))
+        {
+            yield return null;
+        }
+
+        fadeInOutPanelAnimator.SetFloat("speed", 1f);
     }
 }

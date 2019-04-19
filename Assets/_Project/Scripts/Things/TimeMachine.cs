@@ -50,7 +50,7 @@ public class TimeMachine : Thing
         {
             //unlocked = true;
             //return null;
-            if (heldTime >= 3f && !Input.GetMouseButton(1))
+            if (heldTime >= 3f && !Input.GetMouseButtonDown(1) || heldTime >= 4.1f)
             {
                 //Unlock Time Machine
                 Debug.Log("TIME MACHINE UNLOCKED!");
@@ -142,9 +142,8 @@ public class TimeMachine : Thing
             realClockAnimator.enabled = true;
             realClockAnimator.SetTrigger("TimeTravel");
             //whirring.Play();
-            print("TRAVELING THROUGH TIME!!!");
             //StartCoroutine(TimeTravelSequence());
-            //fadeOutPanel.Action(env, ref player);
+            fadeOutPanel.Action(env, ref player);
             return credits.Action(env, ref player);
         }
         else
