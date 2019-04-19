@@ -48,7 +48,7 @@ public class TimeMachine : Thing
         {
             //unlocked = true;
             //return null;
-            if (heldTime >= 3f && !Input.GetMouseButtonDown(1) || heldTime >= 4.1f)
+            if (heldTime >= 3f && !Input.GetMouseButtonDown(1) || heldTime >= 4.5f)
             {
                 //Unlock Time Machine
                 unlocked = true;
