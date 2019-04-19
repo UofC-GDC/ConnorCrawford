@@ -35,6 +35,11 @@ public class GetInputState : State
        // Debug.Log(localEnv.rightClicked);
 
         localEnv.hit = hit2D;
+        if (localEnv.target != null && localEnv.target.GetType() == typeof(Flashlight) && DarknessManager.Instance.flashlightInHand)
+        {
+            hit3D.point = StateManager.Instance.agent.transform.position;
+        }
+
         localEnv.hit3D = hit3D;
 
         new_env = localEnv;

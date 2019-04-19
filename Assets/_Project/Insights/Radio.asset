@@ -16,4 +16,10 @@ MonoBehaviour:
     - "This is my radio and it\u2019s so cool because "
     - I-uh, I can listen to all the stations
     - and even uh and it connects to my walkie talkie
+  - insightOption:
+    - Pew pew bshhh wika wika
+    - music.
+  - insightOption:
+    - It's all staticky
+    - I think it needs another battery.
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
