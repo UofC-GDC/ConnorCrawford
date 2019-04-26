@@ -9,6 +9,7 @@ public class Desk : Thing
     [SerializeField] private BatteryInteract battery;
     [SerializeField] private Thing bluePaperInsight;
     [SerializeField] private SpriteRenderer visuals;
+    [SerializeField] private Collider2D hitbox;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -33,5 +34,6 @@ public class Desk : Thing
     private void Update()
     {
         visuals.enabled = !paper;
+        hitbox.enabled = !paper;
     }
 }

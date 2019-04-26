@@ -4477,11 +4477,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 454285145}
-  m_LocalRotation: {x: 0.7069774, y: 0.013574613, z: -0.013574806, w: 0.7069756}
-  m_LocalPosition: {x: 0.7506478, y: 2.5822096, z: -2.2055264}
-  m_LocalScale: {x: 0.48970845, y: 0.49388868, z: 0.4899108}
+  m_LocalRotation: {x: 0.000000066339496, y: -0.000000014556203, z: -0.77970797, w: 0.6261434}
+  m_LocalPosition: {x: -3.8747678, y: -0.484231, z: -3.4278681}
+  m_LocalScale: {x: 0.77029985, y: 0.7828843, z: 0.77354145}
   m_Children: []
-  m_Father: {fileID: 1919237386}
+  m_Father: {fileID: 487709081}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &454285147
@@ -4705,6 +4705,16 @@ Prefab:
       propertyPath: bluePaperInsight
       value: 
       objectReference: {fileID: 454285147}
+    - target: {fileID: 114951689898111378, guid: 17fc227d29b1de847af7a1f53c6d8011,
+        type: 2}
+      propertyPath: visuals
+      value: 
+      objectReference: {fileID: 487709080}
+    - target: {fileID: 114951689898111378, guid: 17fc227d29b1de847af7a1f53c6d8011,
+        type: 2}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 487709082}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17fc227d29b1de847af7a1f53c6d8011, type: 2}
   m_IsPrefabAsset: 0
@@ -4713,6 +4723,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4531078303009558, guid: 17fc227d29b1de847af7a1f53c6d8011,
     type: 2}
   m_PrefabInternal: {fileID: 487709078}
+--- !u!212 &487709080 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212093195718460056, guid: 17fc227d29b1de847af7a1f53c6d8011,
+    type: 2}
+  m_PrefabInternal: {fileID: 487709078}
+--- !u!4 &487709081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4835655428728700, guid: 17fc227d29b1de847af7a1f53c6d8011,
+    type: 2}
+  m_PrefabInternal: {fileID: 487709078}
+--- !u!61 &487709082 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 61730380778730632, guid: 17fc227d29b1de847af7a1f53c6d8011,
+    type: 2}
+  m_PrefabInternal: {fileID: 487709078}
+--- !u!114 &487709083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114951689898111378, guid: 17fc227d29b1de847af7a1f53c6d8011,
+    type: 2}
+  m_PrefabInternal: {fileID: 487709078}
+  m_Script: {fileID: 11500000, guid: ae4731505f103d94c88ddb92e20983f6, type: 3}
 --- !u!1001 &489761742
 Prefab:
   m_ObjectHideFlags: 0
@@ -9804,7 +9835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battery1: 0
   battery2: 1
-  desk: {fileID: 778883900}
+  desk: {fileID: 487709083}
   battery1Vis: {fileID: 1422659995}
   battery2Vis: {fileID: 2121282191}
 --- !u!1001 &799199475
@@ -22832,11 +22863,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1919237386 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4878676104750202, guid: 3dc5d8947e26f5d46a2fcee26db32c6a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1037412428}
 --- !u!1 &1924316911
 GameObject:
   m_ObjectHideFlags: 0
