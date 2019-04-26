@@ -10792,7 +10792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &877705025
 Transform:
   m_ObjectHideFlags: 0
@@ -10825,7 +10825,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 877705024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -24690,7 +24690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20ad17e4e13c74468c4209e432f3b70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insight: {fileID: 0}
+  insight: {fileID: 11400000, guid: 13072d1bb1297954cbc049edbb521cdc, type: 2}
   doorUhOhInsight: {fileID: 2041491559}
 --- !u!1 &2037373414
 GameObject:
