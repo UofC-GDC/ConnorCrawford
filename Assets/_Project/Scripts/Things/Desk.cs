@@ -8,6 +8,7 @@ public class Desk : Thing
     [SerializeField] private Insight dummy;
     [SerializeField] private BatteryInteract battery;
     [SerializeField] private Thing bluePaperInsight;
+    [SerializeField] private SpriteRenderer visuals;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -27,5 +28,10 @@ public class Desk : Thing
         }
 
         return null;
+    }
+
+    private void Update()
+    {
+        visuals.enabled = !paper;
     }
 }
