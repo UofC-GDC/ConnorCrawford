@@ -14,4 +14,8 @@ MonoBehaviour:
   text:
   - insightOption:
     - Sock Mountain! Sock Mountain!
+  - insightOption:
+    - Just a few more pairs and I can cannonball into this pile!
+  - insightOption:
+    - 'In an emergency, socks     can     be     thrown.  '
   style: {fileID: 0}

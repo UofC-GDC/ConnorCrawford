@@ -17,4 +17,7 @@ MonoBehaviour:
     - "It\u2019s just a bunch of boring switches anyway."
   - insightOption:
     - "Mom didn\u2019t have to put a note on it, I can remember on my own"
+  - insightOption:
+    - Why did I get the room with the breaker box?
+    - This is a  safety       hazard.
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

@@ -13,6 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text:
   - insightOption:
+    - 'Can fish time travel? Can bowls time travel? '
+  - insightOption:
+    - Did you even move?
+    - Did you even move? You're in the same pixel perfect position!
+  - insightOption:
     - What do you call a fish with no eyes?
     - Fssssshhhhhhhhhh
   - insightOption:
@@ -33,5 +38,8 @@ MonoBehaviour:
   - insightOption:
     - Just keep swimming
   - insightOption:
-    - 'Can fish time travel? Can bowls time travel? '
+    - This gold fish isn't even gold!
+    - I hope I didn't hurt his feelings...
+  - insightOption:
+    - I wish I could travel to the future to see how big you'd get!
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

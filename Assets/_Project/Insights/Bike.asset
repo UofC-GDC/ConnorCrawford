@@ -15,4 +15,9 @@ MonoBehaviour:
   - insightOption:
     - I want to ride my bicycle-
     - I want to ride my bike
+  - insightOption:
+    - "Tony Rock\u2019s Pro Biker 2 got me to buy this!  "
+  - insightOption:
+    - Bike means bicycle.
+    - So that means Mike means Micycle?
   style: {fileID: 0}

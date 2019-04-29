@@ -15,7 +15,20 @@ public class TimeMachine : Thing
     [SerializeField] private GameObject starPuzzle;
     [SerializeField] private Animator fadeInOutPanelAnimator;
 
+    [SerializeField] private Animator gearsAnimator;
+    [SerializeField] private List<GameObject> LEDs;
+    [SerializeField] private Animator clockAnimator;
+
+    [SerializeField] private Animator realClockAnimator;
+    [SerializeField] private AudioSource whirring;
+
+    [SerializeField] private Animator galaxy;
+
     private float heldTime = 0f;
+
+    private bool blink1 = false;
+    private bool blink2 = false;
+    private bool blink3 = false;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -37,23 +50,95 @@ public class TimeMachine : Thing
                 //Unlock Time Machine
                 Debug.Log("TIME MACHINE UNLOCKED!");
                 unlocked = true;
+                gearsAnimator.SetTrigger("Gears");
+                foreach (var LED in LEDs)
+                {
+                    LED.SetActive(true);
+                    LED.GetComponent<BlinkingLight>().enabled = true;
+                }
                 return null;
             }
             else if (Input.GetMouseButton(1))
             {
                 heldTime += Time.deltaTime;
+
+                #region Blink1
+                if (heldTime >= 1f && !blink1)
+                {
+                    foreach (var LED in LEDs)
+                    {
+                        LED.SetActive(true);
+                    }
+                    LEDs[0].GetComponent<AudioSource>().Play();
+                    blink1 = true;
+                }
+                if (heldTime >= 1.2f && blink1 && !blink2 && !blink3)
+                {
+                    foreach (var LED in LEDs)
+                    {
+                        LED.SetActive(false);
+                    }
+                }
+                #endregion  
+
+                #region Blink2
+                if (heldTime >= 2f && !blink2)
+                {
+                    foreach (var LED in LEDs)
+                    {
+                        LED.SetActive(true);
+                    }
+                    LEDs[0].GetComponent<AudioSource>().Play();
+                    blink2 = true;
+                }
+                if (heldTime >= 2.2f && blink2 && !blink3)
+                {
+                    foreach (var LED in LEDs)
+                    {
+                        LED.SetActive(false);
+                    }
+                }
+                #endregion
+
+                #region Blink3
+                if (heldTime >= 3f && !blink3)
+                {
+                    foreach (var LED in LEDs)
+                    {
+                        LED.SetActive(true);
+                    }
+                    LEDs[0].GetComponent<AudioSource>().Play();
+                    blink3 = true;
+                }
+                if (heldTime >= 3.2f && blink3)
+                {
+                    foreach (var LED in LEDs)
+                    {
+                        LED.SetActive(false);
+                    }
+                }
+                #endregion  
+
                 return new DoInteractionState();
             }
             else
             {
                 heldTime = 0;
+                blink1 = false;
+                blink2 = false;
+                blink3 = false;
                 return base.Action(env, ref player);
-                //return new DoInteractionState();
             }
         }
         else if (readyToTimeTravel)
         {
+            AudioManager.Instance.TimeTravelTheme();
+            clockAnimator.SetTrigger("Leggo");
+            realClockAnimator.enabled = true;
+            realClockAnimator.SetTrigger("TimeTravel");
+            whirring.Play();
             print("TRAVELING THROUGH TIME!!!");
+            StartCoroutine(TimeTravelSequence());
             return null;
         }
         else
@@ -74,4 +159,12 @@ public class TimeMachine : Thing
         open = true;
         yield break;
     }
+
+    private IEnumerator TimeTravelSequence()
+    {
+        yield return new WaitForSecondsRealtime(6f);
+
+        galaxy.SetTrigger("Galaxy");
+    }
+
 }

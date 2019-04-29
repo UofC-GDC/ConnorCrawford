@@ -10,13 +10,17 @@ public class StarExitButton : Singleton<StarExitButton>
 
     private bool transitioning = false;
 
+    [ContextMenu("DisableStarPuzzle")]
     public void DisableStarPuzzle()
     {
+        AudioManager.Instance.MainThemeNight();
         StartCoroutine(ToggleStarPuzzle(false));
     }
 
+    [ContextMenu("ActivateStarPuzzle")]
     public void ActivateStarPuzzle()
     {
+        AudioManager.Instance.StarTheme();
         StartCoroutine(ToggleStarPuzzle(true));
     }
 

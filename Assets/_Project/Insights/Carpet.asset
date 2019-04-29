@@ -18,4 +18,11 @@ MonoBehaviour:
     - This carpet keeps my feet warm
     - I wish I had a softer one,
     - my sister's is the softest in the house.
+  - insightOption:
+    - This needs a good wash after this hunk of metal fell on it.
+    - Who knows what kind prehistoric bacteria could be all over it.
+  - insightOption:
+    - This carpet keeps my feet warm
+    - I wish I had a softer one,
+    - my sister's is the softest in the house.
   style: {fileID: 0}

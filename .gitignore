@@ -44,6 +44,7 @@ ProjectVersion.txt
 manifest.json #Talk to Caelum or Riley if you want to add a package
 # For some Windows Users
 Thumbs.db
+Thumbs.db.meta
 
 # Odin
 Sirenix/Assemblies/AOT

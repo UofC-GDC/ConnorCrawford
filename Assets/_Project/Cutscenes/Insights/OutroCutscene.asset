@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
+  m_Name: OutroCutscene
+  m_EditorClassIdentifier: 
+  text:
+  - insightOption:
+    - Yes! I got out!
+    - and just in the nick of time!
+    - Conner- Me- will be home any second now
+    - I gotta get out of here before he comes in,
+    - and causes a time para- para- a black hole!
+  - insightOption:
+    - Whew. That was a close one.
+    - This has been quite the journey
+    - Thanks for coming with me!
+  - insightOption:
+    - COMING MOM!
+    - Finally, dinner time
+    - I'll see you soon
+  style: {fileID: 0}

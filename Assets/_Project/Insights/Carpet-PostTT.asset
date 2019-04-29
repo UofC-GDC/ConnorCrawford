@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87228ef40c9f74f468c35e844110c5e3, type: 3}
+  m_Name: Carpet-PostTT
+  m_EditorClassIdentifier: 
+  text:
+  - insightOption:
+    - 'So time travel is possible. Next thing you know, this carpet will fly! '
+  - insightOption:
+    - Fuzzy on my feet
+  - insightOption:
+    - This carpet keeps my feet warm
+    - I wish I had a softer one,
+    - my sister's is the softest in the house.
+  - insightOption:
+    - This needs a good wash after this hunk of metal fell on it.
+    - Who knows what kind prehistoric bacteria could be all over it.
+  - insightOption:
+    - This carpet keeps my feet warm
+    - I wish I had a softer one,
+    - my sister's is the softest in the house.
+  style: {fileID: 0}

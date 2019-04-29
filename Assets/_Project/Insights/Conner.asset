@@ -27,4 +27,10 @@ MonoBehaviour:
     - Net worth $14
   - insightOption:
     - My favorite shirt!
+  - insightOption:
+    - Ah! The Dementors!
+  - insightOption:
+    - Did something just touch me?
+  - insightOption:
+    - Curse you, cursor!
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}

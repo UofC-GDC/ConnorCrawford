@@ -16,4 +16,7 @@ MonoBehaviour:
     - Pew pew!
   - insightOption:
     - Go go gadget gun!
+  - insightOption:
+    - 'If I encounter any trouble, I hope they''re ready for my average aim and foam
+      darts.  '
   style: {fileID: 0}

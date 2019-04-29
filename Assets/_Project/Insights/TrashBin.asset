@@ -16,4 +16,6 @@ MonoBehaviour:
     - "hmm. I should prooooobably take that out\u2026"
   - insightOption:
     - One day. One day I'll empty you.
+  - insightOption:
+    - Oscar? Are you in here?
   style: {fileID: 114609975118346730, guid: 551487d79a22e1f499305e34c6e10635, type: 2}
