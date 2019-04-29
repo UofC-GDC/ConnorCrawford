@@ -21,7 +21,7 @@ public class OpenDoor : Interatable3D
 
     public override void interact(StateManager.Env env, ref Player player)
     {
-        if (slider.value <= slider.maxValue / 2f)
+        if (slider.value <= 0.1359014f)
             return;
 
         var angle = (Input.mousePosition - lastPos).x * sensitivity;
