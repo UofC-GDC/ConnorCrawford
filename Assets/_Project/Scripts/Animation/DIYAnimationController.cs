@@ -7,6 +7,8 @@ public class DIYAnimationController : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator animator;
+
+    [SerializeField] private AudioSource connorStepAudioSource;
 	
 	private void Update () 
     {
@@ -20,6 +22,7 @@ public class DIYAnimationController : MonoBehaviour
         var animSpeed = .2f * velMagNorm;
         animator.SetFloat("Speed", animSpeed);
 
+        PlayStepSoundEffect();
     }
 
     private static float FindDegree(Vector2 vector2)
@@ -31,5 +34,15 @@ public class DIYAnimationController : MonoBehaviour
         if (value < 0) value += 360f;
 
         return value;
+    }
+
+    private void PlayStepSoundEffect()
+    {
+        if(agent.velocity.magnitude > 0 && !connorStepAudioSource.isPlaying)
+        {
+            connorStepAudioSource.volume = Random.Range(.8f, 1);
+            connorStepAudioSource.pitch = Random.Range(.8f, 1.1f);
+            connorStepAudioSource.Play();
+        }
     }
 }
