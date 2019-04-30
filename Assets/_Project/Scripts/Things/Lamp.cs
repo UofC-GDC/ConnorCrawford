@@ -11,7 +11,8 @@ public class Lamp : Thing
 
     private void Start()
     {
-        animator.SetTrigger("LampOn");
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("lampOn"))
+            animator.SetTrigger("LampOn");
         lampSound.Stop();
         lampSound.pitch = 1;
     }
@@ -21,6 +22,9 @@ public class Lamp : Thing
     private float soundPitch = 1;
 
     bool firstTime = true;
+
+    public bool act2 = false;
+    public bool powerOn = false;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -38,15 +42,27 @@ public class Lamp : Thing
         }
 
         lampSound.pitch = soundPitch;
-        if(DarknessManager.Instance.day)
+        if(act2 && powerOn)
             animator.SetTrigger(triggerString);
         lampSound.Play();
 
-        if (firstTime)
+        if (firstTime && !powerOn)
         {
             firstTime = false;
             return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, powerOutInsight, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
         }
         return null;
+    }
+
+    private bool lastPowerStatus;
+
+    private void Update()
+    {
+        if (lastPowerStatus != powerOn && !powerOn)
+        {
+            animator.SetTrigger("LampOff");
+            firstTime = true;
+        }
+        lastPowerStatus = powerOn;
     }
 }

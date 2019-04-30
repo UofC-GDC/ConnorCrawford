@@ -10,6 +10,7 @@ public class Door : Thing
     [SerializeField]    private BoxCollider2D openCollider;
     [SerializeField]    private BoxCollider2D closedCollider;
     [SerializeField]    private GameObject note;
+    [SerializeField]    private NoteThingAct2 noteThing; 
 
     [SerializeField]    private bool locked = false;
                         private bool noteDropped = false;
@@ -32,6 +33,7 @@ public class Door : Thing
         else if (!noteDropped)
         {
             note.SetActive(true);
+            noteThing.MakeNoteFall();
             noteDropped = true;
         }
 

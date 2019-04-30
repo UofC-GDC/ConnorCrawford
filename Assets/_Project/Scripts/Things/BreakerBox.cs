@@ -48,7 +48,8 @@ public class BreakerBox : Thing3d
 
     private void Open()
     {
-        animator.SetTrigger("Open");
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("BreakerBoxOpened"))
+            animator.SetTrigger("Open");
         colliderClosed.enabled = false;
         colliderOpen.enabled = true;
         breakerBoxDoor.SetActive(true);
@@ -56,7 +57,8 @@ public class BreakerBox : Thing3d
     }
     private void Close()
     {
-        animator.SetTrigger("Close");
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName("BreakerBoxClosed"))
+            animator.SetTrigger("Close");
         colliderClosed.enabled = false;
         colliderOpen.enabled = true;
         breakerBoxDoor.SetActive(false);

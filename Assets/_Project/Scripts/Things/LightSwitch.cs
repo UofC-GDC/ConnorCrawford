@@ -20,6 +20,7 @@ public class LightSwitch : Thing
     private float soundPitch = 1;
 
     bool firstTime = true;
+    public bool powerOn = false;
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -28,25 +29,41 @@ public class LightSwitch : Thing
         if (!DarknessManager.Instance.roomLightOn)
         {
             triggerString = "LightOn";
-            DarknessManager.Instance.RoomLightOn();
+            if (powerOn)
+                DarknessManager.Instance.RoomLightOn();
             soundPitch = 1;
         }
         else
         {
             triggerString = "LightOff";
-            DarknessManager.Instance.RoomLightOff();
+            if (powerOn)
+                DarknessManager.Instance.RoomLightOff();
             soundPitch = .6f; ;
         }
 
         lightSound.pitch = soundPitch;
-        animator.SetTrigger(triggerString);
+        if(powerOn)
+            animator.SetTrigger(triggerString);
         lightSound.Play();
 
-        if (firstTime)
+        if (firstTime && !powerOn)
         {
             firstTime = false;
             return new DisplayInsight(StateManager.Instance.connerSpeechBubble, StateManager.Instance.connerNextButton, powerOutInsight, StateManager.Instance.connerTextMesh, StateManager.Instance.connerAudioSource, StateManager.Instance.connerAudioCurve);
         }
         return null;
+    }
+
+    private bool lastPowerStatus;
+
+    private void Update()
+    {
+        if (lastPowerStatus != powerOn && !powerOn)
+        {
+            animator.SetTrigger("LightOff");
+            firstTime = true;
+            DarknessManager.Instance.RoomLightOff();
+        }
+        lastPowerStatus = powerOn;
     }
 }

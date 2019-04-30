@@ -373,6 +373,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   cutsceneManager: {fileID: 1005995559}
   day: 0
+  act2: 0
 --- !u!4 &18190605
 Transform:
   m_ObjectHideFlags: 0
@@ -430,6 +431,7 @@ MonoBehaviour:
   flashlightBlue: 0
   day: 0
   doorOpen: 0
+  act2: 0
   runTheDoorCutscene: 0
 --- !u!114 &18190608
 MonoBehaviour:
@@ -16055,6 +16057,8 @@ MonoBehaviour:
   animator: {fileID: 1243278904}
   lampSound: {fileID: 1243278905}
   powerOutInsight: {fileID: 689529178}
+  act2: 0
+  powerOn: 0
 --- !u!61 &1243278908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26098,6 +26102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insight: {fileID: 11400000, guid: 13072d1bb1297954cbc049edbb521cdc, type: 2}
+  animator: {fileID: 0}
   doorUhOhInsight: {fileID: 2041491559}
 --- !u!1 &2037373414
 GameObject:

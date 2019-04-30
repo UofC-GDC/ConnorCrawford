@@ -26,6 +26,7 @@ public class DarknessManager : Singleton<DarknessManager>
 
                         public bool day                 = true;
                         public bool doorOpen            = true;
+                        public bool powerOn             = false;
 
                         public bool act2                = false;
 
@@ -50,7 +51,7 @@ public class DarknessManager : Singleton<DarknessManager>
     #region Room Light Methods
     public void RoomLightOn()
     {
-        if (!day) return;
+        if (!day && powerOn) return;
         roomLightOn = roomLight.enabled = true;
     }
 
