@@ -18688,7 +18688,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1610576453244248, guid: 75e281af30ec4c5489c06a6c160873cf, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23445889157125938, guid: 75e281af30ec4c5489c06a6c160873cf,
         type: 2}
@@ -19010,6 +19010,10 @@ Prefab:
       propertyPath: breakerBox
       value: 
       objectReference: {fileID: 20403861}
+    - target: {fileID: 1949827126029206, guid: 75e281af30ec4c5489c06a6c160873cf, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75e281af30ec4c5489c06a6c160873cf, type: 2}
   m_IsPrefabAsset: 0
