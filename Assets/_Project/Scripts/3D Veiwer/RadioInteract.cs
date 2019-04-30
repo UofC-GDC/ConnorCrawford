@@ -60,8 +60,11 @@ public class RadioInteract : Interatable3D
 
     protected override void interactEnd()
     {
-        masterMixer.SetFloat("RadioTonePitch", 1);
-        masterMixer.SetFloat("RadioToneVolume", -80);
-        masterMixer.SetFloat("RadioPitch", 1);
+        if (masterMixer != null)
+        {
+            masterMixer.SetFloat("RadioTonePitch", 1);
+            masterMixer.SetFloat("RadioToneVolume", -80);
+            masterMixer.SetFloat("RadioPitch", 1);
+        }
     }
 }
