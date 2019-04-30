@@ -15647,6 +15647,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: b5ff87e599b58d847953927061dde705,
         type: 3}
+    - target: {fileID: 114638683459398570, guid: b98af90800a8da346a65041c5eff87b6,
+        type: 2}
+      propertyPath: act2
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b98af90800a8da346a65041c5eff87b6, type: 2}
   m_IsPrefabAsset: 0
@@ -17562,6 +17567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insight: {fileID: 0}
   flashlight: {fileID: 33644745}
+  timeMachine: {fileID: 498503937}
 --- !u!1 &1273846178
 GameObject:
   m_ObjectHideFlags: 0

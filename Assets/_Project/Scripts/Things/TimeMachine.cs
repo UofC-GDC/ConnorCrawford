@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TimeMachine : Thing
 {
-    private bool open = false;
-    private bool unlocked = false;
+    [SerializeField] private bool act2;
+    [HideInInspector] public bool open = false;
+    [HideInInspector] public bool unlocked = false;
     public bool readyToTimeTravel = false;
     [SerializeField] private Animator lidAnimator;
     [SerializeField] private Animator steamAnimator;
@@ -34,6 +35,22 @@ public class TimeMachine : Thing
     private bool blink1 = false;
     private bool blink2 = false;
     private bool blink3 = false;
+
+    private void Start()
+    {
+        if (act2)
+        {
+            lidAnimator.SetTrigger("Open");
+            steamAnimator.SetTrigger("Steam");
+            gearsAnimator.SetTrigger("Gears");
+            foreach (var LED in LEDs)
+            {
+                LED.SetActive(true);
+                LED.GetComponent<BlinkingLight>().enabled = true;
+            }
+            StartCoroutine(BookTurnOn());
+        }
+    }
 
     public override State Action(StateManager.Env env, ref Player player)
     {
@@ -134,6 +151,7 @@ public class TimeMachine : Thing
         }
         else if (readyToTimeTravel)
         {
+            if (act2) return base.Action(env, ref player);
             //AudioManager.Instance.TimeTravelTheme();
             clockAnimator.SetTrigger("Leggo");
             realClockAnimator.enabled = true;

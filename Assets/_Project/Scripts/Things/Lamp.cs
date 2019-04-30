@@ -11,13 +11,13 @@ public class Lamp : Thing
 
     private void Start()
     {
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("lampOn"))
-            animator.SetTrigger("LampOn");
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("lampOff"))
+            animator.SetTrigger("LampOff");
         lampSound.Stop();
         lampSound.pitch = 1;
     }
 
-    private bool lightOn = true;
+    private bool lightOn = false;
     private string triggerString = "";
     private float soundPitch = 1;
 
