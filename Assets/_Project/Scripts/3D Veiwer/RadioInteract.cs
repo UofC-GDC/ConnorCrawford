@@ -53,6 +53,13 @@ public class RadioInteract : Interatable3D
         mouseX = Input.mousePosition.x;
     }
 
+    [SerializeField] private AnimationCurve connerRadioVoiceIncrease;
+
+    public void SetConnerSound(float val)
+    {
+        masterMixer.SetFloat("ConnerVoice", Mathf.Lerp(-80, -25, connerRadioVoiceIncrease.Evaluate(1-val)));
+    }
+
     protected override void interactStart()
     {
         mouseX = Input.mousePosition.x;
