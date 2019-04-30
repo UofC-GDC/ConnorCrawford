@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 
 public class RadioInteract : Interatable3D
 {   
@@ -8,6 +9,7 @@ public class RadioInteract : Interatable3D
     public float rotateSpeed = 400;
     private float mouseX;
     private float angleSum = 0f;
+    [SerializeField] private AudioMixer masterMixer;
 
     public override void interact(StateManager.Env env, ref Player player)
     {
@@ -24,6 +26,28 @@ public class RadioInteract : Interatable3D
         if (radioSlider != null) // if statement here in case radioSlider object isn't set
         {
             radioSlider.SetSlide(Mathf.Abs(angleSum / 360f));
+            if (masterMixer != null)
+            { 
+                masterMixer.SetFloat("RadioVolume", Mathf.Clamp(Mathf.Abs(delta), 0f, 5));
+                if(delta != 0)
+                    masterMixer.SetFloat("RadioPitch", Random.Range(0.50f, 2.00f));
+                else
+                    masterMixer.SetFloat("RadioPitch", 1);
+
+
+                if (delta != 0)
+                {
+                    masterMixer.SetFloat("RadioToneVolume", Mathf.Clamp(Mathf.Abs(delta), 0f, 5));
+                    float puttemHere = 0;
+                    masterMixer.GetFloat("RadioTonePitch", out puttemHere);
+                    masterMixer.SetFloat("RadioTonePitch", puttemHere + Random.Range(-.15f, .15f));
+                }
+                else
+                {
+                    masterMixer.SetFloat("RadioTonePitch", 1);
+                    masterMixer.SetFloat("RadioToneVolume", -80);
+                }
+            }
         }
 
         mouseX = Input.mousePosition.x;
@@ -32,5 +56,12 @@ public class RadioInteract : Interatable3D
     protected override void interactStart()
     {
         mouseX = Input.mousePosition.x;
+    }
+
+    protected override void interactEnd()
+    {
+        masterMixer.SetFloat("RadioTonePitch", 1);
+        masterMixer.SetFloat("RadioToneVolume", -80);
+        masterMixer.SetFloat("RadioPitch", 1);
     }
 }
