@@ -27,9 +27,34 @@ public class CUTSCENE_BUTTON : Thing
     [SerializeField] private GameObject tummyGrumble;
     [SerializeField] private FadeOutConner fadeOutConner;
 
+    [Header("Act2")]
+    [SerializeField] private Act2Setup act2Setup;
+
     private void Start()
     {
         
+    }
+
+    public State Act2Cutscene()
+    {
+        CutScene cutscene = (CutScene)ScriptableObject.CreateInstance(typeof(CutScene));
+        List<CutScene.Line> cutsceneScript = new List<CutScene.Line>();
+
+        CutScene.Line fade = new CutScene.Line();
+        fade.arg = fadeInPanel;
+        fade.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(fade);
+
+        CutScene.Line line2 = new CutScene.Line();
+        line2.arg = act2Setup.gameObject;
+        line2.verb = CutScene.Verb.DoAction;
+
+        cutsceneScript.Add(line2);
+
+        cutscene.script = cutsceneScript;
+
+        return cutscene.MakeState();
     }
 
     public override State Action(StateManager.Env env, ref Player player)

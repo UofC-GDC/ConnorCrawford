@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Desk : Thing 
 {
-    [HideInInspector] public bool paper = false;
+/*[HideInInspector]*/ public bool paper = false;
     [SerializeField] private Insight dummy;
     [SerializeField] private BatteryInteract battery;
     [SerializeField] private Thing bluePaperInsight;

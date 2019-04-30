@@ -13,12 +13,20 @@ public class Flashlight : Thing
     private void Start()
     {
         renderer.enabled = true;
-        DarknessManager.Instance.ResetFlashlight();
+        //DarknessManager.Instance.ResetFlashlight();
     }
 
     Battery myBattery = null;
 
     bool played = false;
+
+    /// <summary>
+    /// DO NOT call me unless you know what your doing and have a specific reason. The flashlight adds it's own battery. This spawns an extra one from the void.
+    /// </summary>
+    public void AddBattery()
+    {
+        myBattery = gameObject.AddComponent<Battery>();
+    }
 
     public override State Action(StateManager.Env env, ref Player player)
     {

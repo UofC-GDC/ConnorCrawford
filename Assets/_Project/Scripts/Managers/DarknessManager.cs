@@ -20,12 +20,14 @@ public class DarknessManager : Singleton<DarknessManager>
 
                         public bool roomLightOn         = true;
 
-    [HideInInspector]   public bool flashlightInHand    = false;
-    [HideInInspector]   public bool flashlightPowered   = false;
-    [HideInInspector]   public bool flashlightBlue      = false;
+  /*[HideInInspector]*/ public bool flashlightInHand    = false;
+  /*[HideInInspector]*/ public bool flashlightPowered   = false;
+  /*[HideInInspector]*/ public bool flashlightBlue      = false;
 
                         public bool day                 = true;
                         public bool doorOpen            = true;
+
+                        public bool act2                = false;
 
 
     private void Start()
@@ -33,7 +35,8 @@ public class DarknessManager : Singleton<DarknessManager>
         if (roomLightOn)    RoomLightOn();
         else                RoomLightOff();
 
-        ResetFlashlight();
+        if(!act2)
+            ResetFlashlight();
 
         if(day) SetTimeToDay();
         else    SetTimeToNight();

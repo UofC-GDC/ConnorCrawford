@@ -50,6 +50,7 @@ public class StateManager : Singleton<StateManager>
 	}
 
     [SerializeField] private bool day;
+    [SerializeField] private bool act2;
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ public class StateManager : Singleton<StateManager>
 #if !SM_DEBUG
         env = new Env();
         currentState = day ? cutsceneManager.IntroCutscene() : cutsceneManager.IntroCutscenePart2();
+        if (act2) currentState = cutsceneManager.Act2Cutscene();
         controller = currentState;
 #else
         env = new Env();
