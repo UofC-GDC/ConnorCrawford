@@ -164,9 +164,7 @@ AudioMixerGroupController:
   m_Name: RadioNoises
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: d13af4cb050e2264fa95b92a2e3ffbf0
-  m_Children:
-  - {fileID: 243038121162713390}
-  - {fileID: 243210013118910038}
+  m_Children: []
   m_Volume: ca3d61d45a2452f4c8d10b6819774f0c
   m_Pitch: f8abed7d74fa00840b3d7b365491066b
   m_Effects:
@@ -272,6 +270,8 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 243108203287075264}
   - {fileID: 243399448222019408}
+  - {fileID: 243038121162713390}
+  - {fileID: 243210013118910038}
   - {fileID: 243054769813874620}
   m_Volume: 1f8777df0781da3449412bdf16424430
   m_Pitch: 139a5edb3bdfda645a34a8c8f78cd07c

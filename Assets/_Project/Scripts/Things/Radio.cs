@@ -6,9 +6,12 @@ public class Radio : Thing3d
 {
     [SerializeField] private List<AudioClip> radioSongs;
     [SerializeField] private AudioSource source;
+    [SerializeField] private AudioSource talkySource;
     [SerializeField] private BatteryInteract battery;
 
     [SerializeField] private Animator notesAnimator;
+
+    [SerializeField] private RadioInteract radioInteract;
 
     private int i = 0;
 
@@ -33,8 +36,12 @@ public class Radio : Thing3d
         //}
 
         source.enabled = !battery.battery1 || !battery.battery2;
+        talkySource.enabled = !battery.battery1 || !battery.battery2;
+
         notesAnimator.SetBool("NotesVisible", !battery.battery1 || !battery.battery2);
 
         notesAnimator.SetBool("Color", !battery.battery1 && !battery.battery2);
+
+        radioInteract.fixPlz();
     }
 }

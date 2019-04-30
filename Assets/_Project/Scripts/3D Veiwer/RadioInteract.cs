@@ -10,6 +10,23 @@ public class RadioInteract : Interatable3D
     private float mouseX;
     private float angleSum = 0f;
     [SerializeField] private AudioMixer masterMixer;
+    [SerializeField] private BatteryInteract batterys;
+
+    public void fixPlz()
+    {
+        if (radioSlider != null)
+            radioSlider.SetSlide(Mathf.Abs(angleSum / 360f));
+
+        if (masterMixer != null)
+        {
+            if (batterys.battery1 && batterys.battery2)
+            {
+                masterMixer.SetFloat("RadioPitch", 1);
+                masterMixer.SetFloat("RadioVolume", -80);
+                masterMixer.SetFloat("ConnerVoice", -80);
+            }
+        }
+    }
 
     public override void interact(StateManager.Env env, ref Player player)
     {
@@ -27,13 +44,20 @@ public class RadioInteract : Interatable3D
         {
             radioSlider.SetSlide(Mathf.Abs(angleSum / 360f));
             if (masterMixer != null)
-            { 
-                masterMixer.SetFloat("RadioVolume", Mathf.Clamp(Mathf.Abs(delta), 0f, 5));
-                if(delta != 0)
-                    masterMixer.SetFloat("RadioPitch", Random.Range(0.50f, 2.00f));
+            {
+                if (batterys.battery1 || batterys.battery2)
+                {
+                    masterMixer.SetFloat("RadioVolume", Mathf.Clamp(Mathf.Abs(delta), 0f, 5));
+                    if (delta != 0)
+                        masterMixer.SetFloat("RadioPitch", Random.Range(0.50f, 2.00f));
+                    else
+                        masterMixer.SetFloat("RadioPitch", 1);
+                }
                 else
+                {
                     masterMixer.SetFloat("RadioPitch", 1);
-
+                    masterMixer.SetFloat("RadioVolume", -80);
+                }
 
                 if (delta != 0)
                 {
@@ -47,6 +71,12 @@ public class RadioInteract : Interatable3D
                     masterMixer.SetFloat("RadioTonePitch", 1);
                     masterMixer.SetFloat("RadioToneVolume", -80);
                 }
+
+                if (batterys.battery1 && batterys.battery2)
+                {
+                    masterMixer.SetFloat("RadioPitch", 1);
+                    masterMixer.SetFloat("RadioVolume", -80);
+                }
             }
         }
 
@@ -57,7 +87,14 @@ public class RadioInteract : Interatable3D
 
     public void SetConnerSound(float val)
     {
-        masterMixer.SetFloat("ConnerVoice", Mathf.Lerp(-80, -25, connerRadioVoiceIncrease.Evaluate(1-val)));
+        if ((batterys.battery1 || batterys.battery2) && !(batterys.battery1 && batterys.battery2))
+            masterMixer.SetFloat("ConnerVoice", Mathf.Lerp(-80, -25, connerRadioVoiceIncrease.Evaluate(1-val)));
+        else if (batterys.battery1 && batterys.battery2)
+        {
+            masterMixer.SetFloat("ConnerVoice", -80);
+        }
+        else
+            masterMixer.SetFloat("ConnerVoice", Mathf.Lerp(-80, 5, connerRadioVoiceIncrease.Evaluate(1 - val)));
     }
 
     protected override void interactStart()
@@ -72,6 +109,12 @@ public class RadioInteract : Interatable3D
             masterMixer.SetFloat("RadioTonePitch", 1);
             masterMixer.SetFloat("RadioToneVolume", -80);
             masterMixer.SetFloat("RadioPitch", 1);
+            if (batterys.battery1 && batterys.battery2)
+            {
+                masterMixer.SetFloat("RadioPitch", 1);
+                masterMixer.SetFloat("RadioVolume", -80);
+                masterMixer.SetFloat("ConnerVoice", -80);
+            }
         }
     }
 }

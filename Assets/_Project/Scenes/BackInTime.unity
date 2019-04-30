@@ -12576,6 +12576,7 @@ MonoBehaviour:
   start: {x: 0.0998, y: -0.1023, z: 0.0522}
   end: {x: -0.1269, y: -0.1023, z: 0.0522}
   radioInteract: {fileID: 877258207}
+  batteries: {fileID: 788274183}
   textBubble: {fileID: 1839393515}
   text: {fileID: 1726820421}
 --- !u!1 &689529176
@@ -16824,6 +16825,7 @@ MonoBehaviour:
   rotateAxis: {x: 1, y: 0, z: 0}
   rotateSpeed: 400
   masterMixer: {fileID: 24100000, guid: afde001d1de64b24098b995de63c9b22, type: 2}
+  batterys: {fileID: 788274183}
   connerRadioVoiceIncrease:
     serializedVersion: 2
     m_Curve:
@@ -20949,6 +20951,7 @@ MonoBehaviour:
   rotateAxis: {x: 0, y: 1, z: 0}
   rotateSpeed: 400
   masterMixer: {fileID: 0}
+  batterys: {fileID: 0}
   connerRadioVoiceIncrease:
     serializedVersion: 2
     m_Curve: []
@@ -23105,6 +23108,7 @@ MonoBehaviour:
   rotateAxis: {x: 0, y: 1, z: 0}
   rotateSpeed: 400
   masterMixer: {fileID: 0}
+  batterys: {fileID: 0}
   connerRadioVoiceIncrease:
     serializedVersion: 2
     m_Curve: []
@@ -23964,6 +23968,7 @@ MonoBehaviour:
   rotateAxis: {x: 0, y: 0, z: 1}
   rotateSpeed: 400
   masterMixer: {fileID: 0}
+  batterys: {fileID: 0}
   connerRadioVoiceIncrease:
     serializedVersion: 2
     m_Curve:
@@ -27352,12 +27357,12 @@ Prefab:
     - target: {fileID: 23745661337780032, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_CastShadows
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23745661337780032, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
       propertyPath: m_ReceiveShadows
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23745661337780032, guid: 551487d79a22e1f499305e34c6e10635,
         type: 2}
@@ -28405,6 +28410,7 @@ MonoBehaviour:
   rotateAxis: {x: 0, y: 1, z: 0}
   rotateSpeed: 400
   masterMixer: {fileID: 0}
+  batterys: {fileID: 0}
   connerRadioVoiceIncrease:
     serializedVersion: 2
     m_Curve: []
@@ -31338,6 +31344,16 @@ Prefab:
       propertyPath: notesAnimator
       value: 
       objectReference: {fileID: 1740638122}
+    - target: {fileID: 114493650474502478, guid: da14bdaf9ef632c439cdc25a9a47c519,
+        type: 2}
+      propertyPath: talkySource
+      value: 
+      objectReference: {fileID: 1904318058}
+    - target: {fileID: 114493650474502478, guid: da14bdaf9ef632c439cdc25a9a47c519,
+        type: 2}
+      propertyPath: radioInteract
+      value: 
+      objectReference: {fileID: 877258207}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da14bdaf9ef632c439cdc25a9a47c519, type: 2}
   m_IsPrefabAsset: 0
