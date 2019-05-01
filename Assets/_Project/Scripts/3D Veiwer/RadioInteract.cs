@@ -22,7 +22,7 @@ public class RadioInteract : Interatable3D
             if (batterys.battery1 && batterys.battery2)
             {
                 masterMixer.SetFloat("RadioPitch", 1);
-                masterMixer.SetFloat("RadioVolume", -80);
+                //masterMixer.SetFloat("RadioVolume", -80);
                 masterMixer.SetFloat("ConnerVoice", -80);
             }
         }
@@ -45,7 +45,7 @@ public class RadioInteract : Interatable3D
             radioSlider.SetSlide(Mathf.Abs(angleSum / 360f));
             if (masterMixer != null)
             {
-                if (batterys.battery1 || batterys.battery2)
+                if (!batterys.battery1 || !batterys.battery2)
                 {
                     masterMixer.SetFloat("RadioVolume", Mathf.Clamp(Mathf.Abs(delta), 0f, 5));
                     if (delta != 0)
@@ -75,7 +75,7 @@ public class RadioInteract : Interatable3D
                 if (batterys.battery1 && batterys.battery2)
                 {
                     masterMixer.SetFloat("RadioPitch", 1);
-                    masterMixer.SetFloat("RadioVolume", -80);
+                    //masterMixer.SetFloat("RadioVolume", -80);
                 }
             }
         }
@@ -112,7 +112,7 @@ public class RadioInteract : Interatable3D
             if (batterys.battery1 && batterys.battery2)
             {
                 masterMixer.SetFloat("RadioPitch", 1);
-                masterMixer.SetFloat("RadioVolume", -80);
+                //masterMixer.SetFloat("RadioVolume", -80);
                 masterMixer.SetFloat("ConnerVoice", -80);
             }
         }

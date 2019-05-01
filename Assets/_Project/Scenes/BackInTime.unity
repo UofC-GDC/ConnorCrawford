@@ -431,7 +431,7 @@ MonoBehaviour:
   flashlightPowered: 1
   flashlightBlue: 1
   day: 1
-  doorOpen: 1
+  doorOpen: 0
   powerOn: 1
   act2: 1
   runTheDoorCutscene: 0

@@ -38,6 +38,8 @@ public class Radio : Thing3d
         source.enabled = !battery.battery1 || !battery.battery2;
         talkySource.enabled = !battery.battery1 || !battery.battery2;
 
+        if (!battery.battery1 && !battery.battery2) source.enabled = false;
+
         notesAnimator.SetBool("NotesVisible", !battery.battery1 || !battery.battery2);
 
         notesAnimator.SetBool("Color", !battery.battery1 && !battery.battery2);
