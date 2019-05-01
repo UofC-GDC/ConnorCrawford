@@ -30,6 +30,11 @@ public class Door : Thing
                 return null;
             }
         }
+        else if (player.inventory.GetType() == typeof(Key))
+        {
+            UnlockDoor(env, ref player);
+            return null;
+        }
         else if (!noteDropped)
         {
             note.SetActive(true);
@@ -45,6 +50,12 @@ public class Door : Thing
         if (locked && DarknessManager.Instance.doorOpen) CloseDoor();
     }
 
+    private void UnlockDoor(StateManager.Env env, ref Player player)
+    {
+        player.inventory = null;
+        locked = false;
+    }
+
     private void OpenDoor()
     {
         animator.SetTrigger("OpenDoor");
@@ -58,7 +69,8 @@ public class Door : Thing
 
     private void CloseDoor()
     {
-        animator.SetTrigger("CloseDoor");
+        if(!animator.GetNextAnimatorStateInfo(0).IsName("DoorClosed"))
+            animator.SetTrigger("CloseDoor");
         DarknessManager.Instance.CloseDoor();
         collider3d.SetActive(false);
         ChangeAndPlayClip(doorCloseClip);
