@@ -9,6 +9,14 @@ public class OutroCutscene : Thing
     [SerializeField] private PlayAllTheSoundEffects playAllTheSoundEffeccts;
     [SerializeField] private Door door;
 
+    [Header("New")]
+    [SerializeField] private GameObject FlashLight;
+    [SerializeField] private GameObject newFlashLightParent;
+    [Header("New New")]
+    [SerializeField] private GameObject timeMachine;
+    [SerializeField] private GameObject flashLight;
+    [SerializeField] private BatteryInteract batteries;
+
     private bool letsGo = false;
     private bool allDone = false;
 
@@ -16,6 +24,11 @@ public class OutroCutscene : Thing
 
     public override State Action(StateManager.Env env, ref Player player)
     {
+        //Put Back Flash light
+        FlashLight.transform.SetParent(newFlashLightParent.transform);
+        FlashLight.transform.localPosition = new Vector3(0.985f, -1.51f, 14.3583f);
+        DarknessManager.Instance.ResetFlashlight();
+
         if (!letsGo && !allDone)
         { 
             StartCoroutine(action(env, player));
@@ -73,7 +86,11 @@ public class OutroCutscene : Thing
     private IEnumerator actionPart2(StateManager.Env env, Player player)
     {
         leggo2 = true;
-        //Remove objects or change scene or whatever.
+        timeMachine.SetActive(false);
+        flashLight.SetActive(false);
+        batteries.battery1 = true;
+        batteries.battery2 = true;
+        DarknessManager.Instance.SetTimeToNight();
 
         fadeInOutPanelAnimator.SetTrigger("FadeFromBlack");
 

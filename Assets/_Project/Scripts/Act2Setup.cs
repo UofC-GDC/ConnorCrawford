@@ -10,9 +10,9 @@ public class Act2Setup : Thing
     public override State Action(StateManager.Env env, ref Player player)
     {
         flashlight.AddBattery();
-        timeMachine.open = true;
-        timeMachine.unlocked = true;
-        timeMachine.readyToTimeTravel = true;
+        //timeMachine.open = true;
+        //timeMachine.unlocked = true;
+        //timeMachine.readyToTimeTravel = true;
         return null;
     }
 }

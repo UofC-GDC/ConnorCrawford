@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class DemoReset : Singleton<DemoReset> 
 {
-	private void Update () 
-    {
-        if (Input.GetKeyUp(KeyCode.P))
-        { 
-            SceneManager.LoadScene("Night(Dirty)");
-        }
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            SceneManager.LoadScene("Morning(Clean)");
-        }
-    }
+	//private void Update () 
+ //   {
+ //       if (Input.GetKeyUp(KeyCode.P))
+ //       { 
+ //           SceneManager.LoadScene("Night(Dirty)");
+ //       }
+ //       if (Input.GetKeyUp(KeyCode.R))
+ //       {
+ //           SceneManager.LoadScene("Morning(Clean)");
+ //       }
+ //   }
 }

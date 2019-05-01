@@ -59,7 +59,7 @@ public class StarPuzzle : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S)) youDidIt = true;
+        //if (Input.GetKeyDown(KeyCode.S)) youDidIt = true;
 
         if (youDidIt)
         {

@@ -42,7 +42,7 @@ public class AudioManager : Singleton<AudioManager>
 
     {
         timeTravelTheme.TransitionTo(transitionTime);
-        if (!timeTravelThemeSource.isPlaying)
+        //if (!timeTravelThemeSource.isPlaying)
             timeTravelThemeSource.PlayDelayed(transitionTime / 2);
     }
 

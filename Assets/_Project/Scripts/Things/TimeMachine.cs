@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimeMachine : Thing
 {
@@ -40,20 +41,21 @@ public class TimeMachine : Thing
     {
         if (act2)
         {
-            lidAnimator.SetTrigger("Open");
-            steamAnimator.SetTrigger("Steam");
-            gearsAnimator.SetTrigger("Gears");
-            foreach (var LED in LEDs)
-            {
-                LED.SetActive(true);
-                LED.GetComponent<BlinkingLight>().enabled = true;
-            }
-            StartCoroutine(BookTurnOn());
+            //lidAnimator.SetTrigger("Open");
+            //steamAnimator.SetTrigger("Steam");
+            //gearsAnimator.SetTrigger("Gears");
+            //foreach (var LED in LEDs)
+            //{
+            //    LED.SetActive(true);
+            //    LED.GetComponent<BlinkingLight>().enabled = true;
+            //}
+            //StartCoroutine(BookTurnOn());
         }
     }
 
     public override State Action(StateManager.Env env, ref Player player)
     {
+        if (act2) return base.Action(env, ref player);
         if (!open)
         {
             lidAnimator.SetTrigger("Open");
@@ -152,14 +154,13 @@ public class TimeMachine : Thing
         else if (readyToTimeTravel)
         {
             if (act2) return base.Action(env, ref player);
-            //AudioManager.Instance.TimeTravelTheme();
+            AudioManager.Instance.TimeTravelTheme();
             clockAnimator.SetTrigger("Leggo");
             realClockAnimator.enabled = true;
             realClockAnimator.SetTrigger("TimeTravel");
-            //whirring.Play();
-            //StartCoroutine(TimeTravelSequence());
-            fadeOutPanel.Action(env, ref player);
-            return credits.Action(env, ref player);
+            whirring.Play();
+            StartCoroutine(TimeTravelSequence());
+            return null;
         }
         else
         {
@@ -185,6 +186,11 @@ public class TimeMachine : Thing
         yield return new WaitForSecondsRealtime(6f);
 
         galaxy.SetTrigger("Galaxy");
+        fadeInOutPanelAnimator.SetTrigger("FadeToBlack");
+
+        yield return new WaitForSecondsRealtime(6f);
+
+        SceneManager.LoadScene("BackInTime");
     }
 
 }

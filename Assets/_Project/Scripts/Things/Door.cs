@@ -10,7 +10,8 @@ public class Door : Thing
     [SerializeField]    private BoxCollider2D openCollider;
     [SerializeField]    private BoxCollider2D closedCollider;
     [SerializeField]    private GameObject note;
-    [SerializeField]    private NoteThingAct2 noteThing; 
+    [SerializeField]    private NoteThingAct2 noteThing;
+    [SerializeField]    private CUTSCENE_BUTTON thisIsTheEnd;
 
     [SerializeField]    private bool locked = false;
                         private bool noteDropped = false;
@@ -30,10 +31,10 @@ public class Door : Thing
                 return null;
             }
         }
-        else if (player.inventory.GetType() == typeof(Key))
+        else if (player.inventory != null && player.inventory.GetType() == typeof(Key))
         {
             UnlockDoor(env, ref player);
-            return null;
+            return thisIsTheEnd.OutroCutscene();
         }
         else if (!noteDropped)
         {

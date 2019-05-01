@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Night(Dirty).unity
     guid: 22d2078155c202a41a42be5459c88125
+  - enabled: 1
+    path: Assets/_Project/Scenes/BackInTime.unity
+    guid: 60f89ac9233941e48b45041272d4022a
   m_configObjects: {}

@@ -39,7 +39,8 @@ public class RadioTalk : MonoBehaviour
             else if (!System.Char.IsWhiteSpace(character))
             {
                 audioSource.pitch = startPitch + curve.Evaluate(Random.value);
-                audioSource.Play();
+                if(audioSource.enabled)
+                    audioSource.Play();
             }
             #endregion
 
