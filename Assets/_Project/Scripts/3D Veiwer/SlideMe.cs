@@ -17,11 +17,8 @@ public class SlideMe : MonoBehaviour
         transform.localPosition = Vector3.Lerp(start, end, t);
 
         var percentToConnerStation = Mathf.Abs(t - (.0468f / .2267f)) / .8f;
-        print(percentToConnerStation + " " + (percentToConnerStation < .02));
-        if (percentToConnerStation < .02 && !started && (!batteries.battery1 && !batteries.battery2))
+        if (percentToConnerStation < .015 && !started && (!batteries.battery1 && !batteries.battery2))
         {
-            textBubble.color = new Color(textBubble.color.r, textBubble.color.g, textBubble.color.b, 0);
-            text.color = new Color(text.color.r, text.color.g, text.color.b, 0);
             StartCoroutine(FadeInConnerRadioText());
         }
         else
@@ -54,6 +51,8 @@ public class SlideMe : MonoBehaviour
             text.color = new Color(text.color.r, text.color.g, text.color.b, a);
             yield return null;
         }
+
+        started = true;
     }
 
     //public IEnumerator FadeOutConnerRadioText()
